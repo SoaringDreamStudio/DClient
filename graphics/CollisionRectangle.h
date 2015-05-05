@@ -1,5 +1,5 @@
 #pragma once
-#include "stdafx.h"
+#include "../libraries.h"
 
 class CCollisionRectangle
 {

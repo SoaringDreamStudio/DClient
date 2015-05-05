@@ -1,4 +1,4 @@
-#include "stdafx.h"
+#include "../libraries.h"
 #include "Sprite.h"
 
 
@@ -64,8 +64,95 @@ CSprite::CSprite(SDL_Renderer* passed_renderer, std::string FilePath, int x, int
     CameraX = passed_CameraX;
     CameraY = passed_CameraY;
 
-	Camera.x = rect.x + *CameraX;
-    Camera.y = rect.y + *CameraY;
+    MovingCameraX = new float(0);
+    MovingCameraY = new float(0);
+
+	Camera.x = rect.x + *CameraX + *MovingCameraX;
+    Camera.y = rect.y + *CameraY + *MovingCameraY;
+    Camera.w = rect.w;
+    Camera.h = rect.h;
+
+    animationDelay = SDL_GetTicks();
+}
+
+CSprite::CSprite(SDL_Renderer* passed_renderer,
+                 std::string FilePath,
+                 int x,
+                 int y,
+                 int w,
+                 int h,
+                 float *passed_CameraX,
+                 float *passed_CameraY,
+                 float *passed_MovingCameraX,
+                 float *passed_MovingCameraY,
+                 CCollisionRectangle passed_CollisionRect,
+                 CSDL_Setup* csdl_setup)
+{
+    CollisionRect = passed_CollisionRect;
+	renderer = passed_renderer;
+	image = NULL;
+
+	//если текстура с указанным путем уже был загружен
+    if(checkLoadedSprites(csdl_setup, FilePath))
+    {
+        //подгрузить текстуру
+        image = csdl_setup->readSprite(FilePath);
+    }
+
+    //если текстура с указанным путем не был еще загружен
+    else
+    {
+        //загрузить текстуру в игру
+        image = csdl_setup->addSprite(FilePath);
+    }
+
+    //если текстура не была загружена - выдать ошибку
+	if (image == NULL)
+	{
+		std::cout << "Couldn't load " << FilePath.c_str() << std::endl;
+	}
+
+	hitbox = NULL;
+
+    //стереть комментарии для отображения хитбоксов
+	//hitbox = IMG_LoadTexture(renderer, "data/img/hitbox.png");
+
+	//if (hitbox == NULL)
+	//{
+	//	std::cout << "Couldn't load hitbox image" << std::endl;
+	//}
+
+	rect.x = x;
+	rect.y = y;
+	rect.w = w;
+	rect.h = h;
+
+	SDL_QueryTexture(image,NULL,NULL, &img_width, &img_height);
+
+	crop.x = 0;
+	crop.y = 0;
+	crop.w = img_width;
+	crop.h = img_height;
+
+
+	X_pos = x;
+	Y_pos = y;
+
+	Orgin_X = 0;
+	Orgin_Y = 0;
+
+	CurrentFrame = 0;
+	Amount_Frame_X = 0;
+	Amount_Frame_Y = 0;
+
+    CameraX = passed_CameraX;
+    CameraY = passed_CameraY;
+
+    MovingCameraX = passed_MovingCameraX;
+    MovingCameraY = passed_MovingCameraY;
+
+	Camera.x = rect.x + *CameraX + *MovingCameraX;
+    Camera.y = rect.y + *CameraY + *MovingCameraY;
     Camera.w = rect.w;
     Camera.h = rect.h;
 
@@ -122,11 +209,11 @@ void CSprite::DrawWithCoord(CSDL_Setup* csdl_setup, coordinates spawn) //отрисов
 }
 void CSprite::Draw() //отрисовать (без учета spawn)
 {
-    Camera.x = rect.x + *CameraX;
-    Camera.y = rect.y + *CameraY;
+    Camera.x = rect.x + *CameraX + *MovingCameraX;
+    Camera.y = rect.y + *CameraY + *MovingCameraY;
 
-    CollisionRect.SetX(rect.x + *CameraX);
-    CollisionRect.SetY(rect.y + *CameraY);
+    CollisionRect.SetX(rect.x + *CameraX + *MovingCameraX);
+    CollisionRect.SetY(rect.y + *CameraY + *MovingCameraY);
 
 	SDL_RenderCopy(renderer, image, &crop, &Camera);
     SDL_Rect tmpper = CollisionRect.GetRectangle();
@@ -244,4 +331,30 @@ bool CSprite::checkLoadedSprites(CSDL_Setup* csdl_setup, std::string FilePath) /
     {
         return false;
     }
+}
+
+void CSprite::DrawWithRotate(double angle)
+{
+    CollisionRect.SetX(rect.x);// + *CameraX);
+    CollisionRect.SetY(rect.y);// + *CameraY);
+
+
+    Camera.x = rect.x + /**CameraX*/ + *MovingCameraX;
+    Camera.y = rect.y + /**CameraY*/ + *MovingCameraY;
+
+    CollisionRect.SetX(rect.x + /**CameraX*/ + *MovingCameraX);
+    CollisionRect.SetY(rect.y + /**CameraY*/ + *MovingCameraY);
+
+
+    SDL_RenderCopyEx(renderer,
+                     image,
+                     NULL,
+                     &Camera,
+                     angle,
+                     NULL,
+                     SDL_FLIP_NONE);
+
+
+    SDL_Rect tmpper = CollisionRect.GetRectangle();
+	SDL_RenderCopy(renderer, hitbox, NULL, &tmpper);
 }

@@ -1,4 +1,4 @@
-#include "stdafx.h"
+#include "../libraries.h"
 #include "SDL_Setup.h"
 
 
@@ -14,7 +14,7 @@ CSDL_Setup::CSDL_Setup(bool* quit, int passed_ScreenWidth, int passed_ScreenHeig
     ScreenWidth = passed_ScreenWidth;
     ScreenHeight = passed_ScreenHeight;
 	window = NULL;
-	window = SDL_CreateWindow("DiplomAlfa", 0, 30, ScreenWidth, ScreenHeight, SDL_WINDOW_SHOWN /*|| SDL_WINDOW_FULLSCREEN*/);
+	window = SDL_CreateWindow("monochrome", 0, 30, ScreenWidth, ScreenHeight, SDL_WINDOW_SHOWN /*|| SDL_WINDOW_FULLSCREEN*/);
 
 	if (window == NULL)
 	{

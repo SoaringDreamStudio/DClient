@@ -46,35 +46,13 @@
 			<Add directory="Libraries/SDL2_mixer-2.0.0/i686-w64-mingw32/lib" />
 			<Add directory="Libraries/SDL2_net-2.0.0/i686-w64-mingw32/lib" />
 		</Linker>
-		<Unit filename="CollisionRectangle.cpp" />
-		<Unit filename="CollisionRectangle.h" />
-		<Unit filename="Enviroment.cpp" />
-		<Unit filename="Enviroment.h" />
-		<Unit filename="FirstRPG.cpp" />
-		<Unit filename="Main.h" />
-		<Unit filename="MainCharacter.cpp" />
-		<Unit filename="MainCharacter.h" />
-		<Unit filename="Menu.cpp" />
-		<Unit filename="Menu.h" />
-		<Unit filename="Mybiblio.cpp" />
-		<Unit filename="Mybiblio.h" />
-		<Unit filename="Net.cpp" />
-		<Unit filename="Net.h" />
-		<Unit filename="SDL_Setup.cpp" />
-		<Unit filename="SDL_Setup.h" />
-		<Unit filename="Sprite.cpp" />
-		<Unit filename="Sprite.h" />
-		<Unit filename="effects.cpp" />
-		<Unit filename="effects.h" />
-		<Unit filename="interpretator.cpp" />
-		<Unit filename="main.cpp" />
-		<Unit filename="objects.cpp" />
-		<Unit filename="objects.h" />
-		<Unit filename="stdafx.h" />
-		<Unit filename="struct.h" />
-		<Unit filename="version.h" />
-		<Unit filename="writing.cpp" />
-		<Unit filename="writing.h" />
+		<Unit filename="graphics.h" />
+		<Unit filename="graphics/CollisionRectangle.cpp" />
+		<Unit filename="graphics/CollisionRectangle.h" />
+		<Unit filename="graphics/SDL_Setup.cpp" />
+		<Unit filename="graphics/SDL_Setup.h" />
+		<Unit filename="graphics/Sprite.cpp" />
+		<Unit filename="graphics/Sprite.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
