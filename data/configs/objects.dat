@@ -1,0 +1,74 @@
+gameGround
+-
+ID: 1
+name: Ground1
+hitbox: x: 0 y: 0 w: 0 h: 0
+FilePathSprite: data/img/grounds/1.png
+SetCrops: 0 0
+Animation: name: an1 parameters: 0 0 0 0
+Animation: name: an2 parameters: 0 0 0 0
+-
+ID: 2
+name: Ground2
+hitbox: x: 0 y: 0 w: 0 h: 0
+FilePathSprite: data/img/grounds/2.png
+SetCrops: 0 0
+Animation: name: an1 parameters: 0 0 0 0
+Animation: name: an2 parameters: 0 0 0 0
+-
+end
+gameWater
+-
+ID: 1
+name: Water1
+hitbox: x: 0 y: 0 w: 0 h: 0
+FilePathSprite: data/img/water/1.png
+SetCrops: 0 0
+Animation: name: an1 parameters: 0 0 0 0
+Animation: name: an2 parameters: 0 0 0 0
+-
+end
+gameItem
+-
+ID: 1
+name: Item1
+hitbox: x: 0 y: 0 w: 100 h: 100
+FilePathSprite: data/img/objects/01.png
+effects: ID: 1 Time: 5000
+SetCrops: 9 1
+Animation: name: an1 parameters: 0 8 0 100
+-
+ID: 2
+name: Item2
+hitbox: x: 0 y: 0 w: 100 h: 100
+FilePathSprite: data/img/objects/02.png
+effects: ID: 2 Time: 1000
+SetCrops: 5 1
+Animation: name: an1 parameters: 0 4 0 250
+-
+end
+gameAbilityItem
+-
+ID: 1
+name: Item1
+hitbox: x: 0 y: 0 w: 100 h: 100
+Follow: On
+FilePathSprite: data/img/objects/03.png
+SetCrops: 11 1
+Animation: name: an1 parameters: 0 9 0 100
+Animation: name: dead parameters: 0 9 0 100 effects: ID: 3 Time: 110
+-
+end
+gameFood
+-
+ID: 1
+name: banana
+hitbox: x: 0 y: 0 w: 100 h: 100
+FilePathSprite: data/img/objects/food/01.png
+Protein: 1
+Carbohydrate: 22
+Fat: 0
+SetCrops: 0 0
+Animation: name: an1 parameters: 0 0 0 0
+-
+end
