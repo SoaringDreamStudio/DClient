@@ -46,6 +46,12 @@
 			<Add directory="Libraries/SDL2_mixer-2.0.0/i686-w64-mingw32/lib" />
 			<Add directory="Libraries/SDL2_net-2.0.0/i686-w64-mingw32/lib" />
 		</Linker>
+		<Unit filename="Main.h" />
+		<Unit filename="Menu.cpp" />
+		<Unit filename="Menu.h" />
+		<Unit filename="Net.cpp" />
+		<Unit filename="Net.h" />
+		<Unit filename="StartCPP.cpp" />
 		<Unit filename="graphics.h" />
 		<Unit filename="graphics/CollisionRectangle.cpp" />
 		<Unit filename="graphics/CollisionRectangle.h" />
@@ -53,6 +59,9 @@
 		<Unit filename="graphics/SDL_Setup.h" />
 		<Unit filename="graphics/Sprite.cpp" />
 		<Unit filename="graphics/Sprite.h" />
+		<Unit filename="libraries.h" />
+		<Unit filename="main.cpp" />
+		<Unit filename="struct.h" />
 		<Extensions>
 			<code_completion />
 			<envvars />
