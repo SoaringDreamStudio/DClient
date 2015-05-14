@@ -12,7 +12,7 @@ public:
 	void GameMenu();
 	bool GOMenu();
 	void Loading();
-	//void DrawLoadingProcess(float, LoadingProcess*); //временная функция для увеличения прогресса загрузки на заданный процент и отображения на экране
+	void DrawLoadingProcess(float, LoadingProcess*); //временная функция для увеличения прогресса загрузки на заданный процент и отображения на экране
 
 private:
     float CameraX;

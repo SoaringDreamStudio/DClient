@@ -34,7 +34,7 @@ CMain::~CMain(void)
 
 void CMain::GameLoop(void)
 {
-    /*
+
     //инициализируем процесс загрузки
     LoadingProcess* loadingProcess = new LoadingProcess(csdl_setup, &MouseX, &MouseY, &CameraX, &CameraY);
     DrawLoadingProcess(3.3, loadingProcess);
@@ -46,22 +46,22 @@ void CMain::GameLoop(void)
 
     //инициализируем положение мыши и игровой уровень
     SDL_GetMouseState(&MouseX, &MouseY);
-    Stage1 = new CEnviroment(&CameraX, &CameraY, &MouseX, &MouseY,  csdl_setup, loadingProcess);
+    //Stage1 = new CEnviroment(&CameraX, &CameraY, &MouseX, &MouseY,  csdl_setup, loadingProcess);
     DrawLoadingProcess(3.4, loadingProcess);
 
     //инициализируем игровой интерфейс
-    GameInterface* gameInterface = new GameInterface(csdl_setup, &MouseX, &MouseY, &CameraX, &CameraY);
     DrawLoadingProcess(9, loadingProcess);
 
     //инициализируем главного героя
-    MainHero = new MainCharacter(csdl_setup, &MouseX, &MouseY, &CameraX, &CameraY, Stage1, loadingProcess, gameInterface);
+    //MainHero = new MainCharacter(csdl_setup, &MouseX, &MouseY, &CameraX, &CameraY, Stage1, loadingProcess, gameInterface);
     DrawLoadingProcess(4, loadingProcess);
 
-    interpretator = new CInterpretator(Stage1, MainHero);
+    //interpretator = new CInterpretator(Stage1, MainHero);
     DrawLoadingProcess(4, loadingProcess);
 
     //удаляем процесс загрузки
     delete loadingProcess;
+    GameInterface* gameInterface = new GameInterface(csdl_setup, &MouseX, &MouseY, &CameraX, &CameraY);
 
     //основной процесс игры
     //Выполняется до тех пор пока переменная quit ложна и не был нажат крестик
@@ -70,6 +70,7 @@ void CMain::GameLoop(void)
 	    //очищаем окно и проверяем на события
 		csdl_setup->Begin();
 
+/*
         //std::cout << "updateTimer: " << updateTimer <<  "SDL_GetTicks: " << SDL_GetTicks() << std::endl;
         if(updateTimer+250 < SDL_GetTicks())
         {
@@ -99,49 +100,51 @@ void CMain::GameLoop(void)
 
         }
 
-
+*/
 
 
         //считываем положение мышки
 		SDL_GetMouseState(&MouseX, &MouseY);
 
         //проверка на режим игры и считывание клавиш для переключения режимов
-        Stage1->Update();
+        //Stage1->Update();
 
-        interpretator->command(Stage1->GetConsoleCommand());
-        Stage1->SetConsoleCommand("");
+        //interpretator->command(Stage1->GetConsoleCommand());
+        //Stage1->SetConsoleCommand("");
 
         //отрисовка заднего плана
-        Stage1->DrawBack();
+        //Stage1->DrawBack();
 
         //отрисовка главного героя
-        MainHero->Draw();
+        //MainHero->Draw();
 
         //обновление анимации и управление ГГ
-        MainHero->Update();
+        //MainHero->Update();
 
         //просчет и прорисовка для игрового интерфейса
         gameInterface->Update();
+
         gameInterface->Draw();
 
         //отрисовка переднего плана
-        Stage1->DrawFront();
+        //Stage1->DrawFront();
 
         //отрисовка рендера
 		csdl_setup->End();
 
 		//в случае, если здоровье ГГ упадет до 0 - удалить его и выйти из цикла
+		/*
 		if(*(MainHero->GetHP()) <= 0)
         {
             delete MainHero;
             break;
-        }
+        }*/
         if(gameInterface->getMquit())
         {
             ignoreGameOver = true;
             break;
         }
-	}*/
+	}
 }
 void CMain::GameMenu(void)
 {
@@ -154,7 +157,7 @@ void CMain::GameMenu(void)
     //исполняется до тех пор, пока не будет передана команда выхода из главного меню
 
     ////А нужен ли вообще этот цикл?
-    for(;;)
+    while(!Mquit && csdl_setup->GetMainEvent()->type != SDL_QUIT)
     {
 
         ignoreGameOver = false;
@@ -238,7 +241,7 @@ bool CMain::GOMenu(void)
     }
     return true;*/
 }
-/*
+
 void CMain::Loading(void)
 {
     //инициализация окна загрузки
@@ -248,6 +251,7 @@ void CMain::Loading(void)
     //Выполняется до тех пор пока переменная quit ложна и не был нажат крестик
     while(csdl_setup->GetMainEvent()->type != SDL_QUIT)
     {
+
         //очищаем окно и проверяем на события
         csdl_setup->Begin();
 
@@ -263,6 +267,7 @@ void CMain::Loading(void)
 
         //отрисовка рендера
 		csdl_setup->End();
+
     }
 }
 
@@ -274,4 +279,4 @@ void CMain::DrawLoadingProcess(float percent, LoadingProcess* loadingProcess) //
     loadingProcess->Draw();
     csdl_setup->End();
 }
-*/
+

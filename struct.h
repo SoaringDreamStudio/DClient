@@ -31,3 +31,5 @@ enum EffectType
     EffectTypeNone,
     EffectTypeChamp
 };
+
+std::string IntToStr(int x);

@@ -9,7 +9,7 @@ extern const int ProtocolId;
 extern const float DeltaTime;
 extern const float SendRate;
 extern const float TimeOut;
-/*
+
 class LoadingProcess
 {
 public:
@@ -37,6 +37,7 @@ private:
     CSprite* MCHPbar2;
     Text* text1;
     Text* text2;
+
 };
 
 class GameInterface
@@ -60,9 +61,6 @@ private:
     int maxHP;
     std::string tmpMaxHP;
     std::string* linkTmpMaxHP;
-    bool emptyStomach;       //статус пустого желудка
-    int shortageEnergy;      //недостаток энергии. просчитывается из недостатков питательных веществ
-    bool sore;               //статус язвы
 
     int HPstatus;
 
@@ -71,47 +69,29 @@ private:
 
     CSDL_Setup* csdl_setup;
 
-    CSprite* interface1;
-    //CSprite* interface2;
+    CSprite* downInterface;
+    CSprite* weaponIcon;
+    CSprite* armorIcon;
 
-    CSprite* mapForm;
-    CSprite* statusForm1;
-    CSprite* statusWindow1;
-    Text* hungerOfStatusWindow1;
-    bool VisibleStatusWindow1;
+    CSprite* HPStatus;
+    CSprite* hungerStatus;
 
-    CSprite* statusForm2;
-    CSprite* statusWindow2;
-    Text* HPofStatusWindow2;
-    Text* maxHPofStatusWindow2;
-    Text* textHPofStatusWindow2;
-    Text* textmaxHPofStatusWindow2;
-    bool VisibleStatusWindow2;
+    Text* tHPStatus;
+    Text* thungerStatus;
+    bool VisibleHPStatus;
+    bool VisibleHungerStatus;
 
     CSprite* escapeWindow1;
     Text* escapeButton1text;
     Text* escapeButton2text;
     CSprite* escapeButton1;
     CSprite* escapeButton2;
-    bool VisibleEscapeWindow1;
-
-    CSprite* status1;
-    int timeCheck1; //таймер наведения на статус (для показа дополнительной информации) (hunger)
-    int timeCheck1_1; //время наведения на статус (hunger)
-    bool flagTimeCheck1_1; //триггер наведения на статус (hunger)
-    CSprite* status2;
-    int timeCheck2; //таймер наведения на статус (для показа дополнительной информации) (HP)
-    int timeCheck2_1; //время наведения на статус (HP)
-    bool flagTimeCheck2_1; //триггер наведения на статус (HP)
-
-    Text* stomachStatus; //статус пустого желудка
-    Text* soreStatus; //Язва
-    Text* depletionStatus; //истощение
+    bool VisibleEscapeWindow;
 
     bool OnePressed = false;
     bool Mquit = false;
 };
-*/
+
 class MainMenu
 {
 public:

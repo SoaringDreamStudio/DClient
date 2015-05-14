@@ -96,6 +96,8 @@ private:
 	int timeCheck;
 	int animationDelay;
 
+	bool firstTime; //для первой анимации
+
 	int Amount_Frame_X;
 	int Amount_Frame_Y;
 

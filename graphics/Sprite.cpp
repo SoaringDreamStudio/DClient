@@ -72,6 +72,8 @@ CSprite::CSprite(SDL_Renderer* passed_renderer, std::string FilePath, int x, int
     Camera.w = rect.w;
     Camera.h = rect.h;
 
+    firstTime = true;
+
     animationDelay = SDL_GetTicks();
 }
 
@@ -156,6 +158,8 @@ CSprite::CSprite(SDL_Renderer* passed_renderer,
     Camera.w = rect.w;
     Camera.h = rect.h;
 
+    firstTime = true;
+
     animationDelay = SDL_GetTicks();
 }
 
@@ -167,7 +171,7 @@ void CSprite::SetUpAnimation(int passed_Amount_X, int passed_Amount_Y) //настрои
 void CSprite::PlayAnimation(int BeginFrame, int EndFrame, int Row, float Speed) //отыграть анимацию
 {
     //менять кадр каждые speed секунд
-    if (animationDelay+Speed < SDL_GetTicks())
+    if (animationDelay+Speed < SDL_GetTicks() || firstTime)
 	{
 	    //если текущий кадр достиг последнего - начать заново
 		if (EndFrame <= CurrentFrame)
@@ -185,6 +189,7 @@ void CSprite::PlayAnimation(int BeginFrame, int EndFrame, int Row, float Speed) 
 		crop.w = img_width/Amount_Frame_X;
 		crop.h = img_height/Amount_Frame_Y;
 
+        firstTime = false;
 		//тик таймера
 		animationDelay = SDL_GetTicks();
 	}

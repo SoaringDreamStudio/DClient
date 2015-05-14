@@ -24,7 +24,7 @@ int main(int argc, char *argv[])
 		printf( "failed to initialize sockets\n" );
 		return 1;
 	}
-    net::Socket gsocket( ProtocolId, TimeOut, ServerPort);
+    net::Socket gsocket( ProtocolId, TimeOut, ClientPort);
 	// create socket
 
 	printf( "creating socket on port %d\n", ClientPort );

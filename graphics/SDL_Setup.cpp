@@ -14,13 +14,16 @@ CSDL_Setup::CSDL_Setup(bool* quit, int passed_ScreenWidth, int passed_ScreenHeig
     ScreenWidth = passed_ScreenWidth;
     ScreenHeight = passed_ScreenHeight;
 	window = NULL;
-	window = SDL_CreateWindow("monochrome", 0, 30, ScreenWidth, ScreenHeight, SDL_WINDOW_SHOWN /*|| SDL_WINDOW_FULLSCREEN*/);
+	window = SDL_CreateWindow("Diplom", 500, 30, ScreenWidth, ScreenHeight, SDL_WINDOW_SHOWN /*|| SDL_WINDOW_FULLSCREEN*/);
 
 	if (window == NULL)
 	{
-		std::cout << "Window couldn't be created" << std::endl;
 		*quit = true;
 	}
+	if (TTF_Init() < 0)
+    {
+		std::cout << "Unable to init TTF" << std::endl;
+    }
 
 	renderer = NULL;
 	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);

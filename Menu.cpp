@@ -1,6 +1,6 @@
 #include "Menu.h"
 //игровой интерфейс
-/*
+
 GameInterface::GameInterface(CSDL_Setup* passed_SDL_Setup, int *passed_MouseX, int *passed_MouseY, float *passed_CameraX, float *passed_CameraY)
 {
 
@@ -20,7 +20,7 @@ GameInterface::GameInterface(CSDL_Setup* passed_SDL_Setup, int *passed_MouseX, i
     //                          CCollisionRectangle(), csdl_setup);
     //interface2 = new CSprite(csdl_setup->GetRenderer(), "data/img/interfaces/02.png", csdl_setup->GetScreenWidth()*0.5 - (csdl_setup->GetScreenWidth()*0.35)/3, csdl_setup->GetScreenHeight()-(csdl_setup->GetScreenWidth()*0.35)*0.25,
     //                          csdl_setup->GetScreenWidth()*0.35, (csdl_setup->GetScreenWidth()*0.35)*0.25, CameraX, CameraY, CCollisionRectangle(), csdl_setup);
-
+/*
     interface1 = new CSprite(csdl_setup->GetRenderer(), "data/img/interfaces/bottom.png", 20, 500,
                               750, 100, CameraX, CameraY, CCollisionRectangle(), csdl_setup);
 
@@ -54,14 +54,14 @@ GameInterface::GameInterface(CSDL_Setup* passed_SDL_Setup, int *passed_MouseX, i
     maxHPofStatusWindow2 = new Text(tmpMaxHP, 720, 310, 10, 10, csdl_setup, CameraX, CameraY);
     textmaxHPofStatusWindow2 = new Text("max", 755, 310, 10, 10, csdl_setup, CameraX, CameraY);
 
-    VisibleStatusWindow1 = false;
-    VisibleStatusWindow2 = false;
+    VisibleHPStatus = false;
+    VisibleHungerStatus = false;
 
     escapeWindow1 = new CSprite(csdl_setup->GetRenderer(), "data/img/interfaces/window.png", 200, 100,
-                              400, 400, CameraX, CameraY, CCollisionRectangle(), csdl_setup);
-    VisibleEscapeWindow1 = false;
+                              400, 400, CameraX, CameraY, CCollisionRectangle(), csdl_setup);*/
+    VisibleEscapeWindow = false;
 
-
+/*
     escapeButton1text = new Text("exit to main menu", 310, 245, 12, 12, csdl_setup, CameraX, CameraY);
     escapeButton2text = new Text("exit to windows", 320, 345, 12, 12, csdl_setup, CameraX, CameraY);
     escapeButton1 = new CSprite(csdl_setup->GetRenderer(), "data/img/MenuButton1.png", 300, 225, 225, 50, CameraX, CameraY,
@@ -70,14 +70,25 @@ GameInterface::GameInterface(CSDL_Setup* passed_SDL_Setup, int *passed_MouseX, i
     escapeButton2 = new CSprite(csdl_setup->GetRenderer(), "data/img/MenuButton1.png", 300, 325, 225, 50, CameraX, CameraY,
                               CCollisionRectangle(0,0, 225, 50),csdl_setup);
     escapeButton2->SetUpAnimation(3,1);
+*/
 
-    stomachStatus = new Text("empty stomach", 590, 270, 12, 12, csdl_setup, CameraX, CameraY); //статус пустого желудка
-    soreStatus = new Text("sore stomach", 590, 290, 12, 12, csdl_setup, CameraX, CameraY); //Язва
-    depletionStatus = new Text("strong depletion", 590, 310, 12, 12, csdl_setup, CameraX, CameraY); //истощение
 
-    emptyStomach = true;       //статус пустого желудка
-    shortageEnergy = 0;      //недостаток энергии. просчитывается из недостатков питательных веществ
-    sore = true;               //статус язвы
+    downInterface = new CSprite(csdl_setup->GetRenderer(), "data/img/inventory/bg.png", 150, 668,
+                              700, 100, CameraX, CameraY, CCollisionRectangle(), csdl_setup);
+    weaponIcon = new CSprite(csdl_setup->GetRenderer(), "data/img/inventory/wep.png", 795, 727,
+                              32, 32, CameraX, CameraY, CCollisionRectangle(), csdl_setup);
+    armorIcon = new CSprite(csdl_setup->GetRenderer(), "data/img/inventory/arm.png", 748, 727,
+                              32, 32, CameraX, CameraY, CCollisionRectangle(), csdl_setup);
+    HPStatus = new CSprite(csdl_setup->GetRenderer(), "data/img/Status/hp.png", 870, 20,
+                              72, 72, CameraX, CameraY, CCollisionRectangle(), csdl_setup);
+    HPStatus->SetUpAnimation(3,1);
+    hungerStatus = new CSprite(csdl_setup->GetRenderer(), "data/img/Status/hunger.png", 950, 20,
+                              72, 72, CameraX, CameraY, CCollisionRectangle(), csdl_setup);
+    hungerStatus->SetUpAnimation(3,1);
+/*
+
+    Text* tHPStatus;
+    Text* thungerStatus;*/
 }
 
 
@@ -89,6 +100,7 @@ GameInterface::~GameInterface(void)
 void GameInterface::UpdateInformation(int passed_HP, int passed_maxHP, int passed_shortageEnergy,
                                        bool passed_emptyStomach, bool passed_sore)
 {
+    /*
     HP = passed_HP;
 
     //обновить значение строки HP
@@ -102,10 +114,15 @@ void GameInterface::UpdateInformation(int passed_HP, int passed_maxHP, int passe
     emptyStomach = passed_emptyStomach;       //статус пустого желудка
     shortageEnergy = passed_shortageEnergy;      //недостаток энергии. просчитывается из недостатков питательных веществ
     sore = passed_sore;
+    */
 }
 
 void GameInterface::UpdateAnimation()
 {
+
+    HPStatus->PlayAnimation(0, 0, 0, 1000);
+    hungerStatus->PlayAnimation(0, 0, 0, 1000);
+    /*
     //обрезка картинки интерфейса для вывода нужного фрагмента
     //interface1->SetCrop(0,0,364,128);
     escapeButton1text->Update();
@@ -166,10 +183,12 @@ void GameInterface::UpdateAnimation()
         escapeButton1->PlayAnimation(0, 0, 0, 250);
         escapeButton2->PlayAnimation(0, 0, 0, 250);
     }
+    */
 }
 
 void GameInterface::Update()
 {
+    /*
     if(emptyStomach)
     {
         stomachStatus->SetText("empty stomach");
@@ -306,7 +325,7 @@ void GameInterface::Update()
         }
     }
 
-
+*/
     //обновить анимацию
     UpdateAnimation();
 
@@ -316,39 +335,29 @@ void GameInterface::Update()
 void GameInterface::Draw()
 {
     //отрисовать интерфейс
-    interface1->DrawStatic();
-    //interface2->DrawStatic();
-    mapForm->DrawStatic();
-    statusForm1->DrawStatic();
-    status1->DrawStatic();
-    statusForm2->DrawStatic();
-    status2->DrawStatic();
 
-    if(VisibleStatusWindow1)
+    downInterface->DrawStatic();
+    weaponIcon->DrawStatic();
+    armorIcon->DrawStatic();
+
+    HPStatus->DrawStatic();
+    hungerStatus->DrawStatic();
+
+    //CSprite* HPStatus;
+    //CSprite* hungerStatus;
+
+/*
+    if(VisibleEscapeWindow)
     {
-        statusWindow1->DrawStatic();
-        stomachStatus->Draw();
-        soreStatus->Draw();
-        depletionStatus->Draw();
-    }
-    if(VisibleStatusWindow2)
-    {
-        statusWindow2->DrawStatic();
-        textHPofStatusWindow2->Draw();
-        textmaxHPofStatusWindow2->Draw();
-        HPofStatusWindow2->Draw();
-        maxHPofStatusWindow2->Draw();
-    }
-    if(VisibleEscapeWindow1)
-    {
+
         escapeWindow1->DrawStatic();
         escapeButton1->DrawStatic();
         escapeButton2->DrawStatic();
         escapeButton1text->Draw();
         escapeButton2text->Draw();
-    }
+    }*/
 }
-*/
+
 //главное меню
 MainMenu::MainMenu(CSDL_Setup* passed_SDL_Setup, int *passed_MouseX, int *passed_MouseY, float *passed_CameraX, float *passed_CameraY, net::Socket* passed_gsocket)
 {
@@ -470,7 +479,19 @@ void MainMenu::UpdateControls()
             {
                 //триггер выхода из меню - ON
 
-                const char data[] = "hello world!";
+                char data[18];
+                data[0] = 10;
+                std::string login = "avdrine";
+                int l;
+                for(int n = 1, l = 0; n <=9; n++, l++)
+                {
+                    data[n] = login[l];
+                }
+                std::string pass = "89658965";
+                for(int n = 10, l = 0; n <=18; n++, l++)
+                {
+                    data[n] = pass[l];
+                }
 
                 unsigned char packet[sizeof(data)+4];
                 packet[0] = (unsigned char) ( ProtocolId >> 24 );
@@ -501,7 +522,20 @@ void MainMenu::UpdateControls()
     }
     else if(activeMenu == connectMenu)
     {
-
+        gsocket->Update();
+        net::Address sender;
+        unsigned char buffer[256];
+        int bytes_read = gsocket->Receive( sender, buffer, sizeof( buffer ) );
+        if ( bytes_read )
+        {
+            if(buffer[0] >= 200)
+                std::cout << "Error #" << int(buffer[4]) << std::endl;
+            /*
+            printf( "received packet from %d.%d.%d.%d:%d (%d bytes)\n",
+                sender.GetA(), sender.GetB(), sender.GetC(), sender.GetD(),
+                sender.GetPort(), bytes_read );*/
+        }
+        Mquit = true;
     }
 
 }
@@ -609,7 +643,7 @@ void GameOverMenu::Draw()
     text2->Draw();
 
 }
-
+*/
 LoadingProcess::LoadingProcess(CSDL_Setup* passed_SDL_Setup, int *passed_MouseX, int *passed_MouseY, float *passed_CameraX, float *passed_CameraY)
 {
 
@@ -628,9 +662,16 @@ LoadingProcess::LoadingProcess(CSDL_Setup* passed_SDL_Setup, int *passed_MouseX,
     MCHPbar2 = new CSprite(csdl_setup->GetRenderer(), "data/img/GUI.png", csdl_setup->GetScreenWidth()*0.125, csdl_setup->GetScreenHeight()*0.6,
                            csdl_setup->GetScreenWidth()*0.68, csdl_setup->GetScreenHeight()*0.065, CameraX, CameraY, CCollisionRectangle(), csdl_setup);
 
-
-    text1 = new Text("Loading", "BLACK", csdl_setup->GetScreenWidth()*0.25, csdl_setup->GetScreenHeight()*0.37, csdl_setup->GetScreenWidth()*0.066, csdl_setup->GetScreenHeight()*0.066, csdl_setup, CameraX, CameraY);
-    text2 = new Text("0", ProgressPositionX, csdl_setup->GetScreenHeight()*0.605, csdl_setup->GetScreenWidth()*0.05, csdl_setup->GetScreenHeight()*0.066, csdl_setup, CameraX, CameraY, true);
+    text1 = new Text(csdl_setup->GetRenderer(),
+                      "Loading",
+                      400,
+                      300,
+                      50);
+    text2 = new Text(csdl_setup->GetRenderer(),
+                      "0",
+                      ProgressPositionX,
+                      462,
+                      50);
 }
 
 
@@ -641,15 +682,11 @@ LoadingProcess::~LoadingProcess(void)
 
 void LoadingProcess::UpdateAnimation()
 {
-    //настроить текст laoding
-    text1->Update();
-
     //перевести прогресс загрузки из Float в int
     int intProgress = int(Progress);
 
     //настроить текст и установить его равным прогрессу загрузки
     text2->SetText(IntToStr(intProgress));
-    text2->Update();
 
     //вырезать из картинки GUI прогрессбар
     MCHPbar1->SetCrop(0,128,112,11);
@@ -703,4 +740,4 @@ void LoadingProcess::addProcent(float z)
         Progress = 100;
 
 }
-*/
+

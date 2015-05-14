@@ -1342,7 +1342,7 @@
 	<map>
 	<unistd.h>
 
-1430853248 c:\users\avdrine\documents\github\dclient\struct.h
+1431634734 c:\users\avdrine\documents\github\dclient\struct.h
 	"libraries.h"
 	"graphics/CollisionRectangle.h"
 
@@ -1378,7 +1378,7 @@
 	"Menu.h"
 	<vector>
 
-1431431534 c:\users\avdrine\documents\github\dclient\menu.h
+1431638041 c:\users\avdrine\documents\github\dclient\menu.h
 	"libraries.h"
 	"graphics.h"
 
@@ -1396,7 +1396,7 @@
 	"stdafx.h"
 	"Main.h"
 
-1431431695 c:\users\avdrine\documents\github\dclient\main.h
+1431629308 c:\users\avdrine\documents\github\dclient\main.h
 	"graphics.h"
 	"Menu.h"
 	<windows.h>
@@ -1420,23 +1420,24 @@
 1423422724 source:c:\users\avdrine\documents\github\dclient\interpretator.cpp
 	"interpretator.h"
 
-1431431709 source:c:\users\avdrine\documents\github\dclient\main.cpp
+1431640873 source:c:\users\avdrine\documents\github\dclient\main.cpp
 	"libraries.h"
 	"Main.h"
 
 1423694387 source:c:\users\avdrine\documents\github\dclient\maincharacter.cpp
 	"MainCharacter.h"
 
-1431435975 source:c:\users\avdrine\documents\github\dclient\menu.cpp
+1431642803 source:c:\users\avdrine\documents\github\dclient\menu.cpp
 	"Menu.h"
 
 1415527063 source:c:\users\avdrine\documents\github\dclient\mybiblio.cpp
 	"Mybiblio.h"
 
-1429277558 source:c:\users\avdrine\documents\github\dclient\net.cpp
+1431605378 source:c:\users\avdrine\documents\github\dclient\net.cpp
 	"Net.h"
 	<cstdio>
 	<winsock2.h>
+	<ctime>
 	<iostream>
 
 1423691006 source:c:\users\avdrine\documents\github\dclient\objects.cpp
@@ -1459,10 +1460,11 @@
 1431431296 c:\users\avdrine\documents\github\dclient\graphics\collisionrectangle.h
 	"../libraries.h"
 
-1431431570 c:\users\avdrine\documents\github\dclient\libraries.h
+1431623485 c:\users\avdrine\documents\github\dclient\libraries.h
 	<SDL.h>
 	<SDL_image.h>
 	<SDL_mixer.h>
+	<SDL_ttf.h>
 	<iostream>
 	<vector>
 	<map>
@@ -1474,27 +1476,48 @@
 	"struct.h"
 	"Net.h"
 
-1430853247 source:c:\users\avdrine\documents\github\dclient\graphics\sdl_setup.cpp
+1431633488 source:c:\users\avdrine\documents\github\dclient\graphics\sdl_setup.cpp
 	"../libraries.h"
 	"SDL_Setup.h"
 
-1430853247 c:\users\avdrine\documents\github\dclient\graphics\sdl_setup.h
+1431628407 c:\users\avdrine\documents\github\dclient\graphics\sdl_setup.h
+	<map>
+	<SDL.h>
+	<SDL_image.h>
+	<SDL_mixer.h>
+	<SDL_ttf.h>
 
-1430853247 source:c:\users\avdrine\documents\github\dclient\graphics\sprite.cpp
+1431642966 source:c:\users\avdrine\documents\github\dclient\graphics\sprite.cpp
 	"../libraries.h"
 	"Sprite.h"
 
-1430853247 c:\users\avdrine\documents\github\dclient\graphics\sprite.h
+1431642904 c:\users\avdrine\documents\github\dclient\graphics\sprite.h
 	"../libraries.h"
 	"CollisionRectangle.h"
 	"SDL_Setup.h"
 
-1430853247 c:\users\avdrine\documents\github\dclient\graphics.h
+1431628259 c:\users\avdrine\documents\github\dclient\graphics.h
 	"graphics/SDL_Setup.h"
 	"graphics/CollisionRectangle.h"
 	"graphics/Sprite.h"
+	"graphics/Texts.h"
 
-1431435321 source:c:\users\avdrine\documents\github\dclient\startcpp.cpp
+1431640308 source:c:\users\avdrine\documents\github\dclient\startcpp.cpp
 	"libraries.h"
 	"Main.h"
+
+1376156544 c:\users\avdrine\documents\github\dclient\libraries\sdl2_ttf-2.0.12\i686-w64-mingw32\include\sdl2\sdl_ttf.h
+	"SDL.h"
+	"begin_code.h"
+	"close_code.h"
+
+1431634488 c:\users\avdrine\documents\github\dclient\graphics\texts.h
+	"SDL_Setup.h"
+
+1431636987 source:c:\users\avdrine\documents\github\dclient\graphics\texts.cpp
+	"Texts.h"
+	"../libraries.h"
+
+1431634723 source:c:\users\avdrine\documents\github\dclient\struct.cpp
+	"struct.h"
 

@@ -3,6 +3,7 @@
     using namespace std;
     #include <cstdio>
 	#include <winsock2.h>
+	#include <ctime>
 	#include <iostream>
 	#pragma comment( lib, "wsock32.lib" )
 
@@ -378,6 +379,7 @@
 
     int Socket::Receive( Address & sender, unsigned char * data, int size )
     {
+        Update();
         assert( data );
         assert( size > 0 );
 
