@@ -61,8 +61,11 @@
 		<Unit filename="graphics/SDL_Setup.h" />
 		<Unit filename="graphics/Sprite.cpp" />
 		<Unit filename="graphics/Sprite.h" />
+		<Unit filename="graphics/Texts.cpp" />
+		<Unit filename="graphics/Texts.h" />
 		<Unit filename="libraries.h" />
 		<Unit filename="main.cpp" />
+		<Unit filename="struct.cpp" />
 		<Unit filename="struct.h" />
 		<Extensions>
 			<code_completion />
