@@ -1,6 +1,7 @@
 #pragma once
 #include "graphics.h"
 #include "Menu.h"
+#include "GameLVL.h"
 #include <windows.h>
 #include <math.h>
 class CMain
@@ -21,7 +22,7 @@ private:
     net::Socket* gsocket;
 
     //MainCharacter* MainHero;
-    //CEnviroment* Stage1;
+    GameLVL* gameLVL;
 
 	int ScreenWidth;
 	int ScreenHeight;

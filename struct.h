@@ -19,11 +19,12 @@ struct AnimationInfo
 enum ObjectType
 {
     TypeNone,
+    TypeCharacters,
     TypeGround,
-    TypeWater,
-    TypeItem,
-    TypeAbilityItem,
-    TypeFood
+    TypeMobs,
+    TypeNormal,
+    TypeTrigger,
+    TypeWtrig
 };
 
 enum EffectType

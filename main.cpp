@@ -46,17 +46,17 @@ void CMain::GameLoop(void)
 
     //инициализируем положение мыши и игровой уровень
     SDL_GetMouseState(&MouseX, &MouseY);
-    //Stage1 = new CEnviroment(&CameraX, &CameraY, &MouseX, &MouseY,  csdl_setup, loadingProcess);
+    gameLVL = new GameLVL(&CameraX, &CameraY, &MouseX, &MouseY,  csdl_setup, loadingProcess);
     DrawLoadingProcess(3.4, loadingProcess);
 
     //инициализируем игровой интерфейс
     DrawLoadingProcess(9, loadingProcess);
 
     //инициализируем главного героя
-    //MainHero = new MainCharacter(csdl_setup, &MouseX, &MouseY, &CameraX, &CameraY, Stage1, loadingProcess, gameInterface);
+    //MainHero = new MainCharacter(csdl_setup, &MouseX, &MouseY, &CameraX, &CameraY, gameLVL, loadingProcess, gameInterface);
     DrawLoadingProcess(4, loadingProcess);
 
-    //interpretator = new CInterpretator(Stage1, MainHero);
+    //interpretator = new CInterpretator(gameLVL, MainHero);
     DrawLoadingProcess(4, loadingProcess);
 
     //удаляем процесс загрузки
@@ -107,13 +107,13 @@ void CMain::GameLoop(void)
 		SDL_GetMouseState(&MouseX, &MouseY);
 
         //проверка на режим игры и считывание клавиш для переключения режимов
-        //Stage1->Update();
+        gameLVL->Update();
 
-        //interpretator->command(Stage1->GetConsoleCommand());
-        //Stage1->SetConsoleCommand("");
+        //interpretator->command(gameLVL->GetConsoleCommand());
+        //gameLVL->SetConsoleCommand("");
 
         //отрисовка заднего плана
-        //Stage1->DrawBack();
+        gameLVL->DrawBack();
 
         //отрисовка главного героя
         //MainHero->Draw();
@@ -127,7 +127,7 @@ void CMain::GameLoop(void)
         gameInterface->Draw();
 
         //отрисовка переднего плана
-        //Stage1->DrawFront();
+        gameLVL->DrawFront();
 
         //отрисовка рендера
 		csdl_setup->End();

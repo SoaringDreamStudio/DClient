@@ -1342,7 +1342,7 @@
 	<map>
 	<unistd.h>
 
-1431634734 c:\users\avdrine\documents\github\dclient\struct.h
+1431696428 c:\users\avdrine\documents\github\dclient\struct.h
 	"libraries.h"
 	"graphics/CollisionRectangle.h"
 
@@ -1362,10 +1362,24 @@
 
 1422664905 c:\users\avdrine\documents\github\dclient\sdl_setup.h
 
-1423689596 c:\users\avdrine\documents\github\dclient\objects.h
-	"stdafx.h"
-	"Sprite.h"
-	"SDL_Setup.h"
+1431548962 c:\users\avdrine\documents\github\dclient\objects.h
+	"objects/Environment.h"
+	"objects/Environment/Live.h"
+	"objects/Environment/Live/Characters.h"
+	"objects/Environment/Live/Mobs.h"
+	"objects/Environment/NonLive.h"
+	"objects/Environment/NonLive/Objects.h"
+	"objects/Environment/NonLive/Objects/Normal.h"
+	"objects/Environment/NonLive/Objects/Trigger.h"
+	"objects/Environment/NonLive/Objects/Wtrig.h"
+	"objects/Environment/NonLive/Ground.h"
+	"objects/Items.h"
+	"objects/Items/Equip.h"
+	"objects/Items/Equip/Armor.h"
+	"objects/Items/Equip/Weapon.h"
+	"objects/Items/Equip/Weapon/Melee.h"
+	"objects/Items/Equip/Weapon/Range.h"
+	"objects/Items/Usable.h"
 
 1429273165 source:c:\users\avdrine\documents\github\dclient\enviroment.cpp
 	"Enviroment.h"
@@ -1396,9 +1410,10 @@
 	"stdafx.h"
 	"Main.h"
 
-1431629308 c:\users\avdrine\documents\github\dclient\main.h
+1431708108 c:\users\avdrine\documents\github\dclient\main.h
 	"graphics.h"
 	"Menu.h"
+	"GameLVL.h"
 	<windows.h>
 	<math.h>
 
@@ -1420,14 +1435,14 @@
 1423422724 source:c:\users\avdrine\documents\github\dclient\interpretator.cpp
 	"interpretator.h"
 
-1431640873 source:c:\users\avdrine\documents\github\dclient\main.cpp
+1431708128 source:c:\users\avdrine\documents\github\dclient\main.cpp
 	"libraries.h"
 	"Main.h"
 
 1423694387 source:c:\users\avdrine\documents\github\dclient\maincharacter.cpp
 	"MainCharacter.h"
 
-1431642803 source:c:\users\avdrine\documents\github\dclient\menu.cpp
+1431651717 source:c:\users\avdrine\documents\github\dclient\menu.cpp
 	"Menu.h"
 
 1415527063 source:c:\users\avdrine\documents\github\dclient\mybiblio.cpp
@@ -1520,4 +1535,122 @@
 
 1431634723 source:c:\users\avdrine\documents\github\dclient\struct.cpp
 	"struct.h"
+
+1431709195 source:c:\users\avdrine\documents\github\dclient\objects\environment.cpp
+	"Environment.h"
+
+1431704574 c:\users\avdrine\documents\github\dclient\objects\environment.h
+	<string>
+	"../graphics.h"
+	"../struct.h"
+
+1431704623 source:c:\users\avdrine\documents\github\dclient\objects\environment\live.cpp
+	"Live.h"
+
+1431704652 c:\users\avdrine\documents\github\dclient\objects\environment\live.h
+	"../Environment.h"
+
+1431704733 source:c:\users\avdrine\documents\github\dclient\objects\environment\live\characters.cpp
+	"Characters.h"
+
+1431704767 c:\users\avdrine\documents\github\dclient\objects\environment\live\characters.h
+	"../Live.h"
+	"../../Items.h"
+
+1431685146 c:\users\avdrine\documents\github\dclient\objects\items.h
+	"../graphics.h"
+
+1431704801 source:c:\users\avdrine\documents\github\dclient\objects\environment\live\mobs.cpp
+	"Mobs.h"
+
+1431704815 c:\users\avdrine\documents\github\dclient\objects\environment\live\mobs.h
+	"../Live.h"
+	"../../../struct.h"
+
+1431704873 source:c:\users\avdrine\documents\github\dclient\objects\environment\nonlive.cpp
+	"NonLive.h"
+
+1431704873 c:\users\avdrine\documents\github\dclient\objects\environment\nonlive.h
+	"../Environment.h"
+
+1431704908 source:c:\users\avdrine\documents\github\dclient\objects\environment\nonlive\ground.cpp
+	"Ground.h"
+
+1431704934 c:\users\avdrine\documents\github\dclient\objects\environment\nonlive\ground.h
+	"../NonLive.h"
+
+1431704957 source:c:\users\avdrine\documents\github\dclient\objects\environment\nonlive\objects.cpp
+	"Objects.h"
+
+1431704974 c:\users\avdrine\documents\github\dclient\objects\environment\nonlive\objects.h
+	"../NonLive.h"
+
+1431704996 source:c:\users\avdrine\documents\github\dclient\objects\environment\nonlive\objects\normal.cpp
+	"Normal.h"
+
+1431705005 c:\users\avdrine\documents\github\dclient\objects\environment\nonlive\objects\normal.h
+	"../Objects.h"
+
+1431705034 source:c:\users\avdrine\documents\github\dclient\objects\environment\nonlive\objects\trigger.cpp
+	"Trigger.h"
+
+1431705011 c:\users\avdrine\documents\github\dclient\objects\environment\nonlive\objects\trigger.h
+	"../Objects.h"
+
+1431705049 source:c:\users\avdrine\documents\github\dclient\objects\environment\nonlive\objects\wtrig.cpp
+	"Wtrig.h"
+
+1431705018 c:\users\avdrine\documents\github\dclient\objects\environment\nonlive\objects\wtrig.h
+	"../Objects.h"
+
+1431549796 source:c:\users\avdrine\documents\github\dclient\objects\items.cpp
+	"Items.h"
+
+1431549802 source:c:\users\avdrine\documents\github\dclient\objects\items\equip.cpp
+	"Equip.h"
+
+1431685146 c:\users\avdrine\documents\github\dclient\objects\items\equip.h
+	"../Items.h"
+
+1431544562 source:c:\users\avdrine\documents\github\dclient\objects\items\equip\armor.cpp
+	"Armor.h"
+
+1431549265 c:\users\avdrine\documents\github\dclient\objects\items\equip\armor.h
+	"../Equip.h"
+
+1431544741 source:c:\users\avdrine\documents\github\dclient\objects\items\equip\weapon.cpp
+	"Weapon.h"
+
+1431549826 c:\users\avdrine\documents\github\dclient\objects\items\equip\weapon.h
+	<string>
+	"../Equip.h"
+
+1431684359 source:c:\users\avdrine\documents\github\dclient\objects\items\equip\weapon\melee.cpp
+	"Melee.h"
+
+1431684355 c:\users\avdrine\documents\github\dclient\objects\items\equip\weapon\melee.h
+	"../Weapon.h"
+	"../../../../struct.h"
+
+1431545000 source:c:\users\avdrine\documents\github\dclient\objects\items\equip\weapon\range.cpp
+	"Range.h"
+
+1431549258 c:\users\avdrine\documents\github\dclient\objects\items\equip\weapon\range.h
+	"../Weapon.h"
+
+1431549849 source:c:\users\avdrine\documents\github\dclient\objects\items\usable.cpp
+	"Usable.h"
+
+1431549280 c:\users\avdrine\documents\github\dclient\objects\items\usable.h
+	"../Items.h"
+
+1431708640 source:c:\users\avdrine\documents\github\dclient\gamelvl.cpp
+	"GameLVL.h"
+
+1431708513 c:\users\avdrine\documents\github\dclient\gamelvl.h
+	"libraries.h"
+	"graphics.h"
+	"objects.h"
+	"Menu.h"
+	<vector>
 
