@@ -36,6 +36,27 @@ Wtrig::Wtrig(coordinates* passed_spawn,
     Status = passed_Status;
 }
 
+Wtrig::Wtrig(coordinates* passed_spawn,
+                float* passed_CameraX,
+                float* passed_CameraY,
+                CSDL_Setup* passed_csdl_setup,
+                int passed_ID,
+                int passed_PosX,
+                int passed_PosY
+                )
+    : Objects("Wtrig",
+                passed_CameraX,
+                passed_CameraY,
+                passed_spawn,
+                passed_csdl_setup,
+                passed_ID,
+                passed_PosX,
+                passed_PosY,
+                )
+{
+
+}
+
 Wtrig::~Wtrig(void)
 {
 

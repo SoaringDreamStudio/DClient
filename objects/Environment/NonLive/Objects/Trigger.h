@@ -18,6 +18,13 @@ public:
             bool BulletCollision,
             bool Status,
             int ConnectionID);
+    Trigger(coordinates* spawn,
+            float* CameraX,
+            float* CameraY,
+            CSDL_Setup* csdl_setup,
+            int ID,
+            int PosX,
+            int PosY);
 
 	~Trigger(void);
 

@@ -18,6 +18,15 @@ public:
             bool BulletCollision,
             bool PickUpAble);
 
+    Normal(coordinates* spawn,
+            float* CameraX,
+            float* CameraY,
+            CSDL_Setup* csdl_setup,
+            int ID,
+            int PosX,
+            int PosY);
+
+
 	~Normal(void);
 
 	void Draw();

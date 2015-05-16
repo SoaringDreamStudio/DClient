@@ -33,6 +33,26 @@ Normal::Normal(coordinates* passed_spawn,
     PickUpAble = passed_PickUpAble;
 }
 
+Normal::Normal(coordinates* passed_spawn,
+                float* passed_CameraX,
+                float* passed_CameraY,
+                CSDL_Setup* passed_csdl_setup,
+                int passed_ID,
+                int passed_PosX,
+                int passed_PosY)
+        : Objects("Normal",
+                passed_CameraX,
+                passed_CameraY,
+                passed_spawn,
+                passed_csdl_setup,
+                passed_ID,
+                passed_PosX,
+                passed_PosY
+                )
+{
+
+}
+
 Normal::~Normal(void)
 {
 

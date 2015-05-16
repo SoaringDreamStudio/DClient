@@ -20,6 +20,14 @@ public:
             bool Status
             );
 
+    Wtrig(coordinates* spawn,
+            float* CameraX,
+            float* CameraY,
+            CSDL_Setup* csdl_setup,
+            int ID,
+            int PosX,
+            int PosY);
+
 	~Wtrig(void);
 
 	void Draw();

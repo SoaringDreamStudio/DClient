@@ -34,6 +34,26 @@ Trigger::Trigger(coordinates* passed_spawn,
     ConnectionID = passed_ConnectionID;
 }
 
+Trigger::Trigger(coordinates* passed_spawn,
+                float* passed_CameraX,
+                float* passed_CameraY,
+                CSDL_Setup* passed_csdl_setup,
+                int passed_ID,
+                int passed_PosX,
+                int passed_PosY)
+        : Objects("Trigger",
+                passed_CameraX,
+                passed_CameraY,
+                passed_spawn,
+                passed_csdl_setup,
+                passed_ID,
+                passed_PosX,
+                passed_PosY,
+                )
+{
+
+}
+
 Trigger::~Trigger(void)
 {
 

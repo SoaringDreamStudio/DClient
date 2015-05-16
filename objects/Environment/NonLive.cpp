@@ -11,7 +11,8 @@ NonLive::NonLive(std::string passed_className,
                 int passed_PosX,
                 int passed_PosY,
                 std::string passed_ActiveAnimation,
-                std::map<std::string, AnimationInfo> passed_Animations)
+                std::map<std::string, AnimationInfo> passed_Animation
+                )
 
     : Environment( passed_className,
                     passed_CameraX,
@@ -24,7 +25,7 @@ NonLive::NonLive(std::string passed_className,
                     passed_PosX,
                     passed_PosY,
                     passed_ActiveAnimation,
-                    passed_Animations)
+                    passed_Animation)
 {
 
 }

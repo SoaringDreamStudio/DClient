@@ -14,7 +14,8 @@ public:
             int PosX,
             int PosY,
             std::string ActiveAnimation,
-            std::map<std::string, AnimationInfo> Animations);
+            std::map<std::string, AnimationInfo> Animations
+            );
 
 	~NonLive(void);
 
