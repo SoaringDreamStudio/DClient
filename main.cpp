@@ -50,10 +50,11 @@ void CMain::GameLoop(void)
     DrawLoadingProcess(3.4, loadingProcess);
 
     //инициализируем игровой интерфейс
+    GameInterface* gameInterface = new GameInterface(csdl_setup, &MouseX, &MouseY, &CameraX, &CameraY);
     DrawLoadingProcess(9, loadingProcess);
 
     //инициализируем главного геро€
-    //MainHero = new MainCharacter(csdl_setup, &MouseX, &MouseY, &CameraX, &CameraY, gameLVL, loadingProcess, gameInterface);
+    MainHero = new MainCharacter(csdl_setup, &MouseX, &MouseY, &CameraX, &CameraY, gameLVL, loadingProcess, gameInterface);
     DrawLoadingProcess(4, loadingProcess);
 
     //interpretator = new CInterpretator(gameLVL, MainHero);
@@ -61,7 +62,6 @@ void CMain::GameLoop(void)
 
     //удал€ем процесс загрузки
     delete loadingProcess;
-    GameInterface* gameInterface = new GameInterface(csdl_setup, &MouseX, &MouseY, &CameraX, &CameraY);
 
     //основной процесс игры
     //¬ыполн€етс€ до тех пор пока переменна€ quit ложна и не был нажат крестик
@@ -116,10 +116,10 @@ void CMain::GameLoop(void)
         gameLVL->DrawBack();
 
         //отрисовка главного геро€
-        //MainHero->Draw();
+        MainHero->Draw();
 
         //обновление анимации и управление √√
-        //MainHero->Update();
+        MainHero->Update();
 
         //просчет и прорисовка дл€ игрового интерфейса
         gameInterface->Update();

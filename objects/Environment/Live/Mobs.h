@@ -27,9 +27,17 @@ public:
             bool Aggressive,
             SDL_Rect AgroRange
             );
+    Mobs(coordinates* spawn,
+                        float* CameraX,
+                        float* CameraY,
+                        CSDL_Setup* csdl_setup,
+                        int ID,
+                        int PosX,
+                        int PosY);
 
 	~Mobs(void);
 
+	void LoadConfigs();
 	void Draw();
 protected:
     bool Aggressive;

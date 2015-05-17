@@ -42,6 +42,7 @@ GameLVL::GameLVL(float *passed_CameraX, float *passed_CameraY, int* passed_Mouse
 
 
     loadingProcess->addProcent(9);
+    /*
     characters.push_back(new Characters(&spawn,
                                         CameraX,
                                         CameraY,
@@ -49,8 +50,49 @@ GameLVL::GameLVL(float *passed_CameraX, float *passed_CameraY, int* passed_Mouse
                                         1,
                                         100,
                                         100,
-                                        "LOL"
-                                        ));
+                                        "LOL"));
+
+    mobs.push_back(new Mobs(&spawn,
+                            CameraX,
+                            CameraY,
+                            csdl_setup,
+                            1,
+                            100,
+                            100));
+    ground.push_back(new Ground(&spawn,
+                            CameraX,
+                            CameraY,
+                            csdl_setup,
+                            1,
+                            100,
+                            100));
+    normal.push_back(new Normal(&spawn,
+                            CameraX,
+                            CameraY,
+                            csdl_setup,
+                            1,
+                            100,
+                            100));
+    trigger.push_back(new Trigger(&spawn,
+                            CameraX,
+                            CameraY,
+                            csdl_setup,
+                            1,
+                            100,
+                            100,
+                            false,
+                            1));*/
+    wtrig.push_back(new Wtrig(&spawn,
+                            CameraX,
+                            CameraY,
+                            csdl_setup,
+                            1,
+                            100,
+                            100,
+                            false,
+                            1));
+
+
 
 
     loadingProcess->addProcent(9);

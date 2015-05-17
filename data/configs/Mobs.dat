@@ -15,4 +15,6 @@ AttackDmg: 5
 Defense: 0
 AttackCDTime: 1000
 AttackAnimationTime: 500
+Aggressive: 0
+AgroRange: x: 0 y: 0 w: 0 h: 0
 -

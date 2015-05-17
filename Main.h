@@ -2,6 +2,7 @@
 #include "graphics.h"
 #include "Menu.h"
 #include "GameLVL.h"
+#include "MainCharacter.h"
 #include <windows.h>
 #include <math.h>
 class CMain
@@ -21,7 +22,7 @@ private:
 
     net::Socket* gsocket;
 
-    //MainCharacter* MainHero;
+    MainCharacter* MainHero;
     GameLVL* gameLVL;
 
 	int ScreenWidth;

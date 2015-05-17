@@ -49,7 +49,7 @@ public:
     bool getMquit() {return Mquit;}
 	void Update();
 	void Draw();
-	void UpdateInformation(int, int, int, bool, bool);
+	void UpdateInformation(int, int);
 private:
     void UpdateAnimation();
     float *CameraX;

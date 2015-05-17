@@ -32,6 +32,27 @@ Objects::Objects(std::string passed_className,
     BulletCollision = passed_BulletCollision;
 }
 
+Objects::Objects(std::string passed_className,
+            float* passed_CameraX,
+            float* passed_CameraY,
+            coordinates* passed_spawn,
+            CSDL_Setup* passed_csdl_setup,
+            int passed_ID,
+            int passed_PosX,
+            int passed_PosY)
+    :NonLive(passed_className,
+                passed_CameraX,
+                passed_CameraY,
+                passed_spawn,
+                passed_csdl_setup,
+                passed_ID,
+                passed_PosX,
+                passed_PosY)
+
+{
+    LoadConfigs();
+}
+
 Objects::~Objects(void)
 {
 
@@ -39,16 +60,17 @@ Objects::~Objects(void)
 
 void Objects::LoadConfigs(void)
 {
-    if(className != "Characters" ||
+    if(!(className != "Characters" ||
        className != "Ground" ||
        className != "Mobs" ||
        className != "Normal" ||
        className != "Trigger" ||
-       className != "Wtrig" )
-        std::cout << "Class not detected";
+       className != "Wtrig" ))
+        std::cout << "Class not detected" << std::endl << "Ur: " << className << std::endl;
+
 
     //создаетс€ поток файловый дл€ чтени€
-    std::ifstream LoadedFile(("data/configs/" + className).c_str());
+    std::ifstream LoadedFile(("data/configs/" + className + ".dat").c_str());
 
     //инициализаци€ переменной-строки дл€ чтени€ конфигов
     std::string line;

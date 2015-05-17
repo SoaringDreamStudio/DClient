@@ -29,6 +29,7 @@ public:
 	~Environment(void);
 
 	void LoadConfigs();
+	CSprite* getSprite() {return image;}
 
 protected:
     CSprite* image;

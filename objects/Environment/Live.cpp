@@ -74,13 +74,14 @@ Live::~Live(void)
 
 void Live::LoadConfigs(void)
 {
-    if(className != "Characters" ||
+    if(!(className != "Characters" ||
        className != "Ground" ||
        className != "Mobs" ||
        className != "Normal" ||
        className != "Trigger" ||
-       className != "Wtrig" )
-        std::cout << "Class not detected";
+       className != "Wtrig" ))
+        std::cout << "Class not detected" << std::endl << "Ur: " << className << std::endl;
+
 
     //создается поток файловый для чтения
     std::ifstream LoadedFile(("data/configs/" + className).c_str());

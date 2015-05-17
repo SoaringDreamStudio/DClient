@@ -18,11 +18,18 @@ public:
 
     int getHours() {return hours;}
     int getMinute() {return minutes;}
-    int setHours(int i) {hours = i;}
-    int setMinute(int i) {minutes = i;}
+    void setHours(int i) {hours = i;}
+    void setMinute(int i) {minutes = i;}
 
     bool isNight() {return night;}
     bool setNight(bool i) {night = i;}
+    coordinates getSpawn() {return spawn;}
+    std::vector<Characters*> GetCharacters() {return characters;}
+	std::vector<Mobs*> GetMobs() {return mobs;}
+	std::vector<Normal*> GetNormal() {return normal;}
+	std::vector<Wtrig*> GetWtrig() {return wtrig;}
+	std::vector<Trigger*> GetTrigger() {return trigger;}
+	std::vector<Ground*> GetGround() {return ground;}
 private:
     GameInterface* gameInterface;
     CSDL_Setup* csdl_setup;

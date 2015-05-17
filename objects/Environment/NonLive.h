@@ -15,6 +15,14 @@ public:
             int PosY,
             std::string ActiveAnimation,
             std::map<std::string, AnimationInfo> Animations);
+    NonLive(std::string className,
+            float* CameraX,
+            float* CameraY,
+            coordinates* spawn,
+            CSDL_Setup* csdl_setup,
+            int ID,
+            int PosX,
+            int PosY);
 
 	~NonLive(void);
 

@@ -29,6 +29,27 @@ NonLive::NonLive(std::string passed_className,
 
 }
 
+NonLive::NonLive(std::string passed_className,
+            float* passed_CameraX,
+            float* passed_CameraY,
+            coordinates* passed_spawn,
+            CSDL_Setup* passed_csdl_setup,
+            int passed_ID,
+            int passed_PosX,
+            int passed_PosY)
+    :Environment(passed_className,
+                passed_CameraX,
+                passed_CameraY,
+                passed_spawn,
+                passed_csdl_setup,
+                passed_ID,
+                passed_PosX,
+                passed_PosY)
+
+{
+
+}
+
 NonLive::~NonLive(void)
 {
 

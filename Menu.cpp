@@ -97,10 +97,9 @@ GameInterface::~GameInterface(void)
 
 }
 
-void GameInterface::UpdateInformation(int passed_HP, int passed_maxHP, int passed_shortageEnergy,
-                                       bool passed_emptyStomach, bool passed_sore)
+void GameInterface::UpdateInformation(int passed_HP, int passed_maxHP)
 {
-    /*
+
     HP = passed_HP;
 
     //обновить значение строки HP
@@ -111,16 +110,26 @@ void GameInterface::UpdateInformation(int passed_HP, int passed_maxHP, int passe
     //обновить значение строки maxHP
     tmpMaxHP = IntToStr(maxHP);
 
-    emptyStomach = passed_emptyStomach;       //статус пустого желудка
-    shortageEnergy = passed_shortageEnergy;      //недостаток энергии. просчитывается из недостатков питательных веществ
-    sore = passed_sore;
-    */
+
 }
 
 void GameInterface::UpdateAnimation()
 {
 
-    HPStatus->PlayAnimation(0, 0, 0, 1000);
+
+
+    if((HP >= (maxHP / 3) * 2))
+    {
+        HPStatus->PlayAnimation(0, 0, 0, 1000);
+    }
+    else if((HP >= maxHP / 3) && (HP <= (maxHP / 3) * 2))
+    {
+        HPStatus->PlayAnimation(1, 1, 0, 1000);
+    }
+    else if((HP <= maxHP / 3))
+    {
+        HPStatus->PlayAnimation(2, 2, 0, 1000);
+    }
     hungerStatus->PlayAnimation(0, 0, 0, 1000);
     /*
     //обрезка картинки интерфейса для вывода нужного фрагмента
@@ -131,21 +140,6 @@ void GameInterface::UpdateAnimation()
     soreStatus->Update();
     depletionStatus->Update();
 
-    if((HP >= (maxHP / 3) * 2) && HPstatus != 1)
-    {
-        status2->SetImagePath("data/img/interfaces/health1.png");
-        HPstatus = 1;
-    }
-    else if((HP >= maxHP / 3) && (HP <= (maxHP / 3) * 2) && HPstatus != 2)
-    {
-        status2->SetImagePath("data/img/interfaces/health2.png");
-        HPstatus = 2;
-    }
-    else if((HP <= maxHP / 3) && HPstatus != 3)
-    {
-        status2->SetImagePath("data/img/interfaces/health3.png");
-        HPstatus = 3;
-    }
 
     //если мышка наведена на кнопку1, но не нажата ЛКМ - проиграть анимацию
     if(escapeButton1->isColliding(*MouseX, *MouseY) && !(csdl_setup->GetMainEvent()->button.button == SDL_BUTTON(SDL_BUTTON_LEFT) || csdl_setup->GetMainEvent()->button.button == SDL_BUTTON_LEFT))

@@ -48,7 +48,11 @@
 			<Add directory="Libraries/SDL2_net-2.0.0/i686-w64-mingw32/lib" />
 			<Add directory="Libraries/SDL2_ttf-2.0.12/i686-w64-mingw32/lib" />
 		</Linker>
+		<Unit filename="GameLVL.cpp" />
+		<Unit filename="GameLVL.h" />
 		<Unit filename="Main.h" />
+		<Unit filename="MainCharacter.cpp" />
+		<Unit filename="MainCharacter.h" />
 		<Unit filename="Menu.cpp" />
 		<Unit filename="Menu.h" />
 		<Unit filename="Net.cpp" />
