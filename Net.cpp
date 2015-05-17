@@ -340,7 +340,7 @@
 
     void Socket::SendToClients( const Address & destination, unsigned char * data, int size )
     {
-        for(std::map<unsigned int, Connection*>::iterator i = connectedClients.begin(); i != connectedClients.end(); ++i)
+        for(std::map<unsigned int, Connection*>::iterator i = connectedServers.begin(); i != connectedServers.end(); ++i)
         {
             //таймер SDL по deltatime
             *data = *(i -> second->CreatePacket((const unsigned char*)data, size));
@@ -365,13 +365,13 @@
 
     void Socket::Update()
     {
-        for(std::map<unsigned int, Connection*>::iterator i = connectedClients.begin(); i != connectedClients.end(); ++i)
+        for(std::map<unsigned int, Connection*>::iterator i = connectedServers.begin(); i != connectedServers.end(); ++i)
         {
             i -> second->Update( 0.25f );
             if(i->second->ConnectFailed())
             {
-                connectedClients.erase(i);
-                i = connectedClients.begin();
+                connectedServers.erase(i);
+                i = connectedServers.begin();
                 break;
             }
         }
@@ -413,17 +413,17 @@
                 //создать обрезанный пакет
 
 
-                std::map<unsigned int, Connection*>::iterator result = connectedClients.find(address);
-                if (result != connectedClients.end())
+                std::map<unsigned int, Connection*>::iterator result = connectedServers.find(address);
+                if (result != connectedServers.end())
                 {
-                    std::cout << "Element found: " << std::endl;
+                    std::cout << "Server found: " << std::endl;
                     //отправить пакет на анализ
                     result->second->ReceivePacket(packet, size - 4);
                 }
                 else
                 {
                     std::cout << "Creating new connection" << std::endl;
-                    connectedClients[address] = new Connection(address, protocolId, timeout, destinationPort);
+                    connectedServers[address] = new Connection(address, protocolId, timeout, destinationPort);
 
                     //отправить пакет на анализ
 

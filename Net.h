@@ -188,7 +188,7 @@ namespace net
 		unsigned int protocolId;
 		float timeout;
 		int destinationPort;
-		std::map<unsigned int, Connection*> connectedClients;
+		std::map<unsigned int, Connection*> connectedServers;
 	};
 
 
