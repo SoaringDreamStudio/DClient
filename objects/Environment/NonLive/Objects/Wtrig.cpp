@@ -45,7 +45,7 @@ Wtrig::Wtrig(coordinates* passed_spawn,
                 int passed_PosY,
                 bool passed_Status,
                 int passed_ConnectionID)
-    :Objects("Wtrig",
+    : Objects("Wtrig",
                 passed_CameraX,
                 passed_CameraY,
                 passed_spawn,
@@ -53,7 +53,6 @@ Wtrig::Wtrig(coordinates* passed_spawn,
                 passed_ID,
                 passed_PosX,
                 passed_PosY)
-
 {
 
 }

@@ -43,7 +43,7 @@ Trigger::Trigger(coordinates* passed_spawn,
                 int passed_PosY,
                 bool passed_Status,
                 int passed_ConnectionID)
-    :Objects("Trigger",
+        : Objects("Trigger",
                 passed_CameraX,
                 passed_CameraY,
                 passed_spawn,
@@ -51,7 +51,6 @@ Trigger::Trigger(coordinates* passed_spawn,
                 passed_ID,
                 passed_PosX,
                 passed_PosY)
-
 {
 
 }

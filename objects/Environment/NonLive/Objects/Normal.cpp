@@ -40,7 +40,7 @@ Normal::Normal(coordinates* passed_spawn,
                 int passed_ID,
                 int passed_PosX,
                 int passed_PosY)
-    :Objects("Normal",
+        : Objects("Normal",
                 passed_CameraX,
                 passed_CameraY,
                 passed_spawn,
@@ -52,6 +52,7 @@ Normal::Normal(coordinates* passed_spawn,
 {
     LoadConfigs();
 }
+
 
 Normal::~Normal(void)
 {
