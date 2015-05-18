@@ -34,3 +34,4 @@ enum EffectType
 };
 
 std::string IntToStr(int x);
+bool allTrue(bool x[], int Size);

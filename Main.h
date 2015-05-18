@@ -10,7 +10,7 @@ class CMain
 public:
 	CMain(int passed_ScreenWidth, int passed_ScreenHeight, net::Socket* passed_gsocket);
 	~CMain(void);
-	void GameLoop();
+	int GameLoop();
 	void GameMenu();
 	bool GOMenu();
 	void Loading();

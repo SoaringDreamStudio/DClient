@@ -1,7 +1,8 @@
 #include "MainCharacter.h"
 
-MainCharacter::MainCharacter(CSDL_Setup* passed_SDL_Setup, int *passed_MouseX, int *passed_MouseY, float *passed_CameraX, float *passed_CameraY, GameLVL* passed_gameLVL, LoadingProcess* loadingProcess, GameInterface* passed_gameInterface)
+MainCharacter::MainCharacter(std::string passed_NickName, CSDL_Setup* passed_SDL_Setup, int *passed_MouseX, int *passed_MouseY, float *passed_CameraX, float *passed_CameraY, GameLVL* passed_gameLVL, LoadingProcess* loadingProcess, GameInterface* passed_gameInterface)
 {
+    NickName = passed_NickName;
     gameLVL = passed_gameLVL;
     gameInterface = passed_gameInterface;
 

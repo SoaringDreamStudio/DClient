@@ -1,6 +1,7 @@
 #include "libraries.h"
 #include "Main.h"
 
+extern std::string login;
 CMain::CMain(int passed_ScreenWidth, int passed_ScreenHeight, net::Socket* passed_gsocket)
 {
     gsocket = passed_gsocket;
@@ -32,8 +33,9 @@ CMain::~CMain(void)
 	//delete MainHero;
 }
 
-void CMain::GameLoop(void)
+int CMain::GameLoop(void)
 {
+
 
     //инициализируем процесс загрузки
     LoadingProcess* loadingProcess = new LoadingProcess(csdl_setup, &MouseX, &MouseY, &CameraX, &CameraY);
@@ -53,8 +55,131 @@ void CMain::GameLoop(void)
     GameInterface* gameInterface = new GameInterface(csdl_setup, &MouseX, &MouseY, &CameraX, &CameraY);
     DrawLoadingProcess(9, loadingProcess);
 
+    for(;;)
+    {
+        gsocket->Update();
+        net::Address sender;
+        unsigned char buffer[256];
+        int bytes_read = gsocket->Receive( sender, buffer, sizeof( buffer ) );
+        if ( bytes_read )
+        {
+            if(buffer[0] >= 200)
+            {
+                std::cout << "Error #" << int(buffer[0]) << std::endl;
+                break;
+            }
+
+            else if(buffer[4] == 21)
+            {
+                unsigned int Size = (unsigned int)(buffer[5] << 24) + (unsigned int)(buffer[6]<< 16) + (unsigned int)(buffer[7] << 8) + buffer[8];
+                //std::cout << Size << std::endl;
+                bool fragments[Size];
+                for(int i = 0; i < Size;i++)
+                {
+
+                    fragments[i] = false;
+                }
+                while( !allTrue(fragments, Size))
+                {
+                    gsocket->Update();
+                    unsigned char buffer[256];
+                    int bytes_read = gsocket->Receive( sender, buffer, sizeof( buffer ) );
+
+                    if(buffer[4] == 22)
+                    {
+                        unsigned int Number = (unsigned int)(buffer[5] << 24) + (unsigned int)(buffer[6]<< 16) + (unsigned int)(buffer[7] << 8) + buffer[8];
+                        //std::cout << Number << std::endl;
+                        fragments[Number] = true;
+                        unsigned int ID = (unsigned int)(buffer[9] << 24) + (unsigned int)(buffer[10]<< 16) + (unsigned int)(buffer[11] << 8) + buffer[12];
+                        //std::cout << ID << std::endl;
+                        unsigned int X = (unsigned int)(buffer[13] << 24) + (unsigned int)(buffer[14]<< 16) + (unsigned int)(buffer[15] << 8) + buffer[16];
+                        //std::cout << X << std::endl;
+                        unsigned int Y = (unsigned int)(buffer[17] << 24) + (unsigned int)(buffer[18]<< 16) + (unsigned int)(buffer[19] << 8) + buffer[20];
+                        //std::cout << Y << std::endl;
+
+                        gameLVL->CreateGround(ID,X,Y);
+                    }
+
+                }
+                //создать массив булевых переменных для проверки дохождения пакетов
+                //break;
+
+            }
+            else if(buffer[4] == 23)
+            {
+                unsigned int Size = (unsigned int)(buffer[5] << 24) + (unsigned int)(buffer[6]<< 16) + (unsigned int)(buffer[7] << 8) + buffer[8];
+                std::cout << Size << std::endl;
+                bool fragments[Size];
+                for(int i = 0; i < Size;i++)
+                {
+
+                    fragments[i] = false;
+                }
+                while( !allTrue(fragments, Size))
+                {
+                    gsocket->Update();
+                    unsigned char buffer[256];
+                    int bytes_read = gsocket->Receive( sender, buffer, sizeof( buffer ) );
+
+                    if(buffer[4] == 24)
+                    {
+                        unsigned int Number = (unsigned int)(buffer[5] << 24) + (unsigned int)(buffer[6]<< 16) + (unsigned int)(buffer[7] << 8) + buffer[8];
+                        std::cout << Number << std::endl;
+                        fragments[Number] = true;
+                        unsigned int ID = (unsigned int)(buffer[9] << 24) + (unsigned int)(buffer[10]<< 16) + (unsigned int)(buffer[11] << 8) + buffer[12];
+                        //std::cout << ID << std::endl;
+                        unsigned int X = (unsigned int)(buffer[13] << 24) + (unsigned int)(buffer[14]<< 16) + (unsigned int)(buffer[15] << 8) + buffer[16];
+                        //std::cout << X << std::endl;
+                        unsigned int Y = (unsigned int)(buffer[17] << 24) + (unsigned int)(buffer[18]<< 16) + (unsigned int)(buffer[19] << 8) + buffer[20];
+                        //std::cout << Y << std::endl;
+                        std::string Nickname;
+                        for(int i = 21; i <=28; i++)
+                        {
+                            if(buffer[i] == 0)
+                                break;
+                            Nickname += buffer[i];
+                        }
+                        std::cout << Nickname << std::endl;
+                        std::cout << login << std::endl;
+                        std::cout << (Nickname == login) << std::endl;
+                        if(Nickname == login)
+                        {
+                            //std::cout << "CameraX: " << CameraX << std::endl;
+                            gameLVL->setSpawnX(X);
+                            //std::cout << "CameraX: " << CameraX << std::endl;
+                            //std::cout << "CameraY: " << CameraY << std::endl;
+                            gameLVL->setSpawnY(Y);
+                            //std::cout << "CameraY: " << CameraY << std::endl;
+                            break;
+                        }
+                        //std::cout << Nickname << std::endl;
+
+                        bool existNickname;
+                        std::vector<Characters*> tmpCharacters = gameLVL->GetCharacters();
+                        int l=0;
+                        for(std::vector<Characters*>::iterator it = tmpCharacters.begin(); it != tmpCharacters.end(); ++it,++l)
+                        {
+                            if((*it)->getNickName() == Nickname)
+                            {
+                                existNickname = true;
+                                gameLVL->GetCharacters()[l]->changeXY(X,Y);
+                            }
+                        }
+                        if(!existNickname)
+                            gameLVL->CreateCharacter(ID,X,Y,Nickname);
+
+                    }
+                }
+                //создать массив булевых переменных для проверки дохождения пакетов
+                break;
+
+            }
+            else
+                break;
+        }
+    }
     //инициализируем главного героя
-    MainHero = new MainCharacter(csdl_setup, &MouseX, &MouseY, &CameraX, &CameraY, gameLVL, loadingProcess, gameInterface);
+    MainHero = new MainCharacter(login, csdl_setup, &MouseX, &MouseY, &CameraX, &CameraY, gameLVL, loadingProcess, gameInterface);
     DrawLoadingProcess(4, loadingProcess);
 
     //interpretator = new CInterpretator(gameLVL, MainHero);
@@ -70,37 +195,87 @@ void CMain::GameLoop(void)
 	    //очищаем окно и проверяем на события
 		csdl_setup->Begin();
 
-/*
-        //std::cout << "updateTimer: " << updateTimer <<  "SDL_GetTicks: " << SDL_GetTicks() << std::endl;
-        if(updateTimer+250 < SDL_GetTicks())
+
+
+        net::Address sender;
+		for(;;)
         {
             gsocket->Update();
-            net::Address sender;
             unsigned char buffer[256];
             int bytes_read = gsocket->Receive( sender, buffer, sizeof( buffer ) );
             if ( bytes_read )
             {
-                printf( "received packet from %d.%d.%d.%d:%d (%d bytes)\n",
-                sender.GetA(), sender.GetB(), sender.GetC(), sender.GetD(),
-                sender.GetPort(), bytes_read );
-                const char data[] = "hello world!";
+                if(buffer[0] >= 200)
+                {
+                    std::cout << "Error #" << int(buffer[0]) << std::endl;
+                    quit = true;
+                    break;
+                }
 
-                unsigned char packet[sizeof(data)+4];
-                packet[0] = (unsigned char) ( ProtocolId >> 24 );
-                packet[1] = (unsigned char) ( ( ProtocolId >> 16 ) & 0xFF );
-                packet[2] = (unsigned char) ( ( ProtocolId >> 8 ) & 0xFF );
-                packet[3] = (unsigned char) ( ( ProtocolId ) & 0xFF );
-                memcpy( &packet[4], data, sizeof(data) );
+                else if(buffer[4] == 23)
+                {
+                    unsigned int Size = (unsigned int)(buffer[5] << 24) + (unsigned int)(buffer[6]<< 16) + (unsigned int)(buffer[7] << 8) + buffer[8];
+                    //std::cout << Size << std::endl;
+                    bool fragments[Size];
+                    for(int i = 0; i < Size;i++)
+                    {
 
-                gsocket->Send( net::Address(79,164,35,62,21995), packet, sizeof(packet) );
+                        fragments[i] = false;
+                    }
+                    while( !allTrue(fragments, Size))
+                    {
+                        gsocket->Update();
+                        unsigned char buffer[256];
+                        int bytes_read = gsocket->Receive( sender, buffer, sizeof( buffer ) );
 
-                std::cout<< "Sent" << std::endl;
+                        if(buffer[4] == 24)
+                        {
+                            unsigned int Number = (unsigned int)(buffer[5] << 24) + (unsigned int)(buffer[6]<< 16) + (unsigned int)(buffer[7] << 8) + buffer[8];
+                            //std::cout << Number << std::endl;
+                            fragments[Number] = true;
+                            unsigned int ID = (unsigned int)(buffer[9] << 24) + (unsigned int)(buffer[10]<< 16) + (unsigned int)(buffer[11] << 8) + buffer[12];
+                            //std::cout << ID << std::endl;
+                            unsigned int X = (unsigned int)(buffer[13] << 24) + (unsigned int)(buffer[14]<< 16) + (unsigned int)(buffer[15] << 8) + buffer[16];
+                            //std::cout << X << std::endl;
+                            unsigned int Y = (unsigned int)(buffer[17] << 24) + (unsigned int)(buffer[18]<< 16) + (unsigned int)(buffer[19] << 8) + buffer[20];
+                            //std::cout << Y << std::endl;
+                            std::string Nickname;
+                            for(int i = 21; i <=28; i++)
+                            {
+                                if(buffer[i] == 0)
+                                    break;
+                                Nickname += buffer[i];
+                            }
+
+                            if(Nickname == login)
+                                break;
+                            //std::cout << Nickname << std::endl;
+
+                            bool existNickname;
+                            std::vector<Characters*> tmpCharacters = gameLVL->GetCharacters();
+                            int l=0;
+                            for(std::vector<Characters*>::iterator it = tmpCharacters.begin(); it != tmpCharacters.end(); ++it,++l)
+                            {
+                                if((*it)->getNickName() == Nickname)
+                                {
+                                    existNickname = true;
+                                    gameLVL->GetCharacters()[l]->changeXY(X,Y);
+                                }
+                            }
+                            if(!existNickname)
+                                gameLVL->CreateCharacter(ID,X,Y,Nickname);
+
+                        }
+                    }
+                    //создать массив булевых переменных для проверки дохождения пакетов
+                    break;
+
+                }
+                else
+                    break;
             }
-            updateTimer = SDL_GetTicks();
-
         }
 
-*/
 
 
         //считываем положение мышки
@@ -132,6 +307,127 @@ void CMain::GameLoop(void)
         //отрисовка рендера
 		csdl_setup->End();
 
+
+
+		unsigned char data2[5];
+        data2[0] = 23;
+        data2[1] = (unsigned char) ( (gameLVL->GetCharacters().size()+1) >> 24 );
+        data2[2] = (unsigned char) ( (gameLVL->GetCharacters().size()+1) >> 16 );
+        data2[3] = (unsigned char) ( (gameLVL->GetCharacters().size()+1) >> 8 );
+        data2[4] = (unsigned char) ( (gameLVL->GetCharacters().size()+1) );
+
+        unsigned char packet[sizeof(data2)+4];
+        packet[0] = (unsigned char) ( ProtocolId >> 24 );
+        packet[1] = (unsigned char) ( ( ProtocolId >> 16 ) & 0xFF );
+        packet[2] = (unsigned char) ( ( ProtocolId >> 8 ) & 0xFF );
+        packet[3] = (unsigned char) ( ( ProtocolId ) & 0xFF );
+        memcpy( &packet[4], data2, sizeof(data2) );
+
+        gsocket->Send(sender,
+                        packet,
+                        sizeof(packet) );
+
+
+        for(int i = 0; i < gameLVL->GetCharacters().size(); i++)
+        {
+            unsigned char data[25];
+            data[0] = 24;
+
+            //NumberOfPacket
+            data[1] = (unsigned char) ( i+1 >> 24 );
+            data[2] = (unsigned char) ( i+1 >> 16 );
+            data[3] = (unsigned char) ( i+1 >> 8 );
+            data[4] = (unsigned char) ( i+1 );
+
+            //ID
+            data[5] = (unsigned char) ( gameLVL->GetCharacters()[i]->getID() >> 24 );
+            data[6] = (unsigned char) ( gameLVL->GetCharacters()[i]->getID() >> 16 );
+            data[7] = (unsigned char) ( gameLVL->GetCharacters()[i]->getID() >> 8 );
+            data[8] = (unsigned char) ( gameLVL->GetCharacters()[i]->getID() );
+
+            //X
+            data[9] = (unsigned char) ( gameLVL->GetCharacters()[i]->getX() >> 24 );
+            data[10] = (unsigned char) ( gameLVL->GetCharacters()[i]->getX() >> 16 );
+            data[11] = (unsigned char) ( gameLVL->GetCharacters()[i]->getX() >> 8 );
+            data[12] = (unsigned char) ( gameLVL->GetCharacters()[i]->getX() );
+
+            //Y
+            data[13] = (unsigned char) ( gameLVL->GetCharacters()[i]->getY() >> 24 );
+            data[14] = (unsigned char) ( gameLVL->GetCharacters()[i]->getY() >> 16 );
+            data[15] = (unsigned char) ( gameLVL->GetCharacters()[i]->getY() >> 8 );
+            data[16] = (unsigned char) ( gameLVL->GetCharacters()[i]->getY() );
+
+            //NickName
+            data[17] = (unsigned char) ( gameLVL->GetCharacters()[i]->getNickName()[0]);
+            data[18] = (unsigned char) ( gameLVL->GetCharacters()[i]->getNickName()[1]);
+            data[19] = (unsigned char) ( gameLVL->GetCharacters()[i]->getNickName()[2]);
+            data[20] = (unsigned char) ( gameLVL->GetCharacters()[i]->getNickName()[3]);
+            data[21] = (unsigned char) ( gameLVL->GetCharacters()[i]->getNickName()[4]);
+            data[22] = (unsigned char) ( gameLVL->GetCharacters()[i]->getNickName()[5]);
+            data[23] = (unsigned char) ( gameLVL->GetCharacters()[i]->getNickName()[6]);
+            data[24] = (unsigned char) ( gameLVL->GetCharacters()[i]->getNickName()[7]);
+
+            unsigned char packet[sizeof(data)+4];
+            packet[0] = (unsigned char) ( ProtocolId >> 24 );
+            packet[1] = (unsigned char) ( ( ProtocolId >> 16 ) & 0xFF );
+            packet[2] = (unsigned char) ( ( ProtocolId >> 8 ) & 0xFF );
+            packet[3] = (unsigned char) ( ( ProtocolId ) & 0xFF );
+            memcpy( &packet[4], data, sizeof(data) );
+
+            gsocket->Send(sender,
+                            packet,
+                            sizeof(packet) );
+        }
+        //mainCharacter
+
+        unsigned char data[25];
+            data[0] = 24;
+
+            //NumberOfPacket
+            data[1] = (unsigned char) ( 0 );
+            data[2] = (unsigned char) ( 0 );
+            data[3] = (unsigned char) ( 0 );
+            data[4] = (unsigned char) ( 0 );
+
+            //ID
+            data[5] = (unsigned char) ( 0 );//gameLVL->GetCharacters()[i]->getID() >> 24 );
+            data[6] = (unsigned char) ( 0 );//gameLVL->GetCharacters()[i]->getID() >> 16 );
+            data[7] = (unsigned char) ( 0 );//gameLVL->GetCharacters()[i]->getID() >> 8 );
+            data[8] = (unsigned char) ( 1 );//gameLVL->GetCharacters()[i]->getID() );
+
+            //X
+            data[9] = (unsigned char) ( int(gameLVL->getSpawn().x-CameraX) >> 24 );
+            data[10] = (unsigned char) ( int(gameLVL->getSpawn().x-CameraX) >> 16 );
+            data[11] = (unsigned char) ( int(gameLVL->getSpawn().x-CameraX) >> 8 );
+            data[12] = (unsigned char) ( int(gameLVL->getSpawn().x-CameraX) );
+
+            //Y
+            data[13] = (unsigned char) ( int(gameLVL->getSpawn().y-CameraY) >> 24 );
+            data[14] = (unsigned char) ( int(gameLVL->getSpawn().y-CameraY) >> 16 );
+            data[15] = (unsigned char) ( int(gameLVL->getSpawn().y-CameraY) >> 8 );
+            data[16] = (unsigned char) ( int(gameLVL->getSpawn().y-CameraY) );
+
+            //NickName
+            data[17] = (unsigned char) ( MainHero->getNickName()[0]);
+            data[18] = (unsigned char) ( MainHero->getNickName()[1]);
+            data[19] = (unsigned char) ( MainHero->getNickName()[2]);
+            data[20] = (unsigned char) ( MainHero->getNickName()[3]);
+            data[21] = (unsigned char) ( MainHero->getNickName()[4]);
+            data[22] = (unsigned char) ( MainHero->getNickName()[5]);
+            data[23] = (unsigned char) ( MainHero->getNickName()[6]);
+            data[24] = (unsigned char) ( MainHero->getNickName()[7]);
+
+            unsigned char packet2[sizeof(data)+4];
+            packet[0] = (unsigned char) ( ProtocolId >> 24 );
+            packet[1] = (unsigned char) ( ( ProtocolId >> 16 ) & 0xFF );
+            packet[2] = (unsigned char) ( ( ProtocolId >> 8 ) & 0xFF );
+            packet[3] = (unsigned char) ( ( ProtocolId ) & 0xFF );
+            memcpy( &packet2[4], data, sizeof(data) );
+
+            gsocket->Send(sender,
+                            packet2,
+                            sizeof(packet2) );
+
 		//в случае, если здоровье ГГ упадет до 0 - удалить его и выйти из цикла
 		/*
 		if(*(MainHero->GetHP()) <= 0)
@@ -145,6 +441,7 @@ void CMain::GameLoop(void)
             break;
         }
 	}
+	return 0;
 }
 void CMain::GameMenu(void)
 {

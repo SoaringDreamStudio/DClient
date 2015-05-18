@@ -30,6 +30,10 @@ public:
 
 	void LoadConfigs();
 	CSprite* getSprite() {return image;}
+	void changeXY(int X, int Y);
+	int getID() {return ID;}
+	int getX() {return PosX;}
+	int getY() {return PosY;}
 
 protected:
     CSprite* image;

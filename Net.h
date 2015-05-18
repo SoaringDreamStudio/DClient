@@ -40,6 +40,7 @@
 
 #include <assert.h>
 #include <map>
+#include <ctime>
 
 namespace net
 {
@@ -126,11 +127,13 @@ namespace net
 
 		Mode GetMode() const;
 
-		void Update( float deltaTime );
+		void Update( );
 
 		unsigned char* CreatePacket( const unsigned char data[], int size );
 
 		unsigned char* ReceivePacket( unsigned char data[], int size );
+
+		void ConnectOnce() {lastConnect = time (NULL);}
 
 	protected:
 
@@ -156,6 +159,7 @@ namespace net
 		State state;
 		float timeoutAccumulator;
 		Address addressPort;
+		time_t lastConnect;
 	};
 
 

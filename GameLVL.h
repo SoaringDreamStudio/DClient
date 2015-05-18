@@ -21,6 +21,9 @@ public:
     void setHours(int i) {hours = i;}
     void setMinute(int i) {minutes = i;}
 
+    void setSpawnX(int X) {spawn.x = X;}
+    void setSpawnY(int Y) {spawn.y = Y;}
+
     bool isNight() {return night;}
     bool setNight(bool i) {night = i;}
     coordinates getSpawn() {return spawn;}
@@ -30,6 +33,23 @@ public:
 	std::vector<Wtrig*> GetWtrig() {return wtrig;}
 	std::vector<Trigger*> GetTrigger() {return trigger;}
 	std::vector<Ground*> GetGround() {return ground;}
+
+
+	void CreateGround(int ID,int PosX,int PosY) {ground.push_back(new Ground(&spawn,
+                                                                            CameraX,
+                                                                            CameraY,
+                                                                            csdl_setup,
+                                                                            ID,
+                                                                            PosX,
+                                                                            PosY));}
+    void CreateCharacter(int ID,int PosX,int PosY,std::string NickName) {characters.push_back(new Characters(&spawn,
+                                                                                CameraX,
+                                                                                CameraY,
+                                                                                csdl_setup,
+                                                                                ID,
+                                                                                PosX,
+                                                                                PosY,
+                                                                                NickName));}
 private:
     GameInterface* gameInterface;
     CSDL_Setup* csdl_setup;

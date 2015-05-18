@@ -260,3 +260,14 @@ void Environment::LoadConfigs(void)
         std::cout << "File could not be open " << std::endl;
     }
 }
+
+void Environment::changeXY(int X, int Y)
+{
+    PosX = X;
+    PosY = Y;
+    Rect.x = X;
+    Rect.y = Y;
+    image->SetX(X);
+    image->SetY(Y);
+
+}

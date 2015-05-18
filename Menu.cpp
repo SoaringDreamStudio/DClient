@@ -1,6 +1,6 @@
 #include "Menu.h"
 //игровой интерфейс
-
+extern std::string login;
 GameInterface::GameInterface(CSDL_Setup* passed_SDL_Setup, int *passed_MouseX, int *passed_MouseY, float *passed_CameraX, float *passed_CameraY)
 {
 
@@ -475,7 +475,6 @@ void MainMenu::UpdateControls()
 
                 char data[18];
                 data[0] = 10;
-                std::string login = "avdrine";
                 int l;
                 for(int n = 1, l = 0; n <=9; n++, l++)
                 {
@@ -516,19 +515,7 @@ void MainMenu::UpdateControls()
     }
     else if(activeMenu == connectMenu)
     {
-        gsocket->Update();
-        net::Address sender;
-        unsigned char buffer[256];
-        int bytes_read = gsocket->Receive( sender, buffer, sizeof( buffer ) );
-        if ( bytes_read )
-        {
-            if(buffer[0] >= 200)
-                std::cout << "Error #" << int(buffer[4]) << std::endl;
-            /*
-            printf( "received packet from %d.%d.%d.%d:%d (%d bytes)\n",
-                sender.GetA(), sender.GetB(), sender.GetC(), sender.GetD(),
-                sender.GetPort(), bytes_read );*/
-        }
+
         Mquit = true;
     }
 

@@ -42,6 +42,8 @@ public:
 
 	~Characters(void);
 
+	std::string getNickName() {return NickName;}
+
 	void Draw();
 protected:
     std::string NickName;

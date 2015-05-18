@@ -87,6 +87,7 @@
         printf("s1 ");
         addressPort = Address(address, passed_port);
         //ClearData();
+        lastConnect = time (NULL);
     }
 
     Connection::~Connection()
@@ -153,28 +154,16 @@
         return mode;
     }
 
-    void Connection::Update( float deltaTime )
+    void Connection::Update( )
     {
         assert( running );
-        timeoutAccumulator += deltaTime;
-        if ( timeoutAccumulator > timeout )
+        if ( lastConnect + 1 < time (NULL) )
         {
-            if ( state == Connecting )
-            {
-                printf( "connect timed out\n" );
-                ClearData();
-                state = ConnectFail;
-                //std::cout << "ConnectFailed " << ConnectFailed() <<std::endl;
-            }
-            else if ( state == Connected )
-            {
-                printf( "connection timed out\n" );
-                ClearData();
-                //if ( state == Connecting )
-                    state = ConnectFail;
+            printf( "connection timed out\n" );
+            ClearData();
+            state = ConnectFail;
 
-                //std::cout << "ConnectFailed " << ConnectFailed() <<std::endl;
-            }
+            lastConnect = time (NULL);
         }
     }
 
@@ -367,7 +356,7 @@
     {
         for(std::map<unsigned int, Connection*>::iterator i = connectedServers.begin(); i != connectedServers.end(); ++i)
         {
-            i -> second->Update( 0.25f );
+            i -> second->Update( );
             if(i->second->ConnectFailed())
             {
                 connectedServers.erase(i);
@@ -416,14 +405,18 @@
                 std::map<unsigned int, Connection*>::iterator result = connectedServers.find(address);
                 if (result != connectedServers.end())
                 {
-                    std::cout << "Server found: " << std::endl;
+                    //std::cout << "Server found: " << std::endl;
                     //отправить пакет на анализ
                     result->second->ReceivePacket(packet, size - 4);
+
+                    result->second->ConnectOnce();
                 }
                 else
                 {
                     std::cout << "Creating new connection" << std::endl;
                     connectedServers[address] = new Connection(address, protocolId, timeout, destinationPort);
+
+                    result->second->ConnectOnce();
 
                     //отправить пакет на анализ
 

@@ -1,0 +1,24 @@
+Ground.start
+mapBlocksX: 10 mapBlocksY: 10
+1 1 1 1 1 1 1 1 1 1
+1 2 1 1 1 1 2 1 2 1
+1 2 1 1 1 1 2 1 2 1
+1 2 1 1 1 1 2 1 2 1
+1 2 1 1 1 1 2 1 2 1
+1 2 1 1 1 1 2 1 2 1
+1 2 1 1 1 1 2 1 2 1
+1 2 1 1 1 1 2 1 2 1
+1 2 1 1 1 1 2 1 2 1
+1 2 1 1 1 1 2 1 2 1
+Ground.end
+
+Items.start
+ID: 1 x: 10 y: 10 size: 100
+ID: 1 x: 200 y: 200 size: 40
+ID: 2 x: 400 y: 200 size: 50
+Items.end
+
+Food.start
+ID: 1 x: 200 y: 300 size: 40
+ID: 1 x: 300 y: 200 size: 50
+Food.end

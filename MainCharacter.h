@@ -7,7 +7,15 @@
 class MainCharacter
 {
 public:
-	MainCharacter(CSDL_Setup* passed_SDL_Setup, int *passed_MouseX, int *passed_MouseY, float *passed_CameraX, float *passed_CameraY, GameLVL* passed_gameLVL, LoadingProcess* loadingProcess, GameInterface* passed_gameInterface);
+	MainCharacter(std::string passed_NickName,
+               CSDL_Setup* passed_SDL_Setup,
+               int *passed_MouseX,
+               int *passed_MouseY,
+               float *passed_CameraX,
+               float *passed_CameraY,
+               GameLVL* passed_gameLVL,
+               LoadingProcess* loadingProcess,
+               GameInterface* passed_gameInterface);
 	~MainCharacter(void);
 
 	double GetDistance(int X1, int Y1, int X2, int Y2);
@@ -21,6 +29,8 @@ public:
 
 	void SendInfoToInterface();
 
+	std::string getNickName() {return NickName;}
+
 private:
     GameLVL* gameLVL;
     GameInterface* gameInterface;
@@ -28,6 +38,8 @@ private:
     void UpdateControls();
     float *CameraX;
     float *CameraY;
+
+    std::string NickName;
 
     int *MouseX;
     int *MouseY;

@@ -81,7 +81,7 @@ GameLVL::GameLVL(float *passed_CameraX, float *passed_CameraY, int* passed_Mouse
                             100,
                             100,
                             false,
-                            1));*/
+                            1));
     wtrig.push_back(new Wtrig(&spawn,
                             CameraX,
                             CameraY,
@@ -90,7 +90,7 @@ GameLVL::GameLVL(float *passed_CameraX, float *passed_CameraY, int* passed_Mouse
                             100,
                             100,
                             false,
-                            1));
+                            1));*/
 
 
 
