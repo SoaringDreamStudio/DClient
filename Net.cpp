@@ -4,9 +4,10 @@
     #include <cstdio>
 	#include <winsock2.h>
 	#include <ctime>
-	#include <iostream>
+	#include <fstream>
 	#pragma comment( lib, "wsock32.lib" )
 
+extern std::string login;
 	// platform independent wait for n seconds
 
 	void wait( float seconds )
@@ -76,94 +77,49 @@
 
 
 
-
-    Connection::Connection(unsigned int passed_address, unsigned int protocolId, float timeout, int passed_port)
+    Connection::Connection(unsigned int passed_address,
+                           unsigned int protocolId,
+                           int passed_port,
+                           Socket * passed_socket)
     {
         address = passed_address;
         this->protocolId = protocolId;
-        this->timeout = timeout;
-        mode = Server;
-        running = true;
-        printf("s1 ");
         addressPort = Address(address, passed_port);
-        //ClearData();
         lastConnect = time (NULL);
+        //ClearData();
+        firstTime = true;
+        socket = passed_socket;
+        timer = SDL_GetTicks();
+        lastReceivedPacket = 0;
+        lastShippedPacket = 0;
+        disconnected = false;
     }
 
     Connection::~Connection()
     {
-        if ( running )
-            Stop();
-    }
 
-    bool Connection::Start()
-    {
-        assert( !running );
-        printf( "start new connection\n" );
-        running = true;
-        return true;
-    }
-
-    void Connection::Stop()
-    {
-        assert( running );
-        printf( "stop connection\n" );
-        ClearData();
-        running = false;
-    }
-
-    void Connection::Listen()
-    {
-        printf( "server listening for connection\n" );
-        ClearData();
-        mode = Server;
-        state = Listening;
-    }
-
-    void Connection::Connect( )
-    {
-        printf( "client connecting to %d.%d.%d.%d:%d\n",
-            addressPort.GetA(), addressPort.GetB(), addressPort.GetC(), addressPort.GetD(), addressPort.GetPort() );
-        ClearData();
-        mode = Client;
-        state = Connecting;
-    }
-
-    bool Connection::IsConnecting() const
-    {
-        return state == Connecting;
-    }
-
-    bool Connection::ConnectFailed() const
-    {
-        return state == ConnectFail;
-    }
-
-    bool Connection::IsConnected() const
-    {
-        return state == Connected;
-    }
-
-    bool Connection::IsListening() const
-    {
-        return state == Listening;
-    }
-
-    Connection::Mode Connection::GetMode() const
-    {
-        return mode;
     }
 
     void Connection::Update( )
     {
-        assert( running );
-        if ( lastConnect + 1 < time (NULL) )
+        if ( lastConnect + 10 < time (NULL) )
         {
             printf( "connection timed out\n" );
-            ClearData();
-            state = ConnectFail;
-
+            disconnected = true;
             lastConnect = time (NULL);
+        }
+
+        if(timer + 800 < SDL_GetTicks())
+        {
+            char data[1];
+
+            data[0] = 254;
+
+            Send(data, 1);
+
+            //socket->Send( addressPort, packet, sizeof(packet) );
+
+            timer = SDL_GetTicks();
         }
     }
 
@@ -181,53 +137,75 @@
         return packet;
     }
 
-    unsigned char* Connection::ReceivePacket( unsigned char data[], int size )
+    bool Connection::Send( const void * data, int size )
     {
-        assert( running );
-        unsigned char packet[size-4];
-        /*if ( sizeof(data) == 0 )
-            return 0;
-        if ( sizeof(data) <= 4 )
-            return 0;
-        if ( data[0] != (unsigned char) ( protocolId >> 24 ) ||
-             data[1] != (unsigned char) ( ( protocolId >> 16 ) & 0xFF ) ||
-             data[2] != (unsigned char) ( ( protocolId >> 8 ) & 0xFF ) ||
-             data[3] != (unsigned char) ( protocolId & 0xFF ) )
-            return 0;*/
-        if ( mode == Server && !IsConnected() )
-        {
-            printf( "server accepts connection from client %d.%d.%d.%d:%d\n",
-                addressPort.GetA(), addressPort.GetB(), addressPort.GetC(), addressPort.GetD(), addressPort.GetPort() );
-            state = Connected;
-            //addressPort = sender;
-        }
+        //assert( data );
+        //assert( size > 0 );
+std::cout << "1";
+        if ( addressPort.GetAddress() == 0 )
+            return false;
+std::cout << "2";
+        unsigned char packet[size+16];
+        packet[0] = (unsigned char) ( protocolId >> 24 );
+        packet[1] = (unsigned char) ( ( protocolId >> 16 ) & 0xFF );
+        packet[2] = (unsigned char) ( ( protocolId >> 8 ) & 0xFF );
+        packet[3] = (unsigned char) ( ( protocolId ) & 0xFF );
+        packet[4] = (unsigned char)(login[0]);
+        packet[5] = (unsigned char)(login[1]);
+        packet[6] = (unsigned char)(login[2]);
+        packet[7] = (unsigned char)(login[3]);
+        packet[8] = (unsigned char)(login[4]);
+        packet[9] = (unsigned char)(login[5]);
+        packet[10] = (unsigned char)(login[6]);
+        packet[11] = (unsigned char)(login[7]);
+        packet[12] = (unsigned char) ( lastShippedPacket >> 24 );
+        packet[13] = (unsigned char) ( lastShippedPacket >> 16 );
+        packet[14] = (unsigned char) ( lastShippedPacket >> 8 );
+        packet[15] = (unsigned char) ( lastShippedPacket );
+        memcpy( &packet[16], data, size );
+std::cout << "3";
 
-        if ( mode == Client && state == Connecting )
-        {
-            printf( "client completes connection with server\n" );
-            state = Connected;
-        }
-        timeoutAccumulator = 0.0f;
 
-        memcpy( packet, &data[4], size - 4 );
-        return packet;
-        //return size - 4;
+        lastShippedPacket++;
+
+        sockaddr_in address;
+        address.sin_family = AF_INET;
+        address.sin_addr.s_addr = htonl( addressPort.GetAddress() );
+        address.sin_port = htons( (unsigned short) addressPort.GetPort() );
+        /*std::ofstream LoadedFile;
+        LoadedFile.open("Log.txt");
+        for(int i =0; i < size +16; i++)
+            LoadedFile << int(packet[i]) << " ";
+        LoadedFile << std::endl;
+
+        LoadedFile.close();*/
+std::cout << "4";
+std::cout << std::endl;
+        int sent_bytes = sendto( socket->getSocket(), (const char*)packet, size+16, 0, (sockaddr*)&address, sizeof(sockaddr_in) );
+
+        return sent_bytes == size+16;
+    }
+
+
+    unsigned char* Connection::ReceivePacket( unsigned char data[], int size, unsigned int NumberOfPacket )
+    {
+        if(lastReceivedPacket < NumberOfPacket)
+        {
+            lastReceivedPacket = NumberOfPacket;
+            UpdatePacket();
+            return data;
+        }
+        return 0;
 
     }
 
-    void Connection::ClearData()
-    {
-        state = Disconnected;
-        timeoutAccumulator = 0.0f;
-        //addressPort = Address();
-    }
 
-    Socket::Socket( unsigned int passed_protocolId, float passed_timeout, int passed_destinationPort)
+    Socket::Socket( unsigned int passed_protocolId, int passed_destinationPort)
     {
         protocolId = passed_protocolId;
-        timeout = passed_timeout;
         socket = 0;
         destinationPort = passed_destinationPort;
+        connectedClients.clear();
     }
 
     Socket::~Socket()
@@ -327,40 +305,16 @@
         return sent_bytes == size;
     }
 
-    void Socket::SendToClients( const Address & destination, unsigned char * data, int size )
-    {
-        for(std::map<unsigned int, Connection*>::iterator i = connectedServers.begin(); i != connectedServers.end(); ++i)
-        {
-            //таймер SDL по deltatime
-            *data = *(i -> second->CreatePacket((const unsigned char*)data, size));
-            size = sizeof(*data);
-
-            assert( data );
-            assert( size > 0 );
-
-            //if ( socket == 0 )
-            //    return false;
-
-            sockaddr_in address;
-            address.sin_family = AF_INET;
-            address.sin_addr.s_addr = htonl( destination.GetAddress() );
-            address.sin_port = htons( (unsigned short) destination.GetPort() );
-
-            int sent_bytes = sendto( socket, (const char*)data, size, 0, (sockaddr*)&address, sizeof(sockaddr_in) );
-        }
-
-        //return sent_bytes == size;
-    }
-
     void Socket::Update()
     {
-        for(std::map<unsigned int, Connection*>::iterator i = connectedServers.begin(); i != connectedServers.end(); ++i)
+        for(std::map<unsigned int, Connection*>::iterator i = connectedClients.begin(); i != connectedClients.end(); ++i)
         {
             i -> second->Update( );
-            if(i->second->ConnectFailed())
+            if(i->second->IsDisconencted())
             {
-                connectedServers.erase(i);
-                i = connectedServers.begin();
+                connectedClients.erase(i);
+                //i = connectedClients.begin();
+                connectedClients.clear();
                 break;
             }
         }
@@ -369,11 +323,12 @@
     int Socket::Receive( Address & sender, unsigned char * data, int size )
     {
         Update();
-        assert( data );
-        assert( size > 0 );
+        //int size = size1+16;
 
         if ( socket == 0 )
             return false;
+
+        //char * data;
 
         #if PLATFORM == PLATFORM_WINDOWS
         typedef int socklen_t;
@@ -389,9 +344,8 @@
 
         unsigned int address = ntohl( from.sin_addr.s_addr );
         unsigned int port = ntohs( from.sin_port );
-
         if ( size != 0 &&
-             size >= 4 &&
+             size >= 16 &&
              data[0] == (unsigned char) ( protocolId >> 24 ) &&
              data[1] == (unsigned char) ( ( protocolId >> 16 ) & 0xFF ) &&
              data[2] == (unsigned char) ( ( protocolId >> 8 ) & 0xFF ) &&
@@ -400,36 +354,59 @@
                 unsigned char packet[size - 4];
                 memcpy( packet, &data[4], size - 4 );
                 //создать обрезанный пакет
-
-
-                std::map<unsigned int, Connection*>::iterator result = connectedServers.find(address);
-                if (result != connectedServers.end())
+                std::string received_login;
+                for(int i = 0; i < 8; i++)
                 {
-                    //std::cout << "Server found: " << std::endl;
-                    //отправить пакет на анализ
-                    result->second->ReceivePacket(packet, size - 4);
-
-                    result->second->ConnectOnce();
+                    if(packet[i] != 0)
+                    {
+                        received_login += packet[i];
+                    }
+                    else
+                        break;
                 }
-                else
+                unsigned int NumberOfPacket = (unsigned int)(packet[9] << 24)
+                                                + (unsigned int)(packet[10]<< 16)
+                                                + (unsigned int)(packet[11] << 8)
+                                                + packet[12];
+                unsigned char buffer[size-16];
+                memcpy( buffer, &packet[12], size-16 );
+
+                if(!(connectedClients.empty()))
                 {
-                    std::cout << "Creating new connection" << std::endl;
-                    connectedServers[address] = new Connection(address, protocolId, timeout, destinationPort);
 
-                    result->second->ConnectOnce();
+                    std::map<unsigned int, Connection*>::iterator result = connectedClients.find(address);
 
-                    //отправить пакет на анализ
+                    if (result != connectedClients.end())
+                    {
+                        //std::cout << "Element found: " << std::endl;
+                        //отправить пакет на анализ
+                        result->second->ReceivePacket(buffer, size-16, NumberOfPacket);
 
-                    //result->second->ReceivePacket(packet, size - 4);
+                        for(int i = 0; i < size; i++)
+                        {
+                            data[i] = 0;
+                        }
+
+                        memcpy( data, &buffer[0], size-16 );
+
+                    }
                 }
+                else if(data[9] != 254)
+                {
+                    connectedClients[address] = new Connection(address,
+                                                                    protocolId,
+                                                                    port,
+                                                                    this);
 
 
-                sender = Address( address, port );
-
+                }
+                sender = Address(address, port);
                 return received_bytes;
              }
              else
-                return 0;
+             {
+                 std::cout<< "Bad packet" << std::endl;
+             }
 
 
     }

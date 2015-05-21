@@ -41,6 +41,8 @@
 #include <assert.h>
 #include <map>
 #include <ctime>
+#include <SDL.h>
+#include <iostream>
 
 namespace net
 {
@@ -58,7 +60,7 @@ namespace net
 #endif
 
 	// internet address
-
+    class Socket;
 	class Address
 	{
 	public:
@@ -98,68 +100,46 @@ namespace net
 	{
     public:
 
-        enum Mode
-		{
-			None,
-			Client,
-			Server
-		};
-
-        Connection(unsigned int passed_address, unsigned int protocolId, float timeout, int passed_port);
+        Connection(unsigned int passed_address,
+                    unsigned int protocolId,
+                    int passed_port,
+                    Socket * passed_socket);
 
 		~Connection();
 
-		bool Start();
-
-		void Stop();
-
-		void Listen();
-
-		void Connect( );
-
-		bool IsConnecting() const;
-
-		bool ConnectFailed() const;
-
-		bool IsConnected() const;
-
-		bool IsListening() const;
-
-		Mode GetMode() const;
-
-		void Update( );
+		void Update(  );
 
 		unsigned char* CreatePacket( const unsigned char data[], int size );
 
-		unsigned char* ReceivePacket( unsigned char data[], int size );
+		unsigned char* ReceivePacket( unsigned char data[], int size, unsigned int NumberOfPacket );
 
-		void ConnectOnce() {lastConnect = time (NULL);}
+		bool GetFirstTime() {return firstTime;}
 
-	protected:
+		void ConnectionUsed() {firstTime = false;}
 
-		void ClearData();
+		Address getAddress() {return addressPort;}
+
+		void UpdatePacket() { lastConnect = time (NULL);}
+
+		bool IsDisconencted() {return disconnected;}
+		bool Send( const void * data, int size );
 
     private:
         unsigned int address;
 
-        enum State
-		{
-			Disconnected,
-			Listening,
-			Connecting,
-			ConnectFail,
-			Connected
-		};
-
 		unsigned int protocolId;
-		float timeout;
+
+		bool firstTime;
 
 		bool running;
-		Mode mode;
-		State state;
-		float timeoutAccumulator;
 		Address addressPort;
 		time_t lastConnect;
+		int lastReceivedPacket;
+		int lastShippedPacket;
+		int timer;
+		Socket * socket;
+
+		bool disconnected;
 	};
 
 
@@ -168,7 +148,7 @@ namespace net
 	{
 	public:
 
-		Socket( unsigned int passed_protocolId, float passed_timeout, int passed_destinationPort);
+		Socket( unsigned int passed_protocolId, int passed_destinationPort);
 
 		~Socket();
 
@@ -178,6 +158,8 @@ namespace net
 
 		bool IsOpen() const;
 
+		int getSocket() {return socket;}
+
 		bool Send( const Address & destination, const void * data, int size );
 
 		void SendToClients( const Address & destination, unsigned char * data, int size );
@@ -186,13 +168,14 @@ namespace net
 
 		int Receive( Address & sender, unsigned char * data, int size );
 
+		std::map<unsigned int, Connection*> getConnections() {return connectedClients;}
+
 	private:
 
 		int socket;
 		unsigned int protocolId;
-		float timeout;
 		int destinationPort;
-		std::map<unsigned int, Connection*> connectedServers;
+		std::map<unsigned int, Connection*> connectedClients;
 	};
 
 

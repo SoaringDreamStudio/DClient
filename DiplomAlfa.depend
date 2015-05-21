@@ -1333,16 +1333,19 @@
 	"begin_code.h"
 	"close_code.h"
 
-1426862111 c:\users\avdrine\documents\github\dclient\net.h
+1432219000 c:\users\avdrine\documents\github\dclient\net.h
 	<winsock2.h>
 	<sys/socket.h>
 	<netinet/in.h>
 	<fcntl.h>
 	<assert.h>
 	<map>
+	<ctime>
+	<SDL.h>
+	<iostream>
 	<unistd.h>
 
-1431696428 c:\users\avdrine\documents\github\dclient\struct.h
+1431913602 c:\users\avdrine\documents\github\dclient\struct.h
 	"libraries.h"
 	"graphics/CollisionRectangle.h"
 
@@ -1362,7 +1365,7 @@
 
 1422664905 c:\users\avdrine\documents\github\dclient\sdl_setup.h
 
-1431548962 c:\users\avdrine\documents\github\dclient\objects.h
+1431548964 c:\users\avdrine\documents\github\dclient\objects.h
 	"objects/Environment.h"
 	"objects/Environment/Live.h"
 	"objects/Environment/Live/Characters.h"
@@ -1392,7 +1395,7 @@
 	"Menu.h"
 	<vector>
 
-1431863092 c:\users\avdrine\documents\github\dclient\menu.h
+1431863094 c:\users\avdrine\documents\github\dclient\menu.h
 	"libraries.h"
 	"graphics.h"
 
@@ -1410,7 +1413,7 @@
 	"stdafx.h"
 	"Main.h"
 
-1431863092 c:\users\avdrine\documents\github\dclient\main.h
+1432244027 c:\users\avdrine\documents\github\dclient\main.h
 	"graphics.h"
 	"Menu.h"
 	"GameLVL.h"
@@ -1424,7 +1427,7 @@
 	"objects.h"
 	"MainCharacter.h"
 
-1431863092 c:\users\avdrine\documents\github\dclient\maincharacter.h
+1431920128 c:\users\avdrine\documents\github\dclient\maincharacter.h
 	"graphics.h"
 	"libraries.h"
 	"GameLVL.h"
@@ -1433,25 +1436,25 @@
 1423422724 source:c:\users\avdrine\documents\github\dclient\interpretator.cpp
 	"interpretator.h"
 
-1431863092 source:c:\users\avdrine\documents\github\dclient\main.cpp
+1432243786 source:c:\users\avdrine\documents\github\dclient\main.cpp
 	"libraries.h"
 	"Main.h"
 
-1431863092 source:c:\users\avdrine\documents\github\dclient\maincharacter.cpp
+1431920146 source:c:\users\avdrine\documents\github\dclient\maincharacter.cpp
 	"MainCharacter.h"
 
-1431863092 source:c:\users\avdrine\documents\github\dclient\menu.cpp
+1432240457 source:c:\users\avdrine\documents\github\dclient\menu.cpp
 	"Menu.h"
 
 1415527063 source:c:\users\avdrine\documents\github\dclient\mybiblio.cpp
 	"Mybiblio.h"
 
-1431605378 source:c:\users\avdrine\documents\github\dclient\net.cpp
+1432243874 source:c:\users\avdrine\documents\github\dclient\net.cpp
 	"Net.h"
 	<cstdio>
 	<winsock2.h>
 	<ctime>
-	<iostream>
+	<fstream>
 
 1423691006 source:c:\users\avdrine\documents\github\dclient\objects.cpp
 	"objects.h"
@@ -1473,7 +1476,7 @@
 1431431296 c:\users\avdrine\documents\github\dclient\graphics\collisionrectangle.h
 	"../libraries.h"
 
-1431623485 c:\users\avdrine\documents\github\dclient\libraries.h
+1431623486 c:\users\avdrine\documents\github\dclient\libraries.h
 	<SDL.h>
 	<SDL_image.h>
 	<SDL_mixer.h>
@@ -1509,13 +1512,13 @@
 	"CollisionRectangle.h"
 	"SDL_Setup.h"
 
-1431628259 c:\users\avdrine\documents\github\dclient\graphics.h
+1431628260 c:\users\avdrine\documents\github\dclient\graphics.h
 	"graphics/SDL_Setup.h"
 	"graphics/CollisionRectangle.h"
 	"graphics/Sprite.h"
 	"graphics/Texts.h"
 
-1431640308 source:c:\users\avdrine\documents\github\dclient\startcpp.cpp
+1432240530 source:c:\users\avdrine\documents\github\dclient\startcpp.cpp
 	"libraries.h"
 	"Main.h"
 
@@ -1531,13 +1534,13 @@
 	"Texts.h"
 	"../libraries.h"
 
-1431634723 source:c:\users\avdrine\documents\github\dclient\struct.cpp
+1431922018 source:c:\users\avdrine\documents\github\dclient\struct.cpp
 	"struct.h"
 
-1431709195 source:c:\users\avdrine\documents\github\dclient\objects\environment.cpp
+1431916189 source:c:\users\avdrine\documents\github\dclient\objects\environment.cpp
 	"Environment.h"
 
-1431863092 c:\users\avdrine\documents\github\dclient\objects\environment.h
+1431917596 c:\users\avdrine\documents\github\dclient\objects\environment.h
 	<string>
 	"../graphics.h"
 	"../struct.h"
@@ -1551,7 +1554,7 @@
 1431704733 source:c:\users\avdrine\documents\github\dclient\objects\environment\live\characters.cpp
 	"Characters.h"
 
-1431704767 c:\users\avdrine\documents\github\dclient\objects\environment\live\characters.h
+1431915844 c:\users\avdrine\documents\github\dclient\objects\environment\live\characters.h
 	"../Live.h"
 	"../../Items.h"
 
@@ -1595,7 +1598,7 @@
 1431863500 c:\users\avdrine\documents\github\dclient\objects\environment\nonlive\objects\trigger.h
 	"../Objects.h"
 
-1431861127 source:c:\users\avdrine\documents\github\dclient\objects\environment\nonlive\objects\wtrig.cpp
+1431863556 source:c:\users\avdrine\documents\github\dclient\objects\environment\nonlive\objects\wtrig.cpp
 	"Wtrig.h"
 
 1431863455 c:\users\avdrine\documents\github\dclient\objects\environment\nonlive\objects\wtrig.h
@@ -1642,10 +1645,10 @@
 1431549280 c:\users\avdrine\documents\github\dclient\objects\items\usable.h
 	"../Items.h"
 
-1431863092 source:c:\users\avdrine\documents\github\dclient\gamelvl.cpp
+1431912964 source:c:\users\avdrine\documents\github\dclient\gamelvl.cpp
 	"GameLVL.h"
 
-1431863092 c:\users\avdrine\documents\github\dclient\gamelvl.h
+1431925780 c:\users\avdrine\documents\github\dclient\gamelvl.h
 	"libraries.h"
 	"graphics.h"
 	"objects.h"
@@ -2189,4 +2192,591 @@
 1431773883 source:c:\users\unknown\documents\github\dclient\startcpp.cpp
 	"libraries.h"
 	"Main.h"
+
+1431909364 source:c:\users\8\desktop\d\dclient\gamelvl.cpp
+	"GameLVL.h"
+
+1431922180 c:\users\8\desktop\d\dclient\gamelvl.h
+	"libraries.h"
+	"graphics.h"
+	"objects.h"
+	"Menu.h"
+	<vector>
+
+1431619886 c:\users\8\desktop\d\dclient\libraries.h
+	<SDL.h>
+	<SDL_image.h>
+	<SDL_mixer.h>
+	<SDL_ttf.h>
+	<iostream>
+	<vector>
+	<map>
+	<fstream>
+	<sstream>
+	<string>
+	<cstdlib>
+	<math.h>
+	"struct.h"
+	"Net.h"
+
+1394933596 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl.h
+	"SDL_main.h"
+	"SDL_stdinc.h"
+	"SDL_assert.h"
+	"SDL_atomic.h"
+	"SDL_audio.h"
+	"SDL_clipboard.h"
+	"SDL_cpuinfo.h"
+	"SDL_endian.h"
+	"SDL_error.h"
+	"SDL_events.h"
+	"SDL_filesystem.h"
+	"SDL_joystick.h"
+	"SDL_gamecontroller.h"
+	"SDL_haptic.h"
+	"SDL_hints.h"
+	"SDL_loadso.h"
+	"SDL_log.h"
+	"SDL_messagebox.h"
+	"SDL_mutex.h"
+	"SDL_power.h"
+	"SDL_render.h"
+	"SDL_rwops.h"
+	"SDL_system.h"
+	"SDL_thread.h"
+	"SDL_timer.h"
+	"SDL_version.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1394933596 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_main.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1394933598 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_stdinc.h
+	"SDL_config.h"
+	<sys/types.h>
+	<stdio.h>
+	<stdlib.h>
+	<stddef.h>
+	<stdarg.h>
+	<stdlib.h>
+	<malloc.h>
+	<stddef.h>
+	<stdarg.h>
+	<memory.h>
+	<string.h>
+	<strings.h>
+	<inttypes.h>
+	<stdint.h>
+	<ctype.h>
+	<math.h>
+	<float.h>
+	<iconv.h>
+	"begin_code.h"
+	<alloca.h>
+	<malloc.h>
+	<malloc.h>
+	<malloc.h>
+	<stdlib.h>
+	"close_code.h"
+
+1394933598 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_config.h
+	"SDL_platform.h"
+
+1410291490 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_platform.h
+	"AvailabilityMacros.h"
+	"TargetConditionals.h"
+	<winapifamily.h>
+	"begin_code.h"
+	"close_code.h"
+
+1394933598 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\begin_code.h
+
+1394933598 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\close_code.h
+
+1394933596 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_assert.h
+	"SDL_config.h"
+	"begin_code.h"
+	<signal.h>
+	"close_code.h"
+
+1394933596 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_atomic.h
+	"SDL_stdinc.h"
+	"SDL_platform.h"
+	"begin_code.h"
+	"close_code.h"
+
+1394933596 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_audio.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_endian.h"
+	"SDL_mutex.h"
+	"SDL_thread.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1394933596 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_error.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1394933596 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_endian.h
+	"SDL_stdinc.h"
+	<endian.h>
+	"begin_code.h"
+	"close_code.h"
+
+1394933598 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_mutex.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1394933598 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_thread.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_atomic.h"
+	"SDL_mutex.h"
+	"begin_code.h"
+	<process.h>
+	"close_code.h"
+
+1394933598 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_rwops.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1394933596 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_clipboard.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1394933596 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_cpuinfo.h
+	"SDL_stdinc.h"
+	<intrin.h>
+	<intrin.h>
+	<altivec.h>
+	<mmintrin.h>
+	<mm3dnow.h>
+	<xmmintrin.h>
+	<emmintrin.h>
+	"begin_code.h"
+	"close_code.h"
+
+1394933596 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_events.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"SDL_keyboard.h"
+	"SDL_mouse.h"
+	"SDL_joystick.h"
+	"SDL_gamecontroller.h"
+	"SDL_quit.h"
+	"SDL_gesture.h"
+	"SDL_touch.h"
+	"begin_code.h"
+	"close_code.h"
+
+1394933598 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_video.h
+	"SDL_stdinc.h"
+	"SDL_pixels.h"
+	"SDL_rect.h"
+	"SDL_surface.h"
+	"begin_code.h"
+	"close_code.h"
+
+1394933598 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_pixels.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1394933598 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_rect.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_pixels.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1394933598 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_surface.h
+	"SDL_stdinc.h"
+	"SDL_pixels.h"
+	"SDL_rect.h"
+	"SDL_blendmode.h"
+	"SDL_rwops.h"
+	"begin_code.h"
+	"close_code.h"
+
+1394933596 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_blendmode.h
+	"begin_code.h"
+	"close_code.h"
+
+1394933596 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_keyboard.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_keycode.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1394933596 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_keycode.h
+	"SDL_stdinc.h"
+	"SDL_scancode.h"
+
+1394933598 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_scancode.h
+	"SDL_stdinc.h"
+
+1394933596 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_mouse.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1394933596 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_joystick.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1394933596 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_gamecontroller.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_rwops.h"
+	"SDL_joystick.h"
+	"begin_code.h"
+	"close_code.h"
+
+1394933598 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_quit.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+
+1394933596 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_gesture.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"SDL_touch.h"
+	"begin_code.h"
+	"close_code.h"
+
+1394933598 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_touch.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1394933596 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_filesystem.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1394933596 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_haptic.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"SDL_joystick.h"
+	"begin_code.h"
+	"close_code.h"
+
+1394933596 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_hints.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1394933596 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_loadso.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1394933596 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_log.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1394933596 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_messagebox.h
+	"SDL_stdinc.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1394933598 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_power.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1394933598 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_render.h
+	"SDL_stdinc.h"
+	"SDL_rect.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1394933598 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_system.h
+	"SDL_stdinc.h"
+	"SDL_keyboard.h"
+	"SDL_render.h"
+	"SDL_video.h"
+	"begin_code.h"
+	"close_code.h"
+
+1394933598 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_timer.h
+	"SDL_stdinc.h"
+	"SDL_error.h"
+	"begin_code.h"
+	"close_code.h"
+
+1394933598 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_version.h
+	"SDL_stdinc.h"
+	"begin_code.h"
+	"close_code.h"
+
+1376156342 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_image.h
+	"SDL.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+
+1376156426 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_mixer.h
+	"SDL_stdinc.h"
+	"SDL_rwops.h"
+	"SDL_audio.h"
+	"SDL_endian.h"
+	"SDL_version.h"
+	"begin_code.h"
+	"close_code.h"
+
+1376152944 c:\users\8\desktop\d\dclient\libraries\sdl2_ttf-2.0.12\i686-w64-mingw32\include\sdl2\sdl_ttf.h
+	"SDL.h"
+	"begin_code.h"
+	"close_code.h"
+
+1431910002 c:\users\8\desktop\d\dclient\struct.h
+	"libraries.h"
+	"graphics/CollisionRectangle.h"
+
+1431427698 c:\users\8\desktop\d\dclient\graphics\collisionrectangle.h
+	"../libraries.h"
+
+1432215398 c:\users\8\desktop\d\dclient\net.h
+	<winsock2.h>
+	<sys/socket.h>
+	<netinet/in.h>
+	<fcntl.h>
+	<assert.h>
+	<map>
+	<ctime>
+	<SDL.h>
+	<iostream>
+	<unistd.h>
+
+1431624660 c:\users\8\desktop\d\dclient\graphics.h
+	"graphics/SDL_Setup.h"
+	"graphics/CollisionRectangle.h"
+	"graphics/Sprite.h"
+	"graphics/Texts.h"
+
+1431624808 c:\users\8\desktop\d\dclient\graphics\sdl_setup.h
+	<map>
+	<SDL.h>
+	<SDL_image.h>
+	<SDL_mixer.h>
+	<SDL_ttf.h>
+
+1431639306 c:\users\8\desktop\d\dclient\graphics\sprite.h
+	"../libraries.h"
+	"CollisionRectangle.h"
+	"SDL_Setup.h"
+
+1431630890 c:\users\8\desktop\d\dclient\graphics\texts.h
+	"SDL_Setup.h"
+
+1431545364 c:\users\8\desktop\d\dclient\objects.h
+	"objects/Environment.h"
+	"objects/Environment/Live.h"
+	"objects/Environment/Live/Characters.h"
+	"objects/Environment/Live/Mobs.h"
+	"objects/Environment/NonLive.h"
+	"objects/Environment/NonLive/Objects.h"
+	"objects/Environment/NonLive/Objects/Normal.h"
+	"objects/Environment/NonLive/Objects/Trigger.h"
+	"objects/Environment/NonLive/Objects/Wtrig.h"
+	"objects/Environment/NonLive/Ground.h"
+	"objects/Items.h"
+	"objects/Items/Equip.h"
+	"objects/Items/Equip/Armor.h"
+	"objects/Items/Equip/Weapon.h"
+	"objects/Items/Equip/Weapon/Melee.h"
+	"objects/Items/Equip/Weapon/Range.h"
+	"objects/Items/Usable.h"
+
+1431913998 c:\users\8\desktop\d\dclient\objects\environment.h
+	<string>
+	"../graphics.h"
+	"../struct.h"
+
+1431701054 c:\users\8\desktop\d\dclient\objects\environment\live.h
+	"../Environment.h"
+
+1431912246 c:\users\8\desktop\d\dclient\objects\environment\live\characters.h
+	"../Live.h"
+	"../../Items.h"
+
+1431681548 c:\users\8\desktop\d\dclient\objects\items.h
+	"../graphics.h"
+
+1431859494 c:\users\8\desktop\d\dclient\objects\environment\live\mobs.h
+	"../Live.h"
+	"../../../struct.h"
+
+1431859920 c:\users\8\desktop\d\dclient\objects\environment\nonlive.h
+	"../Environment.h"
+
+1431859494 c:\users\8\desktop\d\dclient\objects\environment\nonlive\objects.h
+	"../NonLive.h"
+
+1431859812 c:\users\8\desktop\d\dclient\objects\environment\nonlive\objects\normal.h
+	"../Objects.h"
+
+1431859902 c:\users\8\desktop\d\dclient\objects\environment\nonlive\objects\trigger.h
+	"../Objects.h"
+
+1431859856 c:\users\8\desktop\d\dclient\objects\environment\nonlive\objects\wtrig.h
+	"../Objects.h"
+
+1431859934 c:\users\8\desktop\d\dclient\objects\environment\nonlive\ground.h
+	"../NonLive.h"
+
+1431681548 c:\users\8\desktop\d\dclient\objects\items\equip.h
+	"../Items.h"
+
+1431545666 c:\users\8\desktop\d\dclient\objects\items\equip\armor.h
+	"../Equip.h"
+
+1431546228 c:\users\8\desktop\d\dclient\objects\items\equip\weapon.h
+	<string>
+	"../Equip.h"
+
+1431680756 c:\users\8\desktop\d\dclient\objects\items\equip\weapon\melee.h
+	"../Weapon.h"
+	"../../../../struct.h"
+
+1431545660 c:\users\8\desktop\d\dclient\objects\items\equip\weapon\range.h
+	"../Weapon.h"
+
+1431545682 c:\users\8\desktop\d\dclient\objects\items\usable.h
+	"../Items.h"
+
+1431859494 c:\users\8\desktop\d\dclient\menu.h
+	"libraries.h"
+	"graphics.h"
+
+1430849648 source:c:\users\8\desktop\d\dclient\graphics\collisionrectangle.cpp
+	"CollisionRectangle.h"
+
+1431629890 source:c:\users\8\desktop\d\dclient\graphics\sdl_setup.cpp
+	"../libraries.h"
+	"SDL_Setup.h"
+
+1431639368 source:c:\users\8\desktop\d\dclient\graphics\sprite.cpp
+	"../libraries.h"
+	"Sprite.h"
+
+1431633388 source:c:\users\8\desktop\d\dclient\graphics\texts.cpp
+	"Texts.h"
+	"../libraries.h"
+
+1432216141 source:c:\users\8\desktop\d\dclient\main.cpp
+	"libraries.h"
+	"Main.h"
+
+1431901364 c:\users\8\desktop\d\dclient\main.h
+	"graphics.h"
+	"Menu.h"
+	"GameLVL.h"
+	"MainCharacter.h"
+	<windows.h>
+	<math.h>
+
+1431916528 c:\users\8\desktop\d\dclient\maincharacter.h
+	"graphics.h"
+	"libraries.h"
+	"GameLVL.h"
+	"struct.h"
+
+1431916546 source:c:\users\8\desktop\d\dclient\maincharacter.cpp
+	"MainCharacter.h"
+
+1432215387 source:c:\users\8\desktop\d\dclient\net.cpp
+	"Net.h"
+	<cstdio>
+	<winsock2.h>
+	<ctime>
+	<fstream>
+
+1431912590 source:c:\users\8\desktop\d\dclient\objects\environment.cpp
+	"Environment.h"
+
+1431859494 source:c:\users\8\desktop\d\dclient\objects\environment\live.cpp
+	"Live.h"
+
+1431701134 source:c:\users\8\desktop\d\dclient\objects\environment\live\characters.cpp
+	"Characters.h"
+
+1431859494 source:c:\users\8\desktop\d\dclient\objects\environment\live\mobs.cpp
+	"Mobs.h"
+
+1431859496 source:c:\users\8\desktop\d\dclient\objects\environment\nonlive.cpp
+	"NonLive.h"
+
+1431859706 source:c:\users\8\desktop\d\dclient\objects\environment\nonlive\ground.cpp
+	"Ground.h"
+
+1431859494 source:c:\users\8\desktop\d\dclient\objects\environment\nonlive\objects.cpp
+	"Objects.h"
+
+1431859780 source:c:\users\8\desktop\d\dclient\objects\environment\nonlive\objects\normal.cpp
+	"Normal.h"
+
+1431859952 source:c:\users\8\desktop\d\dclient\objects\environment\nonlive\objects\trigger.cpp
+	"Trigger.h"
+
+1431859958 source:c:\users\8\desktop\d\dclient\objects\environment\nonlive\objects\wtrig.cpp
+	"Wtrig.h"
+
+1431546198 source:c:\users\8\desktop\d\dclient\objects\items.cpp
+	"Items.h"
+
+1431546204 source:c:\users\8\desktop\d\dclient\objects\items\equip.cpp
+	"Equip.h"
+
+1431540964 source:c:\users\8\desktop\d\dclient\objects\items\equip\armor.cpp
+	"Armor.h"
+
+1431541142 source:c:\users\8\desktop\d\dclient\objects\items\equip\weapon.cpp
+	"Weapon.h"
+
+1431680760 source:c:\users\8\desktop\d\dclient\objects\items\equip\weapon\melee.cpp
+	"Melee.h"
+
+1431541402 source:c:\users\8\desktop\d\dclient\objects\items\equip\weapon\range.cpp
+	"Range.h"
+
+1431546250 source:c:\users\8\desktop\d\dclient\objects\items\usable.cpp
+	"Usable.h"
+
+1432217733 source:c:\users\8\desktop\d\dclient\startcpp.cpp
+	"libraries.h"
+	"Main.h"
+
+1431918418 source:c:\users\8\desktop\d\dclient\struct.cpp
+	"struct.h"
+
+1432197696 source:c:\users\8\desktop\d\dclient\menu.cpp
+	"Menu.h"
 

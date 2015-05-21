@@ -38,5 +38,7 @@ private:
 	int MouseX;
 	int MouseY;
     bool ignoreGameOver;
+
+    int timerSend;
 };
 

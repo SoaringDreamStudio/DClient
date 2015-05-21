@@ -473,25 +473,36 @@ void MainMenu::UpdateControls()
             {
                 //триггер выхода из меню - ON
 
-                char data[18];
-                data[0] = 10;
+                char data[22];
                 int l;
-                for(int n = 1, l = 0; n <=9; n++, l++)
+                for(int n = 0, l = 0; n <8; n++, l++)
                 {
                     data[n] = login[l];
                 }
+                data[8] = 0;
+                data[9] = 0;
+                data[10] = 0;
+                data[11] = 0;
+                data[12] = 10;
                 std::string pass = "89658965";
-                for(int n = 10, l = 0; n <=18; n++, l++)
+                for(int n = 13, l = 0; n <=21; n++, l++)
                 {
                     data[n] = pass[l];
                 }
 
                 unsigned char packet[sizeof(data)+4];
+                memcpy( &packet[4], data, sizeof(data) );
                 packet[0] = (unsigned char) ( ProtocolId >> 24 );
                 packet[1] = (unsigned char) ( ( ProtocolId >> 16 ) & 0xFF );
                 packet[2] = (unsigned char) ( ( ProtocolId >> 8 ) & 0xFF );
                 packet[3] = (unsigned char) ( ( ProtocolId ) & 0xFF );
-                memcpy( &packet[4], data, sizeof(data) );
+
+
+                for(int i = 0; i <sizeof(data)+4; i++)
+                {
+                    std::cout << packet[i];
+                }
+                std::cout << std::endl;
 
                 gsocket->Send( net::Address(79,164,35,62,21995), packet, sizeof(packet) );
 

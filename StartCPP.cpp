@@ -10,7 +10,7 @@ const float DeltaTime = 0.25f;
 const float SendRate = 0.25f;
 const float TimeOut = 10.0f;
 
-std::string login = "LOL";
+std::string login = "avdrine2";
 
 
 bool InitializeSockets();
@@ -26,7 +26,7 @@ int main(int argc, char *argv[])
 		printf( "failed to initialize sockets\n" );
 		return 1;
 	}
-    net::Socket gsocket( ProtocolId, TimeOut, ClientPort);
+    net::Socket gsocket( ProtocolId, ClientPort);
 	// create socket
 
 	printf( "creating socket on port %d\n", ClientPort );
