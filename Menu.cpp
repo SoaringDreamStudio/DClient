@@ -504,7 +504,7 @@ void MainMenu::UpdateControls()
                 }
                 std::cout << std::endl;
 
-                gsocket->Send( net::Address(79,164,35,62,21995), packet, sizeof(packet) );
+                gsocket->Send( net::Address(127,0,0,1,21995), packet, sizeof(packet) );
 
                 std::cout<< "Sent" << std::endl;
 

@@ -100,6 +100,7 @@ int CMain::GameLoop(void)
                         //std::cout << Y << std::endl;
 
                         gameLVL->CreateGround(ID,X,Y);
+                        std::cout << "created Ground" << std::endl;
                     }
 
                 }
@@ -134,6 +135,7 @@ int CMain::GameLoop(void)
                         //std::cout << X << std::endl;
                         unsigned int Y = (unsigned int)(buffer[17] << 24) + (unsigned int)(buffer[18]<< 16) + (unsigned int)(buffer[19] << 8) + buffer[20];
                         //std::cout << Y << std::endl;
+
                         std::string Nickname;
                         for(int i = 21; i <=28; i++)
                         {
@@ -167,8 +169,12 @@ int CMain::GameLoop(void)
                                 gameLVL->GetCharacters()[l]->changeXY(X,Y);
                             }
                         }
+
                         if(!existNickname)
+                        {
+                            std::cout << "Creating: " << Nickname << std::endl;
                             gameLVL->CreateCharacter(ID,X,Y,Nickname);
+                        }
 
                     }
                 }
@@ -245,7 +251,8 @@ int CMain::GameLoop(void)
                             unsigned int Y = (unsigned int)(buffer[13] << 24) + (unsigned int)(buffer[14]<< 16) + (unsigned int)(buffer[15] << 8) + buffer[16];
                             //std::cout << Y << std::endl;
                             std::string Nickname;
-                            for(int i = 21; i <=28; i++)
+
+                            for(int i = 17; i <=24; i++)
                             {
                                 if(buffer[i] == 0)
                                     break;
@@ -268,7 +275,10 @@ int CMain::GameLoop(void)
                                 }
                             }
                             if(!existNickname)
+                            {
+                                std::cout << "Creating1: " << Nickname << std::endl;
                                 gameLVL->CreateCharacter(ID,X,Y,Nickname);
+                            }
 
                         }
                     }
@@ -301,13 +311,13 @@ int CMain::GameLoop(void)
         //обновление анимации и управление ГГ
         MainHero->Update();
 
+        //отрисовка переднего плана
+        gameLVL->DrawFront();
+
         //просчет и прорисовка для игрового интерфейса
         gameInterface->Update();
 
         gameInterface->Draw();
-
-        //отрисовка переднего плана
-        gameLVL->DrawFront();
 
         //отрисовка рендера
 		csdl_setup->End();
@@ -382,45 +392,49 @@ int CMain::GameLoop(void)
             gsocket->Send(sender,
                             packet,
                             sizeof(packet) );
-        }*/
-        //mainCharacter
+        }
+        //mainCharacter*/
         if(timerSend+33 < SDL_GetTicks())
         {
-            unsigned char data[21];
+            unsigned char data[25];
             data[0] = 24;
-
+            //NumberOfPacket
+            data[1] = (unsigned char) ( 0 );
+            data[2] = (unsigned char) ( 0 );
+            data[3] = (unsigned char) ( 0 );
+            data[4] = (unsigned char) ( 0 );
             //ID
-            data[1] = (unsigned char) ( 0 );//gameLVL->GetCharacters()[i]->getID() >> 24 );
-            data[2] = (unsigned char) ( 0 );//gameLVL->GetCharacters()[i]->getID() >> 16 );
-            data[3] = (unsigned char) ( 0 );//gameLVL->GetCharacters()[i]->getID() >> 8 );
-            data[4] = (unsigned char) ( 1 );//gameLVL->GetCharacters()[i]->getID() );
+            data[5] = (unsigned char) ( 0 );//gameLVL->GetCharacters()[i]->getID() >> 24 );
+            data[6] = (unsigned char) ( 0 );//gameLVL->GetCharacters()[i]->getID() >> 16 );
+            data[7] = (unsigned char) ( 0 );//gameLVL->GetCharacters()[i]->getID() >> 8 );
+            data[8] = (unsigned char) ( 1 );//gameLVL->GetCharacters()[i]->getID() );
 
             //X
-            data[5] = (unsigned char) ( int(gameLVL->getSpawn().x-CameraX) >> 24 );
-            data[6] = (unsigned char) ( int(gameLVL->getSpawn().x-CameraX) >> 16 );
-            data[7] = (unsigned char) ( int(gameLVL->getSpawn().x-CameraX) >> 8 );
-            data[8] = (unsigned char) ( int(gameLVL->getSpawn().x-CameraX) );
+            data[9] = (unsigned char) ( int(gameLVL->getSpawn().x-CameraX) >> 24 );
+            data[10] = (unsigned char) ( int(gameLVL->getSpawn().x-CameraX) >> 16 );
+            data[11] = (unsigned char) ( int(gameLVL->getSpawn().x-CameraX) >> 8 );
+            data[12] = (unsigned char) ( int(gameLVL->getSpawn().x-CameraX) );
 
             //Y
-            data[9] = (unsigned char) ( int(gameLVL->getSpawn().y-CameraY) >> 24 );
-            data[10] = (unsigned char) ( int(gameLVL->getSpawn().y-CameraY) >> 16 );
-            data[11] = (unsigned char) ( int(gameLVL->getSpawn().y-CameraY) >> 8 );
-            data[12] = (unsigned char) ( int(gameLVL->getSpawn().y-CameraY) );
+            data[13] = (unsigned char) ( int(gameLVL->getSpawn().y-CameraY) >> 24 );
+            data[14] = (unsigned char) ( int(gameLVL->getSpawn().y-CameraY) >> 16 );
+            data[15] = (unsigned char) ( int(gameLVL->getSpawn().y-CameraY) >> 8 );
+            data[16] = (unsigned char) ( int(gameLVL->getSpawn().y-CameraY) );
 
             //NickName
-            data[13] = (unsigned char) ( MainHero->getNickName()[0]);
-            data[14] = (unsigned char) ( MainHero->getNickName()[1]);
-            data[15] = (unsigned char) ( MainHero->getNickName()[2]);
-            data[16] = (unsigned char) ( MainHero->getNickName()[3]);
-            data[17] = (unsigned char) ( MainHero->getNickName()[4]);
-            data[18] = (unsigned char) ( MainHero->getNickName()[5]);
-            data[19] = (unsigned char) ( MainHero->getNickName()[6]);
-            data[20] = (unsigned char) ( MainHero->getNickName()[7]);
+            data[17] = (unsigned char) ( MainHero->getNickName()[0]);
+            data[18] = (unsigned char) ( MainHero->getNickName()[1]);
+            data[19] = (unsigned char) ( MainHero->getNickName()[2]);
+            data[20] = (unsigned char) ( MainHero->getNickName()[3]);
+            data[21] = (unsigned char) ( MainHero->getNickName()[4]);
+            data[22] = (unsigned char) ( MainHero->getNickName()[5]);
+            data[23] = (unsigned char) ( MainHero->getNickName()[6]);
+            data[24] = (unsigned char) ( MainHero->getNickName()[7]);
 
 
             for(std::map<unsigned int, net::Connection*>::iterator it = gsocket->getConnections().begin(); it != gsocket->getConnections().end(); ++it)
             {
-                it->second->Send(data, 21 );
+                it->second->Send(data, 25 );
             }
             timerSend = SDL_GetTicks();
         }

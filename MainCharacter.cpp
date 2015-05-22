@@ -287,7 +287,7 @@ void MainCharacter::UpdateControls()
 
             break;
         }
-
+/*
         //Если нажата клавиша мыши или мышь находится в движении
         if(csdl_setup->GetMainEvent()->type == SDL_MOUSEBUTTONDOWN || csdl_setup->GetMainEvent()->type == SDL_MOUSEMOTION)
         {
@@ -302,7 +302,7 @@ void MainCharacter::UpdateControls()
                 Follow = true;
             }
         }
-
+*/
     }
     //создание тригерра столкновения с объектами
     bool colldingWithObject = false;

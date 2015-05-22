@@ -141,10 +141,8 @@ extern std::string login;
     {
         //assert( data );
         //assert( size > 0 );
-std::cout << "1";
         if ( addressPort.GetAddress() == 0 )
             return false;
-std::cout << "2";
         unsigned char packet[size+16];
         packet[0] = (unsigned char) ( protocolId >> 24 );
         packet[1] = (unsigned char) ( ( protocolId >> 16 ) & 0xFF );
@@ -163,7 +161,6 @@ std::cout << "2";
         packet[14] = (unsigned char) ( lastShippedPacket >> 8 );
         packet[15] = (unsigned char) ( lastShippedPacket );
         memcpy( &packet[16], data, size );
-std::cout << "3";
 
 
         lastShippedPacket++;
@@ -179,8 +176,6 @@ std::cout << "3";
         LoadedFile << std::endl;
 
         LoadedFile.close();*/
-std::cout << "4";
-std::cout << std::endl;
         int sent_bytes = sendto( socket->getSocket(), (const char*)packet, size+16, 0, (sockaddr*)&address, sizeof(sockaddr_in) );
 
         return sent_bytes == size+16;
