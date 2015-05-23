@@ -287,7 +287,15 @@ int CMain::GameLoop(void)
 
                 }
                 else
+                {
+                    for(int i = 0; i < 254; i++)
+                    {
+                        std::cout << int(buffer[i]) << " ";
+                    }
+                    std::cout << std::endl;
                     break;
+
+                }
             }
         }
 
