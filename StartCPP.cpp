@@ -4,13 +4,13 @@
 using namespace std;
 //переменные для сетевой игры
 const int ServerPort = 21995;
-const int ClientPort = 30002;
+const int ClientPort = 30003;
 const int ProtocolId = 0x99887766;
 const float DeltaTime = 0.25f;
 const float SendRate = 0.25f;
 const float TimeOut = 10.0f;
 
-std::string login = "avdrine2";
+std::string login = "avdrine4";
 
 
 bool InitializeSockets();

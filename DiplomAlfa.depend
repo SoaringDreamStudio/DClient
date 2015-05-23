@@ -1655,13 +1655,13 @@
 	"Menu.h"
 	<vector>
 
-1431773883 source:c:\users\unknown\documents\github\dclient\graphics\collisionrectangle.cpp
+1432309123 source:c:\users\unknown\documents\github\dclient\graphics\collisionrectangle.cpp
 	"CollisionRectangle.h"
 
-1431773883 c:\users\unknown\documents\github\dclient\graphics\collisionrectangle.h
+1432309123 c:\users\unknown\documents\github\dclient\graphics\collisionrectangle.h
 	"../libraries.h"
 
-1431773883 c:\users\unknown\documents\github\dclient\libraries.h
+1432309123 c:\users\unknown\documents\github\dclient\libraries.h
 	<SDL.h>
 	<SDL_image.h>
 	<SDL_mixer.h>
@@ -1677,7 +1677,7 @@
 	"struct.h"
 	"Net.h"
 
-1431773882 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl.h
+1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl.h
 	"SDL_main.h"
 	"SDL_stdinc.h"
 	"SDL_assert.h"
@@ -1708,12 +1708,12 @@
 	"begin_code.h"
 	"close_code.h"
 
-1431773882 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_main.h
+1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_main.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1431773882 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_stdinc.h
+1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_stdinc.h
 	"SDL_config.h"
 	<sys/types.h>
 	<stdio.h>
@@ -1741,33 +1741,33 @@
 	<stdlib.h>
 	"close_code.h"
 
-1431773882 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_config.h
+1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_config.h
 	"SDL_platform.h"
 
-1431773882 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_platform.h
+1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_platform.h
 	"AvailabilityMacros.h"
 	"TargetConditionals.h"
 	<winapifamily.h>
 	"begin_code.h"
 	"close_code.h"
 
-1431773882 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\begin_code.h
+1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\begin_code.h
 
-1431773882 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\close_code.h
+1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\close_code.h
 
-1431773882 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_assert.h
+1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_assert.h
 	"SDL_config.h"
 	"begin_code.h"
 	<signal.h>
 	"close_code.h"
 
-1431773882 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_atomic.h
+1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_atomic.h
 	"SDL_stdinc.h"
 	"SDL_platform.h"
 	"begin_code.h"
 	"close_code.h"
 
-1431773882 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_audio.h
+1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_audio.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_endian.h"
@@ -1777,24 +1777,24 @@
 	"begin_code.h"
 	"close_code.h"
 
-1431773882 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_error.h
+1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_error.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1431773882 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_endian.h
+1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_endian.h
 	"SDL_stdinc.h"
 	<endian.h>
 	"begin_code.h"
 	"close_code.h"
 
-1431773882 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_mutex.h
+1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_mutex.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1431773882 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_thread.h
+1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_thread.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_atomic.h"
@@ -1803,18 +1803,18 @@
 	<process.h>
 	"close_code.h"
 
-1431773882 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_rwops.h
+1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_rwops.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1431773882 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_clipboard.h
+1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_clipboard.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1431773882 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_cpuinfo.h
+1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_cpuinfo.h
 	"SDL_stdinc.h"
 	<intrin.h>
 	<intrin.h>
@@ -1826,7 +1826,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1431773882 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_events.h
+1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_events.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_video.h"
@@ -1840,7 +1840,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1431773882 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_video.h
+1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_video.h
 	"SDL_stdinc.h"
 	"SDL_pixels.h"
 	"SDL_rect.h"
@@ -1848,12 +1848,12 @@
 	"begin_code.h"
 	"close_code.h"
 
-1431773882 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_pixels.h
+1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_pixels.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1431773882 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_rect.h
+1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_rect.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_pixels.h"
@@ -1861,7 +1861,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1431773882 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_surface.h
+1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_surface.h
 	"SDL_stdinc.h"
 	"SDL_pixels.h"
 	"SDL_rect.h"
@@ -1870,11 +1870,11 @@
 	"begin_code.h"
 	"close_code.h"
 
-1431773882 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_blendmode.h
+1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_blendmode.h
 	"begin_code.h"
 	"close_code.h"
 
-1431773882 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_keyboard.h
+1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_keyboard.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_keycode.h"
@@ -1882,27 +1882,27 @@
 	"begin_code.h"
 	"close_code.h"
 
-1431773882 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_keycode.h
+1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_keycode.h
 	"SDL_stdinc.h"
 	"SDL_scancode.h"
 
-1431773882 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_scancode.h
+1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_scancode.h
 	"SDL_stdinc.h"
 
-1431773882 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_mouse.h
+1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_mouse.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_video.h"
 	"begin_code.h"
 	"close_code.h"
 
-1431773882 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_joystick.h
+1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_joystick.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1431773882 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_gamecontroller.h
+1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_gamecontroller.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_rwops.h"
@@ -1910,11 +1910,11 @@
 	"begin_code.h"
 	"close_code.h"
 
-1431773882 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_quit.h
+1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_quit.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 
-1431773882 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_gesture.h
+1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_gesture.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_video.h"
@@ -1922,60 +1922,60 @@
 	"begin_code.h"
 	"close_code.h"
 
-1431773882 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_touch.h
+1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_touch.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_video.h"
 	"begin_code.h"
 	"close_code.h"
 
-1431773882 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_filesystem.h
+1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_filesystem.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1431773882 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_haptic.h
+1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_haptic.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_joystick.h"
 	"begin_code.h"
 	"close_code.h"
 
-1431773882 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_hints.h
+1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_hints.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1431773882 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_loadso.h
+1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_loadso.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1431773882 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_log.h
+1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_log.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1431773882 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_messagebox.h
+1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_messagebox.h
 	"SDL_stdinc.h"
 	"SDL_video.h"
 	"begin_code.h"
 	"close_code.h"
 
-1431773882 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_power.h
+1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_power.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1431773882 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_render.h
+1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_render.h
 	"SDL_stdinc.h"
 	"SDL_rect.h"
 	"SDL_video.h"
 	"begin_code.h"
 	"close_code.h"
 
-1431773882 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_system.h
+1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_system.h
 	"SDL_stdinc.h"
 	"SDL_keyboard.h"
 	"SDL_render.h"
@@ -1983,24 +1983,24 @@
 	"begin_code.h"
 	"close_code.h"
 
-1431773882 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_timer.h
+1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_timer.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1431773882 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_version.h
+1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_version.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1431773882 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_image.h
+1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_image.h
 	"SDL.h"
 	"SDL_version.h"
 	"begin_code.h"
 	"close_code.h"
 
-1431773882 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_mixer.h
+1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_mixer.h
 	"SDL_stdinc.h"
 	"SDL_rwops.h"
 	"SDL_audio.h"
@@ -2009,80 +2009,84 @@
 	"begin_code.h"
 	"close_code.h"
 
-1431773883 c:\users\unknown\documents\github\dclient\libraries\sdl2_ttf-2.0.12\i686-w64-mingw32\include\sdl2\sdl_ttf.h
+1432309120 c:\users\unknown\documents\github\dclient\libraries\sdl2_ttf-2.0.12\i686-w64-mingw32\include\sdl2\sdl_ttf.h
 	"SDL.h"
 	"begin_code.h"
 	"close_code.h"
 
-1431773884 c:\users\unknown\documents\github\dclient\struct.h
+1432309124 c:\users\unknown\documents\github\dclient\struct.h
 	"libraries.h"
 	"graphics/CollisionRectangle.h"
 
-1431773883 c:\users\unknown\documents\github\dclient\net.h
+1432309120 c:\users\unknown\documents\github\dclient\net.h
 	<winsock2.h>
 	<sys/socket.h>
 	<netinet/in.h>
 	<fcntl.h>
 	<assert.h>
 	<map>
+	<ctime>
+	<SDL.h>
+	<iostream>
 	<unistd.h>
 
-1431773883 source:c:\users\unknown\documents\github\dclient\graphics\sdl_setup.cpp
+1432309123 source:c:\users\unknown\documents\github\dclient\graphics\sdl_setup.cpp
 	"../libraries.h"
 	"SDL_Setup.h"
 
-1431773883 c:\users\unknown\documents\github\dclient\graphics\sdl_setup.h
+1432309123 c:\users\unknown\documents\github\dclient\graphics\sdl_setup.h
 	<map>
 	<SDL.h>
 	<SDL_image.h>
 	<SDL_mixer.h>
 	<SDL_ttf.h>
 
-1431773883 source:c:\users\unknown\documents\github\dclient\graphics\sprite.cpp
+1432309123 source:c:\users\unknown\documents\github\dclient\graphics\sprite.cpp
 	"../libraries.h"
 	"Sprite.h"
 
-1431773883 c:\users\unknown\documents\github\dclient\graphics\sprite.h
+1432309123 c:\users\unknown\documents\github\dclient\graphics\sprite.h
 	"../libraries.h"
 	"CollisionRectangle.h"
 	"SDL_Setup.h"
 
-1431773883 source:c:\users\unknown\documents\github\dclient\graphics\texts.cpp
+1432309123 source:c:\users\unknown\documents\github\dclient\graphics\texts.cpp
 	"Texts.h"
 	"../libraries.h"
 
-1431773883 c:\users\unknown\documents\github\dclient\graphics\texts.h
+1432309123 c:\users\unknown\documents\github\dclient\graphics\texts.h
 	"SDL_Setup.h"
 
-1431773883 source:c:\users\unknown\documents\github\dclient\main.cpp
+1432309123 source:c:\users\unknown\documents\github\dclient\main.cpp
 	"libraries.h"
 	"Main.h"
 
-1431773883 c:\users\unknown\documents\github\dclient\main.h
+1432309120 c:\users\unknown\documents\github\dclient\main.h
 	"graphics.h"
 	"Menu.h"
 	"GameLVL.h"
+	"MainCharacter.h"
 	<windows.h>
 	<math.h>
 
-1431773883 c:\users\unknown\documents\github\dclient\graphics.h
+1432309123 c:\users\unknown\documents\github\dclient\graphics.h
 	"graphics/SDL_Setup.h"
 	"graphics/CollisionRectangle.h"
 	"graphics/Sprite.h"
 	"graphics/Texts.h"
 
-1431773883 c:\users\unknown\documents\github\dclient\menu.h
+1432309120 c:\users\unknown\documents\github\dclient\menu.h
 	"libraries.h"
 	"graphics.h"
 
-1431773882 c:\users\unknown\documents\github\dclient\gamelvl.h
+1432309118 c:\users\unknown\documents\github\dclient\gamelvl.h
 	"libraries.h"
 	"graphics.h"
 	"objects.h"
 	"Menu.h"
 	<vector>
 
-1431773883 c:\users\unknown\documents\github\dclient\objects.h
+1432309123 c:\users\unknown\documents\github\dclient\objects.h
 	"objects/Environment.h"
 	"objects/Environment/Live.h"
 	"objects/Environment/Live/Characters.h"
@@ -2101,89 +2105,89 @@
 	"objects/Items/Equip/Weapon/Range.h"
 	"objects/Items/Usable.h"
 
-1431773883 c:\users\unknown\documents\github\dclient\objects\environment.h
+1432309123 c:\users\unknown\documents\github\dclient\objects\environment.h
 	<string>
 	"../graphics.h"
 	"../struct.h"
 
-1431773883 c:\users\unknown\documents\github\dclient\objects\environment\live.h
+1432309123 c:\users\unknown\documents\github\dclient\objects\environment\live.h
 	"../Environment.h"
 
-1431773883 c:\users\unknown\documents\github\dclient\objects\environment\live\characters.h
+1432309123 c:\users\unknown\documents\github\dclient\objects\environment\live\characters.h
 	"../Live.h"
 	"../../Items.h"
 
-1431773883 c:\users\unknown\documents\github\dclient\objects\items.h
+1432309124 c:\users\unknown\documents\github\dclient\objects\items.h
 	"../graphics.h"
 
-1431773883 c:\users\unknown\documents\github\dclient\objects\environment\live\mobs.h
+1432309123 c:\users\unknown\documents\github\dclient\objects\environment\live\mobs.h
 	"../Live.h"
 	"../../../struct.h"
 
-1431806204 c:\users\unknown\documents\github\dclient\objects\environment\nonlive.h
+1432309123 c:\users\unknown\documents\github\dclient\objects\environment\nonlive.h
 	"../Environment.h"
 
-1431773883 c:\users\unknown\documents\github\dclient\objects\environment\nonlive\objects.h
+1432309123 c:\users\unknown\documents\github\dclient\objects\environment\nonlive\objects.h
 	"../NonLive.h"
 
-1431805658 c:\users\unknown\documents\github\dclient\objects\environment\nonlive\objects\normal.h
+1432309123 c:\users\unknown\documents\github\dclient\objects\environment\nonlive\objects\normal.h
 	"../Objects.h"
 
-1431805463 c:\users\unknown\documents\github\dclient\objects\environment\nonlive\objects\trigger.h
+1432309123 c:\users\unknown\documents\github\dclient\objects\environment\nonlive\objects\trigger.h
 	"../Objects.h"
 
-1431805580 c:\users\unknown\documents\github\dclient\objects\environment\nonlive\objects\wtrig.h
+1432309123 c:\users\unknown\documents\github\dclient\objects\environment\nonlive\objects\wtrig.h
 	"../Objects.h"
 
-1431805139 c:\users\unknown\documents\github\dclient\objects\environment\nonlive\ground.h
+1432309123 c:\users\unknown\documents\github\dclient\objects\environment\nonlive\ground.h
 	"../NonLive.h"
 
-1431773884 c:\users\unknown\documents\github\dclient\objects\items\equip.h
+1432309124 c:\users\unknown\documents\github\dclient\objects\items\equip.h
 	"../Items.h"
 
-1431773884 c:\users\unknown\documents\github\dclient\objects\items\equip\armor.h
+1432309124 c:\users\unknown\documents\github\dclient\objects\items\equip\armor.h
 	"../Equip.h"
 
-1431773884 c:\users\unknown\documents\github\dclient\objects\items\equip\weapon.h
+1432309124 c:\users\unknown\documents\github\dclient\objects\items\equip\weapon.h
 	<string>
 	"../Equip.h"
 
-1431773884 c:\users\unknown\documents\github\dclient\objects\items\equip\weapon\melee.h
+1432309124 c:\users\unknown\documents\github\dclient\objects\items\equip\weapon\melee.h
 	"../Weapon.h"
 	"../../../../struct.h"
 
-1431773884 c:\users\unknown\documents\github\dclient\objects\items\equip\weapon\range.h
+1432309124 c:\users\unknown\documents\github\dclient\objects\items\equip\weapon\range.h
 	"../Weapon.h"
 
-1431773884 c:\users\unknown\documents\github\dclient\objects\items\usable.h
+1432309124 c:\users\unknown\documents\github\dclient\objects\items\usable.h
 	"../Items.h"
 
-1431773883 source:c:\users\unknown\documents\github\dclient\menu.cpp
+1432309120 source:c:\users\unknown\documents\github\dclient\menu.cpp
 	"Menu.h"
 
-1431773883 source:c:\users\unknown\documents\github\dclient\net.cpp
+1432309120 source:c:\users\unknown\documents\github\dclient\net.cpp
 	"Net.h"
 	<cstdio>
 	<winsock2.h>
 	<ctime>
-	<iostream>
+	<fstream>
 
-1431773883 source:c:\users\unknown\documents\github\dclient\objects\environment.cpp
+1432309123 source:c:\users\unknown\documents\github\dclient\objects\environment.cpp
 	"Environment.h"
 
-1431773883 source:c:\users\unknown\documents\github\dclient\objects\environment\live.cpp
+1432309123 source:c:\users\unknown\documents\github\dclient\objects\environment\live.cpp
 	"Live.h"
 
-1431773883 source:c:\users\unknown\documents\github\dclient\objects\environment\live\characters.cpp
+1432309123 source:c:\users\unknown\documents\github\dclient\objects\environment\live\characters.cpp
 	"Characters.h"
 
-1431773883 source:c:\users\unknown\documents\github\dclient\objects\environment\live\mobs.cpp
+1432309123 source:c:\users\unknown\documents\github\dclient\objects\environment\live\mobs.cpp
 	"Mobs.h"
 
-1431773883 source:c:\users\unknown\documents\github\dclient\objects\environment\nonlive.cpp
+1432309123 source:c:\users\unknown\documents\github\dclient\objects\environment\nonlive.cpp
 	"NonLive.h"
 
-1431773883 source:c:\users\unknown\documents\github\dclient\objects\environment\nonlive\objects.cpp
+1432309123 source:c:\users\unknown\documents\github\dclient\objects\environment\nonlive\objects.cpp
 	"Objects.h"
 
 1431773883 source:c:\users\unknown\documents\github\dclient\objects\items.cpp
@@ -2779,4 +2783,28 @@
 
 1432197696 source:c:\users\8\desktop\d\dclient\menu.cpp
 	"Menu.h"
+
+1432309118 source:c:\users\unknown\documents\github\dclient\gamelvl.cpp
+	"GameLVL.h"
+
+1432309120 c:\users\unknown\documents\github\dclient\maincharacter.h
+	"graphics.h"
+	"libraries.h"
+	"GameLVL.h"
+	"struct.h"
+
+1432309120 source:c:\users\unknown\documents\github\dclient\maincharacter.cpp
+	"MainCharacter.h"
+
+1432309123 source:c:\users\unknown\documents\github\dclient\objects\environment\nonlive\ground.cpp
+	"Ground.h"
+
+1432309123 source:c:\users\unknown\documents\github\dclient\objects\environment\nonlive\objects\normal.cpp
+	"Normal.h"
+
+1432309123 source:c:\users\unknown\documents\github\dclient\objects\environment\nonlive\objects\trigger.cpp
+	"Trigger.h"
+
+1432309123 source:c:\users\unknown\documents\github\dclient\objects\environment\nonlive\objects\wtrig.cpp
+	"Wtrig.h"
 
