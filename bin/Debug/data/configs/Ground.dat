@@ -2,8 +2,55 @@ ID: 1
 name: Ground1
 Size: 100 100
 hitbox: x: 0 y: 0 w: 0 h: 0
-FilePathSprite: data/img/grounds/1.png
-SetCrops: 0 0
-Animation: name: an1 parameters: 0 0 0 0
-Animation: name: an2 parameters: 0 0 0 0
+FilePathSprite: data/img/grounds/background.png
+SetCrops: 1 1
+Animation: name: default parameters: 0 0 0 1000
+-
+ID: 2
+name: Ground1
+Size: 100 100
+hitbox: x: 0 y: 0 w: 0 h: 0
+FilePathSprite: data/img/grounds/grass.png
+SetCrops: 1 1
+Animation: name: default parameters: 0 0 0 1000
+-
+ID: 3
+name: Ground1
+Size: 100 100
+hitbox: x: 0 y: 0 w: 0 h: 0
+FilePathSprite: data/img/grounds/ground.png
+SetCrops: 1 1
+Animation: name: default parameters: 0 0 0 1000
+-
+ID: 4
+name: Ground1
+Size: 100 100
+hitbox: x: 0 y: 0 w: 0 h: 0
+FilePathSprite: data/img/grounds/lava.png
+SetCrops: 10 1
+Animation: name: default parameters: 0 9 0 100
+-
+ID: 5
+name: Ground1
+Size: 100 100
+hitbox: x: 0 y: 0 w: 0 h: 0
+FilePathSprite: data/img/grounds/sand.png
+SetCrops: 1 1
+Animation: name: default parameters: 0 0 0 1000
+-
+ID: 6
+name: Ground1
+Size: 100 100
+hitbox: x: 0 y: 0 w: 0 h: 0
+FilePathSprite: data/img/grounds/sand2.png
+SetCrops: 1 1
+Animation: name: default parameters: 0 0 0 1000
+-
+ID: 7
+name: Ground1
+Size: 100 100
+hitbox: x: 0 y: 0 w: 0 h: 0
+FilePathSprite: data/img/grounds/water.png
+SetCrops: 16 1
+Animation: name: default parameters: 0 15 0 100
 -

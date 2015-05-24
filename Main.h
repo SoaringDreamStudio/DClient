@@ -39,6 +39,8 @@ private:
 	int MouseY;
     bool ignoreGameOver;
 
+    int ServerTimeOut;
+
     int timerSend;
 };
 

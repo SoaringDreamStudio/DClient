@@ -34,6 +34,9 @@ public:
 	int getID() {return ID;}
 	int getX() {return PosX;}
 	int getY() {return PosY;}
+	std::string getActiveAnimation(){return ActiveAnimation;}
+    void setActiveAnimation(std::string passed_ActiveAnimation) {ActiveAnimation = passed_ActiveAnimation;}
+
 
 protected:
     CSprite* image;

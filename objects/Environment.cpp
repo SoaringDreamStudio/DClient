@@ -67,6 +67,8 @@ Environment::Environment(std::string passed_className,
                         CameraY,
                         CCollisionRectangle(hitbox.x,hitbox.y,hitbox.w,hitbox.h),
                         csdl_setup );
+
+    image->SetUpAnimation(SpriteCropX,SpriteCropY);
 }
 
 Environment::~Environment(void)

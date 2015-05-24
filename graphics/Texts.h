@@ -25,6 +25,7 @@ public:
 	int GetFontSize( );
 
 	void SetText(std::string message);
+	std::string GetText() {return message;}
 
 private:
 

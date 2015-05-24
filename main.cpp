@@ -57,6 +57,8 @@ int CMain::GameLoop(void)
     GameInterface* gameInterface = new GameInterface(csdl_setup, &MouseX, &MouseY, &CameraX, &CameraY);
     DrawLoadingProcess(9, loadingProcess);
 
+    ServerTimeOut = SDL_GetTicks();
+
     for(;;)
     {
         gsocket->Update();
@@ -65,16 +67,16 @@ int CMain::GameLoop(void)
         int bytes_read = gsocket->Receive( sender, buffer, sizeof( buffer ) );
         if ( bytes_read )
         {
-            if(buffer[0] >= 200)
+            if(buffer[0] >= 200 && buffer[0] <=220)
             {
                 std::cout << "Error #" << int(buffer[0]) << std::endl;
                 break;
             }
 
-            else if(buffer[0] == 21)
+            else if(/*buffer[0] == 21 || */buffer[16] == 21)
             {
-                unsigned int Size = (unsigned int)(buffer[5] << 24) + (unsigned int)(buffer[6]<< 16) + (unsigned int)(buffer[7] << 8) + buffer[8];
-                //std::cout << Size << std::endl;
+                unsigned int Size = (unsigned int)(buffer[17] << 24) + (unsigned int)(buffer[18]<< 16) + (unsigned int)(buffer[19] << 8) + buffer[20];
+                //std::cout << "Size " << Size << std::endl;
                 bool fragments[Size];
                 for(int i = 0; i < Size;i++)
                 {
@@ -87,16 +89,16 @@ int CMain::GameLoop(void)
                     unsigned char buffer[256];
                     int bytes_read = gsocket->Receive( sender, buffer, sizeof( buffer ) );
 
-                    if(buffer[4] == 22)
+                    if(buffer[0] == 22)
                     {
-                        unsigned int Number = (unsigned int)(buffer[5] << 24) + (unsigned int)(buffer[6]<< 16) + (unsigned int)(buffer[7] << 8) + buffer[8];
+                        unsigned int Number = (unsigned int)(buffer[1] << 24) + (unsigned int)(buffer[2]<< 16) + (unsigned int)(buffer[3] << 8) + buffer[4];
                         //std::cout << Number << std::endl;
                         fragments[Number] = true;
-                        unsigned int ID = (unsigned int)(buffer[9] << 24) + (unsigned int)(buffer[10]<< 16) + (unsigned int)(buffer[11] << 8) + buffer[12];
+                        unsigned int ID = (unsigned int)(buffer[5] << 24) + (unsigned int)(buffer[6]<< 16) + (unsigned int)(buffer[7] << 8) + buffer[8];
                         //std::cout << ID << std::endl;
-                        unsigned int X = (unsigned int)(buffer[13] << 24) + (unsigned int)(buffer[14]<< 16) + (unsigned int)(buffer[15] << 8) + buffer[16];
+                        unsigned int X = (unsigned int)(buffer[9] << 24) + (unsigned int)(buffer[10]<< 16) + (unsigned int)(buffer[11] << 8) + buffer[12];
                         //std::cout << X << std::endl;
-                        unsigned int Y = (unsigned int)(buffer[17] << 24) + (unsigned int)(buffer[18]<< 16) + (unsigned int)(buffer[19] << 8) + buffer[20];
+                        unsigned int Y = (unsigned int)(buffer[13] << 24) + (unsigned int)(buffer[14]<< 16) + (unsigned int)(buffer[15] << 8) + buffer[16];
                         //std::cout << Y << std::endl;
 
                         gameLVL->CreateGround(ID,X,Y);
@@ -110,8 +112,8 @@ int CMain::GameLoop(void)
             }
             else if(buffer[0] == 23)
             {
-                unsigned int Size = (unsigned int)(buffer[5] << 24) + (unsigned int)(buffer[6]<< 16) + (unsigned int)(buffer[7] << 8) + buffer[8];
-                std::cout << Size << std::endl;
+                unsigned int Size = (unsigned int)(buffer[1] << 24) + (unsigned int)(buffer[2]<< 16) + (unsigned int)(buffer[3] << 8) + buffer[4];
+                std::cout << "Size " << Size << std::endl;
                 bool fragments[Size];
                 for(int i = 0; i < Size;i++)
                 {
@@ -124,39 +126,41 @@ int CMain::GameLoop(void)
                     unsigned char buffer[256];
                     int bytes_read = gsocket->Receive( sender, buffer, sizeof( buffer ) );
 
-                    if(buffer[4] == 24)
+                        //std::cout << "buffer[0] " << int(buffer[0]) << std::endl;
+                    if(buffer[0] == 24)
                     {
-                        unsigned int Number = (unsigned int)(buffer[5] << 24) + (unsigned int)(buffer[6]<< 16) + (unsigned int)(buffer[7] << 8) + buffer[8];
-                        std::cout << Number << std::endl;
+                        //std::cout << "Size " << Size << std::endl;
+                        unsigned int Number = (unsigned int)(buffer[1] << 24) + (unsigned int)(buffer[2]<< 16) + (unsigned int)(buffer[3] << 8) + buffer[4];
+                        //std::cout << "Number " << Number << std::endl;
                         fragments[Number] = true;
-                        unsigned int ID = (unsigned int)(buffer[9] << 24) + (unsigned int)(buffer[10]<< 16) + (unsigned int)(buffer[11] << 8) + buffer[12];
+                        unsigned int ID = (unsigned int)(buffer[5] << 24) + (unsigned int)(buffer[6]<< 16) + (unsigned int)(buffer[7] << 8) + buffer[8];
                         //std::cout << ID << std::endl;
-                        unsigned int X = (unsigned int)(buffer[13] << 24) + (unsigned int)(buffer[14]<< 16) + (unsigned int)(buffer[15] << 8) + buffer[16];
+                        unsigned int X = (unsigned int)(buffer[9] << 24) + (unsigned int)(buffer[10]<< 16) + (unsigned int)(buffer[11] << 8) + buffer[12];
                         //std::cout << X << std::endl;
-                        unsigned int Y = (unsigned int)(buffer[17] << 24) + (unsigned int)(buffer[18]<< 16) + (unsigned int)(buffer[19] << 8) + buffer[20];
+                        unsigned int Y = (unsigned int)(buffer[13] << 24) + (unsigned int)(buffer[14]<< 16) + (unsigned int)(buffer[15] << 8) + buffer[16];
                         //std::cout << Y << std::endl;
-
                         std::string Nickname;
-                        for(int i = 21; i <=28; i++)
+
+                        for(int i = 17; i <=24; i++)
                         {
                             if(buffer[i] == 0)
                                 break;
                             Nickname += buffer[i];
                         }
-                        std::cout << Nickname << std::endl;
-                        std::cout << login << std::endl;
-                        std::cout << (Nickname == login) << std::endl;
-                        if(Nickname == login)
+                        std::string activeAnimation;
+                        for(int i = 25; i <=32; i++)
                         {
-                            //std::cout << "CameraX: " << CameraX << std::endl;
-                            gameLVL->setSpawnX(X);
-                            //std::cout << "CameraX: " << CameraX << std::endl;
-                            //std::cout << "CameraY: " << CameraY << std::endl;
-                            gameLVL->setSpawnY(Y);
-                            //std::cout << "CameraY: " << CameraY << std::endl;
-                            break;
+                            if(buffer[i] == 0)
+                                break;
+                            activeAnimation += buffer[i];
                         }
-                        //std::cout << Nickname << std::endl;
+                        std::cout << "ActiveAnimation " << activeAnimation << std::endl;
+
+                        //std::cout << "Nickname "<< Nickname << std::endl;
+                        //std::cout << "login " << login << std::endl;
+                        //std::cout << "(Nickname == login) "<< (Nickname == login) << std::endl;
+                        //if(Nickname == login)
+                            //continue;
 
                         bool existNickname;
                         std::vector<Characters*> tmpCharacters = gameLVL->GetCharacters();
@@ -165,32 +169,46 @@ int CMain::GameLoop(void)
                         {
                             if((*it)->getNickName() == Nickname)
                             {
+                                //std::cout << "Nickname here "<< Nickname << std::endl;
                                 existNickname = true;
+                                gameLVL->GetCharacters()[l]->setActiveAnimation(activeAnimation);
                                 gameLVL->GetCharacters()[l]->changeXY(X,Y);
                             }
                         }
-
+                                //std::cout << "Nickname not here "<< Nickname << std::endl;
                         if(!existNickname)
                         {
-                            std::cout << "Creating: " << Nickname << std::endl;
+                                //std::cout << "Nickname not here "<< Nickname << std::endl;
+                            std::cout << "Creating1: " << Nickname << std::endl;
                             gameLVL->CreateCharacter(ID,X,Y,Nickname);
+                            gameLVL->GetCharacters()[gameLVL->GetCharacters().size()-1]->setActiveAnimation(activeAnimation);
                         }
 
                     }
                 }
+                //std::cout << "ended" << std::endl;
                 //создать массив булевых переменных для проверки дохождения пакетов
                 break;
 
             }
             else
-            {
-
+            {/*
+                for(int i = 0; i < 254; i++)
+                {
+                    std::cout << int(buffer[i]) << " ";
+                }
+                std::cout << std::endl;*/
                 break;
             }
         }
+        if(ServerTimeOut + 1000 < SDL_GetTicks())
+        {
+            Mquit = false;
+            return 0;
+        }
     }
     //инициализируем главного героя
-    MainHero = new MainCharacter(login, csdl_setup, &MouseX, &MouseY, &CameraX, &CameraY, gameLVL, loadingProcess, gameInterface);
+    MainHero = new MainCharacter(login, csdl_setup, &MouseX, &MouseY, &CameraX, &CameraY, gameLVL, loadingProcess, gameInterface, gsocket);
     DrawLoadingProcess(4, loadingProcess);
 
     //interpretator = new CInterpretator(gameLVL, MainHero);
@@ -209,97 +227,90 @@ int CMain::GameLoop(void)
 
 
         net::Address sender;
-		for(;;)
+		while (updateTimer+10 > SDL_GetTicks())
         {
             gsocket->Update();
             unsigned char buffer[256];
             int bytes_read = gsocket->Receive( sender, buffer, sizeof( buffer ) );
             if ( bytes_read )
             {
+
+                //std::cout << "buffer[0] " << int(buffer[0]) << std::endl;
                 if(buffer[0] >= 200 && buffer[0] <=220)
                 {
                     std::cout << "Error #" << int(buffer[0]) << std::endl;
                     //quit = true;
                     break;
                 }
-
-                else if(buffer[0] == 23)
+                if(buffer[0] == 24)
                 {
-                    unsigned int Size = (unsigned int)(buffer[1] << 24) + (unsigned int)(buffer[2]<< 16) + (unsigned int)(buffer[3] << 8) + buffer[4];
-                    //std::cout << Size << std::endl;
-                    bool fragments[Size];
-                    for(int i = 0; i < Size;i++)
-                    {
+                    //std::cout << "Size " << Size << std::endl;
+                    unsigned int Number = (unsigned int)(buffer[1] << 24) + (unsigned int)(buffer[2]<< 16) + (unsigned int)(buffer[3] << 8) + buffer[4];
+                    //std::cout << "Number " << Number << std::endl;
 
-                        fragments[i] = false;
+                    unsigned int ID = (unsigned int)(buffer[5] << 24) + (unsigned int)(buffer[6]<< 16) + (unsigned int)(buffer[7] << 8) + buffer[8];
+                    //std::cout << ID << std::endl;
+                    unsigned int X = (unsigned int)(buffer[9] << 24) + (unsigned int)(buffer[10]<< 16) + (unsigned int)(buffer[11] << 8) + buffer[12];
+                    //std::cout << X << std::endl;
+                    unsigned int Y = (unsigned int)(buffer[13] << 24) + (unsigned int)(buffer[14]<< 16) + (unsigned int)(buffer[15] << 8) + buffer[16];
+                    //std::cout << Y << std::endl;
+                    std::string Nickname;
+
+                    for(int i = 17; i <=24; i++)
+                    {
+                        if(buffer[i] == 0)
+                            break;
+                        Nickname += buffer[i];
                     }
-                    while( !allTrue(fragments, Size))
+                    std::string activeAnimation;
+                    for(int i = 25; i <=32; i++)
                     {
-                        gsocket->Update();
-                        unsigned char buffer[256];
-                        int bytes_read = gsocket->Receive( sender, buffer, sizeof( buffer ) );
+                        if(buffer[i] == 0)
+                            break;
+                        activeAnimation += buffer[i];
+                    }
 
-                        if(buffer[0] == 24)
+                    //std::cout << "Nickname "<< Nickname << std::endl;
+                    //std::cout << "activeAnimation "<< activeAnimation << std::endl;
+                    //std::cout << "login " << login << std::endl;
+                    //std::cout << "(Nickname == login) "<< (Nickname == login) << std::endl;
+                    //if(Nickname == login)
+                        //continue;
+
+                    bool existNickname;
+                    std::vector<Characters*> tmpCharacters = gameLVL->GetCharacters();
+                    int l=0;
+                    for(std::vector<Characters*>::iterator it = tmpCharacters.begin(); it != tmpCharacters.end(); ++it,++l)
+                    {
+                        if((*it)->getNickName() == Nickname)
                         {
-                            unsigned int Number = (unsigned int)(buffer[1] << 24) + (unsigned int)(buffer[2]<< 16) + (unsigned int)(buffer[3] << 8) + buffer[4];
-                            //std::cout << Number << std::endl;
-                            fragments[Number] = true;
-                            unsigned int ID = (unsigned int)(buffer[5] << 24) + (unsigned int)(buffer[6]<< 16) + (unsigned int)(buffer[7] << 8) + buffer[8];
-                            //std::cout << ID << std::endl;
-                            unsigned int X = (unsigned int)(buffer[9] << 24) + (unsigned int)(buffer[10]<< 16) + (unsigned int)(buffer[11] << 8) + buffer[12];
-                            //std::cout << X << std::endl;
-                            unsigned int Y = (unsigned int)(buffer[13] << 24) + (unsigned int)(buffer[14]<< 16) + (unsigned int)(buffer[15] << 8) + buffer[16];
-                            //std::cout << Y << std::endl;
-                            std::string Nickname;
-
-                            for(int i = 17; i <=24; i++)
-                            {
-                                if(buffer[i] == 0)
-                                    break;
-                                Nickname += buffer[i];
-                            }
-
-                            if(Nickname == login)
-                                break;
-                            //std::cout << Nickname << std::endl;
-
-                            bool existNickname;
-                            std::vector<Characters*> tmpCharacters = gameLVL->GetCharacters();
-                            int l=0;
-                            for(std::vector<Characters*>::iterator it = tmpCharacters.begin(); it != tmpCharacters.end(); ++it,++l)
-                            {
-                                if((*it)->getNickName() == Nickname)
-                                {
-                                    existNickname = true;
-                                    gameLVL->GetCharacters()[l]->changeXY(X,Y);
-                                }
-                            }
-                            if(!existNickname)
-                            {
-                                std::cout << "Creating1: " << Nickname << std::endl;
-                                gameLVL->CreateCharacter(ID,X,Y,Nickname);
-                            }
-
+                            //std::cout << "Nickname here "<< Nickname << std::endl;
+                            existNickname = true;
+                            gameLVL->GetCharacters()[l]->setActiveAnimation(activeAnimation);
+                            gameLVL->GetCharacters()[l]->changeXY(X,Y);
                         }
                     }
-                    //создать массив булевых переменных для проверки дохождения пакетов
-                    break;
+                            //std::cout << "Nickname not here "<< Nickname << std::endl;
+                    if(!existNickname)
+                    {
+                            //std::cout << "Nickname not here "<< Nickname << std::endl;
+                        std::cout << "Creating: " << Nickname << std::endl;
+                        gameLVL->CreateCharacter(ID,X,Y,Nickname);
+                        gameLVL->GetCharacters()[gameLVL->GetCharacters().size()-1]->setActiveAnimation(activeAnimation);
+                    }
 
                 }
+
                 else
                 {
-                    for(int i = 0; i < 254; i++)
-                    {
-                        std::cout << int(buffer[i]) << " ";
-                    }
-                    std::cout << std::endl;
+
                     break;
 
                 }
             }
         }
 
-
+        updateTimer = SDL_GetTicks();
 
         //считываем положение мышки
 		SDL_GetMouseState(&MouseX, &MouseY);
@@ -402,50 +413,6 @@ int CMain::GameLoop(void)
                             sizeof(packet) );
         }
         //mainCharacter*/
-        if(timerSend+33 < SDL_GetTicks())
-        {
-            unsigned char data[25];
-            data[0] = 24;
-            //NumberOfPacket
-            data[1] = (unsigned char) ( 0 );
-            data[2] = (unsigned char) ( 0 );
-            data[3] = (unsigned char) ( 0 );
-            data[4] = (unsigned char) ( 0 );
-            //ID
-            data[5] = (unsigned char) ( 0 );//gameLVL->GetCharacters()[i]->getID() >> 24 );
-            data[6] = (unsigned char) ( 0 );//gameLVL->GetCharacters()[i]->getID() >> 16 );
-            data[7] = (unsigned char) ( 0 );//gameLVL->GetCharacters()[i]->getID() >> 8 );
-            data[8] = (unsigned char) ( 1 );//gameLVL->GetCharacters()[i]->getID() );
-
-            //X
-            data[9] = (unsigned char) ( int(gameLVL->getSpawn().x-CameraX) >> 24 );
-            data[10] = (unsigned char) ( int(gameLVL->getSpawn().x-CameraX) >> 16 );
-            data[11] = (unsigned char) ( int(gameLVL->getSpawn().x-CameraX) >> 8 );
-            data[12] = (unsigned char) ( int(gameLVL->getSpawn().x-CameraX) );
-
-            //Y
-            data[13] = (unsigned char) ( int(gameLVL->getSpawn().y-CameraY) >> 24 );
-            data[14] = (unsigned char) ( int(gameLVL->getSpawn().y-CameraY) >> 16 );
-            data[15] = (unsigned char) ( int(gameLVL->getSpawn().y-CameraY) >> 8 );
-            data[16] = (unsigned char) ( int(gameLVL->getSpawn().y-CameraY) );
-
-            //NickName
-            data[17] = (unsigned char) ( MainHero->getNickName()[0]);
-            data[18] = (unsigned char) ( MainHero->getNickName()[1]);
-            data[19] = (unsigned char) ( MainHero->getNickName()[2]);
-            data[20] = (unsigned char) ( MainHero->getNickName()[3]);
-            data[21] = (unsigned char) ( MainHero->getNickName()[4]);
-            data[22] = (unsigned char) ( MainHero->getNickName()[5]);
-            data[23] = (unsigned char) ( MainHero->getNickName()[6]);
-            data[24] = (unsigned char) ( MainHero->getNickName()[7]);
-
-
-            for(std::map<unsigned int, net::Connection*>::iterator it = gsocket->getConnections().begin(); it != gsocket->getConnections().end(); ++it)
-            {
-                it->second->Send(data, 25 );
-            }
-            timerSend = SDL_GetTicks();
-        }
 
 		//в случае, если здоровье ГГ упадет до 0 - удалить его и выйти из цикла
 		/*

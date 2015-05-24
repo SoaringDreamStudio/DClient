@@ -1,11 +1,17 @@
 ID: 1
 name: Ground1
-Size: 170 302
+Size: 79 98
 hitbox: x: 0 y: 0 w: 0 h: 0
-FilePathSprite: data/img/Characters/01.png
-SetCrops: 0 0
-Animation: name: an1 parameters: 0 0 0 0
-Animation: name: an2 parameters: 0 0 0 0
+FilePathSprite: data/img/Characters/hero.png
+SetCrops: 6 4
+Animation: name: moved parameters: 0 3 3 250
+Animation: name: moveu parameters: 0 3 0 250
+Animation: name: movel parameters: 0 5 1 250
+Animation: name: mover parameters: 0 5 2 250
+Animation: name: stopd parameters: 0 0 3 250
+Animation: name: stopu parameters: 0 0 0 250
+Animation: name: stopl parameters: 0 0 1 250
+Animation: name: stopr parameters: 0 0 2 250
 fpX: 0
 fpY: 0
 HP: 100

@@ -364,6 +364,7 @@ MainMenu::MainMenu(CSDL_Setup* passed_SDL_Setup, int *passed_MouseX, int *passed
     MouseX = passed_MouseX;
     MouseY = passed_MouseY;
     Mquit  = false;
+    OnePressed = false;
 
     activeMenu = mainMenu;
 
@@ -379,6 +380,32 @@ MainMenu::MainMenu(CSDL_Setup* passed_SDL_Setup, int *passed_MouseX, int *passed
 
     BG = new CSprite(csdl_setup->GetRenderer(), "data/img/Menu/BG.png", 0, 0, csdl_setup->GetScreenWidth(), csdl_setup->GetScreenHeight(),
                      CameraX, CameraY, CCollisionRectangle() , csdl_setup);
+
+
+
+    loginTextBox = new CSprite(csdl_setup->GetRenderer(), "data/img/Menu/textbox.png", 250, 150, 500, 100, CameraX, CameraY,
+                              CCollisionRectangle(0,0, 500, 100),csdl_setup);
+    passTextBox = new CSprite(csdl_setup->GetRenderer(), "data/img/Menu/textbox.png", 250, 320, 500, 100, CameraX, CameraY,
+                              CCollisionRectangle(0,0, 500, 100),csdl_setup);
+    connectButton = new CSprite(csdl_setup->GetRenderer(), "data/img/Menu/Connect1.png", 430, 520, 170, 60, CameraX, CameraY,
+                              CCollisionRectangle(0,0, 170, 60),csdl_setup);
+    connectButton->SetUpAnimation(3,1);
+    mainMenuButton = new CSprite(csdl_setup->GetRenderer(), "data/img/Menu/Back1.png", 450, 620, 130, 60, CameraX, CameraY,
+                              CCollisionRectangle(0,0, 130, 60),csdl_setup);
+    mainMenuButton->SetUpAnimation(3,1);
+
+    activeTextBox = nothing;
+    loginText = new Text(csdl_setup->GetRenderer(),
+                          "",
+                          365,
+                          180,
+                          50);
+    passText = new Text(csdl_setup->GetRenderer(),
+                          "",
+                          365,
+                          350,
+                          50);
+    //mainMenuButton;
 
 
 }
@@ -451,6 +478,45 @@ void MainMenu::UpdateAnimation()
             exitButton->PlayAnimation(0, 0, 0, 10);
         }
     }
+    if(activeMenu == connectMenu)
+    {
+        //если мышка наведена на кнопку1, но не нажата ЛКМ - проиграть анимацию
+        if(connectButton->isColliding(*MouseX, *MouseY) && !(csdl_setup->GetMainEvent()->button.button == SDL_BUTTON(SDL_BUTTON_LEFT) || csdl_setup->GetMainEvent()->button.button == SDL_BUTTON_LEFT))
+        {
+            connectButton->PlayAnimation(1, 1, 0, 10);
+            mainMenuButton->PlayAnimation(0, 0, 0, 10);
+        }
+
+        //если мышка наведена на кпопку2, но не нажата ЛКМ - проиграть анимацию
+        else if(mainMenuButton->isColliding(*MouseX, *MouseY) && !(csdl_setup->GetMainEvent()->button.button == SDL_BUTTON(SDL_BUTTON_LEFT) || csdl_setup->GetMainEvent()->button.button == SDL_BUTTON_LEFT))
+        {
+            connectButton->PlayAnimation(0, 0, 0, 10);
+            mainMenuButton->PlayAnimation(1, 1, 0, 10);
+        }
+
+        //если мышка наведена на кнопку1 и нажата ЛКМ - проиграть анимацию
+        else if(connectButton->isColliding(*MouseX, *MouseY) && (csdl_setup->GetMainEvent()->button.button == SDL_BUTTON(SDL_BUTTON_LEFT) || csdl_setup->GetMainEvent()->button.button == SDL_BUTTON_LEFT)
+                                        && (csdl_setup->GetMainEvent()->type == SDL_MOUSEBUTTONDOWN || csdl_setup->GetMainEvent()->type == SDL_MOUSEMOTION))
+        {
+            connectButton->PlayAnimation(2, 2, 0, 10);
+            mainMenuButton->PlayAnimation(0, 0, 0, 10);
+        }
+
+        //если мышка наведена на кнопку2 и нажата ЛКМ - проиграть анимацию
+        else if(mainMenuButton->isColliding(*MouseX, *MouseY) && (csdl_setup->GetMainEvent()->button.button == SDL_BUTTON(SDL_BUTTON_LEFT) || csdl_setup->GetMainEvent()->button.button == SDL_BUTTON_LEFT)
+                                        && (csdl_setup->GetMainEvent()->type == SDL_MOUSEBUTTONDOWN || csdl_setup->GetMainEvent()->type == SDL_MOUSEMOTION))
+        {
+            connectButton->PlayAnimation(0, 0, 0, 10);
+            mainMenuButton->PlayAnimation(2, 2, 0, 10);
+        }
+
+        //иначе проиграть стандартную анимацию
+        else
+        {
+            connectButton->PlayAnimation(0, 0, 0, 10);
+            mainMenuButton->PlayAnimation(0, 0, 0, 10);
+        }
+    }
 }
 
 void MainMenu::Update()
@@ -473,6 +539,47 @@ void MainMenu::UpdateControls()
             {
                 //триггер выхода из меню - ON
 
+
+
+                activeMenu = connectMenu;
+
+                csdl_setup->GetMainEvent()->type = NULL;
+                csdl_setup->GetMainEvent()->button.state = NULL;
+                csdl_setup->GetMainEvent()->button.button = NULL;
+                //Mquit = true;
+            }
+
+            //если была нажата кнопка2
+            if(exitButton->isColliding(*MouseX, *MouseY))
+            {
+                //выйти из программы
+                exit(1);
+            }
+        }
+    }
+    else if(activeMenu == connectMenu)
+    {
+        //если кнопка мыши отпущена и она ЛКМ
+        if((csdl_setup->GetMainEvent()->type == SDL_MOUSEBUTTONUP) &&
+           (csdl_setup->GetMainEvent()->button.state == SDL_RELEASED) &&
+           (csdl_setup->GetMainEvent()->button.button == SDL_BUTTON(SDL_BUTTON_LEFT)))
+        {
+            //если была нажата кнопка1
+            if(loginTextBox->isColliding(*MouseX, *MouseY))
+            {
+                activeTextBox = loginBox;
+            }
+
+            //если была нажата кнопка1
+            if(passTextBox->isColliding(*MouseX, *MouseY))
+            {
+                activeTextBox = passBox;
+            }
+
+            //если была нажата кнопка1
+            if(connectButton->isColliding(*MouseX, *MouseY))
+            {
+                login = loginText->GetText();
                 char data[22];
                 int l;
                 for(int n = 0, l = 0; n <8; n++, l++)
@@ -484,7 +591,7 @@ void MainMenu::UpdateControls()
                 data[10] = 0;
                 data[11] = 0;
                 data[12] = 10;
-                std::string pass = "89658965";
+                std::string pass = passText->GetText();
                 for(int n = 13, l = 0; n <=21; n++, l++)
                 {
                     data[n] = pass[l];
@@ -507,27 +614,28 @@ void MainMenu::UpdateControls()
                 gsocket->Send( net::Address(127,0,0,1,21995), packet, sizeof(packet) );
 
                 std::cout<< "Sent" << std::endl;
+                activeTextBox = nothing;
+                Mquit = true;
+            }
 
-                activeMenu = connectMenu;
-
+            //если была нажата кнопка1
+            if(mainMenuButton->isColliding(*MouseX, *MouseY))
+            {
+                activeMenu = mainMenu;
                 csdl_setup->GetMainEvent()->type = NULL;
                 csdl_setup->GetMainEvent()->button.state = NULL;
                 csdl_setup->GetMainEvent()->button.button = NULL;
-                //Mquit = true;
-            }
-
-            //если была нажата кнопка2
-            if(exitButton->isColliding(*MouseX, *MouseY))
-            {
-                //выйти из программы
-                exit(1);
             }
         }
-    }
-    else if(activeMenu == connectMenu)
-    {
-
-        Mquit = true;
+        if(activeTextBox == loginBox)
+        {
+            enterText(loginText);
+        }
+        if(activeTextBox == passBox)
+        {
+            enterText(passText);
+        }
+        //Mquit = true;
     }
 
 }
@@ -545,7 +653,247 @@ void MainMenu::Draw()
     }
     else if(activeMenu == connectMenu)
     {
+        loginTextBox->DrawStatic();
+        passTextBox->DrawStatic();
+        connectButton->DrawStatic();
+        mainMenuButton->DrawStatic();
+        loginText->Draw();
+        passText->Draw();
+    }
+}
 
+
+void MainMenu::enterText(Text* text)
+{
+    if(text->GetText().size() < 8)
+    {
+        if (csdl_setup->GetMainEvent()->type == SDL_KEYDOWN)
+        {
+
+            if (!OnePressed && csdl_setup->GetMainEvent()->key.keysym.sym == SDLK_BACKSPACE && text->GetText().size())
+            {
+                std::string tmp = text->GetText();
+                tmp.erase(tmp.end()-1);
+                text->SetText( tmp );
+                OnePressed = true;
+            }
+
+
+
+            if (!OnePressed && csdl_setup->GetMainEvent()->key.keysym.sym == SDLK_q)
+            {
+                text->SetText(text->GetText()+"q");
+                OnePressed = true;
+            }
+            if (!OnePressed && csdl_setup->GetMainEvent()->key.keysym.sym == SDLK_w)
+            {
+                text->SetText(text->GetText()+"w");
+                OnePressed = true;
+            }
+            if (!OnePressed && csdl_setup->GetMainEvent()->key.keysym.sym == SDLK_e)
+            {
+                    text->SetText(text->GetText()+"e");
+                OnePressed = true;
+            }
+            if (!OnePressed && csdl_setup->GetMainEvent()->key.keysym.sym == SDLK_r)
+            {
+                    text->SetText(text->GetText()+"r");
+                OnePressed = true;
+            }
+            if (!OnePressed && csdl_setup->GetMainEvent()->key.keysym.sym == SDLK_t)
+            {
+                    text->SetText(text->GetText()+"t");
+                OnePressed = true;
+            }
+            if (!OnePressed && csdl_setup->GetMainEvent()->key.keysym.sym == SDLK_y)
+            {
+                    text->SetText(text->GetText()+"y");
+                OnePressed = true;
+            }
+            if (!OnePressed && csdl_setup->GetMainEvent()->key.keysym.sym == SDLK_u)
+            {
+                    text->SetText(text->GetText()+"u");
+                OnePressed = true;
+            }
+
+            if (!OnePressed && csdl_setup->GetMainEvent()->key.keysym.sym == SDLK_i)
+            {
+                    text->SetText(text->GetText()+"i");
+                OnePressed = true;
+            }
+            if (!OnePressed && csdl_setup->GetMainEvent()->key.keysym.sym == SDLK_o)
+            {
+                    text->SetText(text->GetText()+"o");
+                OnePressed = true;
+            }
+            if (!OnePressed && csdl_setup->GetMainEvent()->key.keysym.sym == SDLK_p)
+            {
+                    text->SetText(text->GetText()+"p");
+                OnePressed = true;
+            }
+
+            if (!OnePressed && csdl_setup->GetMainEvent()->key.keysym.sym == SDLK_a)
+            {
+                    text->SetText(text->GetText()+"a");
+                OnePressed = true;
+            }
+            if (!OnePressed && csdl_setup->GetMainEvent()->key.keysym.sym == SDLK_s)
+            {
+                    text->SetText(text->GetText()+"s");
+                OnePressed = true;
+            }
+            if (!OnePressed && csdl_setup->GetMainEvent()->key.keysym.sym == SDLK_d)
+            {
+                    text->SetText(text->GetText()+"d");
+                OnePressed = true;
+            }
+            if (!OnePressed && csdl_setup->GetMainEvent()->key.keysym.sym == SDLK_f)
+            {
+                    text->SetText(text->GetText()+"f");
+                OnePressed = true;
+            }
+            if (!OnePressed && csdl_setup->GetMainEvent()->key.keysym.sym == SDLK_g)
+            {
+                    text->SetText(text->GetText()+"g");
+                OnePressed = true;
+            }
+            if (!OnePressed && csdl_setup->GetMainEvent()->key.keysym.sym == SDLK_h)
+            {
+                    text->SetText(text->GetText()+"h");
+                OnePressed = true;
+            }
+            if (!OnePressed && csdl_setup->GetMainEvent()->key.keysym.sym == SDLK_j)
+            {
+                    text->SetText(text->GetText()+"j");
+                OnePressed = true;
+            }
+            if (!OnePressed && csdl_setup->GetMainEvent()->key.keysym.sym == SDLK_k)
+            {
+                    text->SetText(text->GetText()+"k");
+                OnePressed = true;
+            }
+            if (!OnePressed && csdl_setup->GetMainEvent()->key.keysym.sym == SDLK_l)
+            {
+                    text->SetText(text->GetText()+"l");
+                OnePressed = true;
+            }
+
+            if (!OnePressed && csdl_setup->GetMainEvent()->key.keysym.sym == SDLK_z)
+            {
+                    text->SetText(text->GetText()+"z");
+                OnePressed = true;
+            }
+            if (!OnePressed && csdl_setup->GetMainEvent()->key.keysym.sym == SDLK_x)
+            {
+                    text->SetText(text->GetText()+"x");
+                OnePressed = true;
+            }
+            if (!OnePressed && csdl_setup->GetMainEvent()->key.keysym.sym == SDLK_c)
+            {
+                    text->SetText(text->GetText()+"c");
+                OnePressed = true;
+            }
+            if (!OnePressed && csdl_setup->GetMainEvent()->key.keysym.sym == SDLK_v)
+            {
+                    text->SetText(text->GetText()+"v");
+                OnePressed = true;
+            }
+            if (!OnePressed && csdl_setup->GetMainEvent()->key.keysym.sym == SDLK_b)
+            {
+                    text->SetText(text->GetText()+"b");
+                OnePressed = true;
+            }
+            if (!OnePressed && csdl_setup->GetMainEvent()->key.keysym.sym == SDLK_n)
+            {
+                    text->SetText(text->GetText()+"n");
+                OnePressed = true;
+            }
+            if (!OnePressed && csdl_setup->GetMainEvent()->key.keysym.sym == SDLK_m)
+            {
+                    text->SetText(text->GetText()+"m");
+                OnePressed = true;
+            }
+            if (!OnePressed && csdl_setup->GetMainEvent()->key.keysym.sym == SDLK_1)
+            {
+                    text->SetText(text->GetText()+"1");
+                OnePressed = true;
+            }
+            if (!OnePressed && csdl_setup->GetMainEvent()->key.keysym.sym == SDLK_2)
+            {
+                    text->SetText(text->GetText()+"2");
+                OnePressed = true;
+            }
+            if (!OnePressed && csdl_setup->GetMainEvent()->key.keysym.sym == SDLK_3)
+            {
+                    text->SetText(text->GetText()+"3");
+                OnePressed = true;
+            }
+            if (!OnePressed && csdl_setup->GetMainEvent()->key.keysym.sym == SDLK_4)
+            {
+                    text->SetText(text->GetText()+"4");
+                OnePressed = true;
+            }
+            if (!OnePressed && csdl_setup->GetMainEvent()->key.keysym.sym == SDLK_5)
+            {
+                    text->SetText(text->GetText()+"5");
+                OnePressed = true;
+            }
+            if (!OnePressed && csdl_setup->GetMainEvent()->key.keysym.sym == SDLK_6)
+            {
+                    text->SetText(text->GetText()+"6");
+                OnePressed = true;
+            }
+            if (!OnePressed && csdl_setup->GetMainEvent()->key.keysym.sym == SDLK_7)
+            {
+                    text->SetText(text->GetText()+"7");
+                OnePressed = true;
+            }
+            if (!OnePressed && csdl_setup->GetMainEvent()->key.keysym.sym == SDLK_8)
+            {
+                    text->SetText(text->GetText()+"8");
+                OnePressed = true;
+            }
+            if (!OnePressed && csdl_setup->GetMainEvent()->key.keysym.sym == SDLK_9)
+            {
+                    text->SetText(text->GetText()+"9");
+                OnePressed = true;
+            }
+            if (!OnePressed && csdl_setup->GetMainEvent()->key.keysym.sym == SDLK_0)
+            {
+                    text->SetText(text->GetText()+"0");
+                OnePressed = true;
+            }
+
+
+        }
+        if (csdl_setup->GetMainEvent()->type == SDL_KEYUP)
+        {
+            if(OnePressed)
+                OnePressed = false;
+        }
+        //ввод клавиатуры
+        //если нажата клавиша backspace - cтереть 1 символ
+    }
+    else
+    {
+        //если нажата клавиша backspace - cтереть 1 символ
+        if (csdl_setup->GetMainEvent()->type == SDL_KEYDOWN)
+        {
+            if (!OnePressed && csdl_setup->GetMainEvent()->key.keysym.sym == SDLK_BACKSPACE && text->GetText().size())
+            {
+                std::string tmp = text->GetText();
+                tmp.erase(tmp.end()-1);
+                text->SetText( tmp );
+                OnePressed = true;
+            }
+
+
+        }
+        if (csdl_setup->GetMainEvent()->type == SDL_KEYUP)
+        {
+            if(OnePressed)
+                OnePressed = false;
+        }
     }
 }
 /*

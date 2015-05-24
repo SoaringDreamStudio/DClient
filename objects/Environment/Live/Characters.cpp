@@ -82,5 +82,14 @@ Characters::~Characters(void)
 void Characters::Draw()
 {
     //отрисовать объект
+    //std::cout << "ActiveAnimation " << ActiveAnimation << std::endl;
+    //std::cout << "Animations[ActiveAnimation].BeginFrame " << Animations[ActiveAnimation].BeginFrame << std::endl;
+    //std::cout << "Animations[ActiveAnimation].EndFrame " << Animations[ActiveAnimation].EndFrame << std::endl;
+    //std::cout << "Animations[ActiveAnimation].Row " << Animations[ActiveAnimation].Row << std::endl;
+    //std::cout << "Animations[ActiveAnimation].Speed " << Animations[ActiveAnimation].Speed << std::endl;
+    image->PlayAnimation(Animations[ActiveAnimation].BeginFrame,
+                                    Animations[ActiveAnimation].EndFrame,
+                                    Animations[ActiveAnimation].Row,
+                                    Animations[ActiveAnimation].Speed);
     image->DrawWithCoord(csdl_setup, *spawn);
 }

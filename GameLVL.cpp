@@ -35,8 +35,8 @@ GameLVL::GameLVL(float *passed_CameraX, float *passed_CameraY, int* passed_Mouse
  // consoleActive = false;
 
     loadingProcess->addProcent(9);
-    spawn.x = 300;
-    spawn.y = 150;
+    spawn.x = 0;
+    spawn.y = 0;
 
     loadingProcess->addProcent(9);
 

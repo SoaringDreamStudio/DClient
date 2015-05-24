@@ -4,13 +4,13 @@
 using namespace std;
 //переменные для сетевой игры
 const int ServerPort = 21995;
-const int ClientPort = 30003;
+const int ClientPort = 30001;
 const int ProtocolId = 0x99887766;
 const float DeltaTime = 0.25f;
 const float SendRate = 0.25f;
 const float TimeOut = 10.0f;
 
-std::string login = "avdrine4";
+std::string login;
 
 
 bool InitializeSockets();
@@ -46,12 +46,15 @@ int main(int argc, char *argv[])
 	CMain* cmain = new CMain(1024, 768, &gsocket);
 
 	//Запуск процесса игры
+    for(;;)
+    {
+        cmain->GameMenu(); //Запуск главного меню
+        //cmain->GOMenu(); //Запуск окна GameOver
+        //cmain->Loading(); //Запуск окна Loading
 
-    cmain->GameMenu(); //Запуск главного меню
-    //cmain->GOMenu(); //Запуск окна GameOver
-    //cmain->Loading(); //Запуск окна Loading
+    }
 
-    //ShutdownSockets();
+    ShutdownSockets();
 
 	return 0;
 

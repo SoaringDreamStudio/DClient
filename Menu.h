@@ -102,6 +102,7 @@ public:
 	void Draw();
     bool getMquit() {return Mquit;}
     void setMquit(bool per) {Mquit = per;}
+    void enterText(Text*);
 private:
     void UpdateAnimation();
     net::Socket* gsocket;
@@ -117,10 +118,15 @@ private:
     CSprite* startButton;
     CSprite* optionsButton;
     CSprite* exitButton;
-    //CSprite* connectMenuButton1;
-    //CSprite* connectMenuButton2;
+    CSprite* loginTextBox;
+    CSprite* passTextBox;
+    CSprite* connectButton;
+    CSprite* mainMenuButton;
 
     CSprite* BG;
+
+    Text* loginText;
+    Text* passText;
 
     enum ActiveMenu
     {
@@ -130,7 +136,18 @@ private:
 
     ActiveMenu activeMenu;
 
+    enum ActiveTextBox
+    {
+        loginBox,
+        passBox,
+        nothing
+    };
+
+    ActiveTextBox activeTextBox;
+
     bool Mquit;
+
+    bool OnePressed;
 };
 /*
 class GameOverMenu

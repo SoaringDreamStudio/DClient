@@ -176,6 +176,7 @@ extern std::string login;
         LoadedFile << std::endl;
 
         LoadedFile.close();*/
+        //std::cout << "sending" << std::endl;
         int sent_bytes = sendto( socket->getSocket(), (const char*)packet, size+16, 0, (sockaddr*)&address, sizeof(sockaddr_in) );
 
         return sent_bytes == size+16;

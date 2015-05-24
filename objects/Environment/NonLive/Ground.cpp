@@ -53,6 +53,7 @@ Ground::~Ground(void)
 }
 void Ground::Draw()
 {
+    image->PlayAnimation(Animations["default"].BeginFrame, Animations["default"].EndFrame, Animations["default"].Row, Animations["default"].Speed);
     //отрисовать объект
     image->DrawWithCoord(csdl_setup, *spawn);
 }

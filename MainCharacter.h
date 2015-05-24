@@ -15,7 +15,8 @@ public:
                float *passed_CameraY,
                GameLVL* passed_gameLVL,
                LoadingProcess* loadingProcess,
-               GameInterface* passed_gameInterface);
+               GameInterface* passed_gameInterface,
+               net::Socket* passed_gsocket);
 	~MainCharacter(void);
 
 	double GetDistance(int X1, int Y1, int X2, int Y2);
@@ -32,6 +33,8 @@ public:
 	std::string getNickName() {return NickName;}
 
 private:
+    void sendPosition(std::string);
+
     GameLVL* gameLVL;
     GameInterface* gameInterface;
     void UpdateAnimation();
@@ -45,6 +48,7 @@ private:
     int *MouseY;
 
     CSDL_Setup* csdl_setup;
+    net::Socket* gsocket;
 
     bool OnePressed;
     bool MoveLeft;
@@ -76,6 +80,16 @@ private:
     int HP;
 
     //Text* text4;
+    int sendTimer;
+    enum Direction
+    {
+        up,
+        left,
+        right,
+        down
+    };
+    bool onceSendDirection;
+    Direction lastDirection;
 
     int nightTimer;
     bool escapeMenu;

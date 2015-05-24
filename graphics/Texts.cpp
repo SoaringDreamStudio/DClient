@@ -28,7 +28,7 @@ Text::Text(SDL_Renderer* passed_renderer,
 
 Text::~Text(void)
 {
-	SDL_DestroyTexture(image);
+
 }
 
 void Text::Draw()
@@ -41,6 +41,9 @@ void Text::Draw()
 	image = SDL_CreateTextureFromSurface(renderer, surf);
 
 	SDL_RenderCopy(renderer, image, NULL, &rect);
+
+	SDL_FreeSurface(surf);
+	SDL_DestroyTexture(image);
 }
 
 
