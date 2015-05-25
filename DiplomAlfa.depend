@@ -1427,7 +1427,7 @@
 	"objects.h"
 	"MainCharacter.h"
 
-1432453299 c:\users\avdrine\documents\github\dclient\maincharacter.h
+1432531487 c:\users\avdrine\documents\github\dclient\maincharacter.h
 	"graphics.h"
 	"libraries.h"
 	"GameLVL.h"
@@ -1436,14 +1436,14 @@
 1423422724 source:c:\users\avdrine\documents\github\dclient\interpretator.cpp
 	"interpretator.h"
 
-1432472003 source:c:\users\avdrine\documents\github\dclient\main.cpp
+1432498323 source:c:\users\avdrine\documents\github\dclient\main.cpp
 	"libraries.h"
 	"Main.h"
 
-1432454720 source:c:\users\avdrine\documents\github\dclient\maincharacter.cpp
+1432532343 source:c:\users\avdrine\documents\github\dclient\maincharacter.cpp
 	"MainCharacter.h"
 
-1432472321 source:c:\users\avdrine\documents\github\dclient\menu.cpp
+1432499986 source:c:\users\avdrine\documents\github\dclient\menu.cpp
 	"Menu.h"
 
 1415527063 source:c:\users\avdrine\documents\github\dclient\mybiblio.cpp
@@ -1470,7 +1470,7 @@
 1422998148 source:c:\users\avdrine\documents\github\dclient\writing.cpp
 	"writing.h"
 
-1430853247 source:c:\users\avdrine\documents\github\dclient\graphics\collisionrectangle.cpp
+1432532156 source:c:\users\avdrine\documents\github\dclient\graphics\collisionrectangle.cpp
 	"CollisionRectangle.h"
 
 1431431296 c:\users\avdrine\documents\github\dclient\graphics\collisionrectangle.h
@@ -1503,7 +1503,7 @@
 	<SDL_mixer.h>
 	<SDL_ttf.h>
 
-1431642966 source:c:\users\avdrine\documents\github\dclient\graphics\sprite.cpp
+1432499801 source:c:\users\avdrine\documents\github\dclient\graphics\sprite.cpp
 	"../libraries.h"
 	"Sprite.h"
 
@@ -1518,7 +1518,7 @@
 	"graphics/Sprite.h"
 	"graphics/Texts.h"
 
-1432472132 source:c:\users\avdrine\documents\github\dclient\startcpp.cpp
+1432476041 source:c:\users\avdrine\documents\github\dclient\startcpp.cpp
 	"libraries.h"
 	"Main.h"
 
@@ -1537,7 +1537,7 @@
 1431922018 source:c:\users\avdrine\documents\github\dclient\struct.cpp
 	"struct.h"
 
-1432408794 source:c:\users\avdrine\documents\github\dclient\objects\environment.cpp
+1432500444 source:c:\users\avdrine\documents\github\dclient\objects\environment.cpp
 	"Environment.h"
 
 1432406345 c:\users\avdrine\documents\github\dclient\objects\environment.h
@@ -1586,7 +1586,7 @@
 1431863092 c:\users\avdrine\documents\github\dclient\objects\environment\nonlive\objects.h
 	"../NonLive.h"
 
-1431863378 source:c:\users\avdrine\documents\github\dclient\objects\environment\nonlive\objects\normal.cpp
+1432496562 source:c:\users\avdrine\documents\github\dclient\objects\environment\nonlive\objects\normal.cpp
 	"Normal.h"
 
 1431863410 c:\users\avdrine\documents\github\dclient\objects\environment\nonlive\objects\normal.h
@@ -1648,7 +1648,7 @@
 1432399197 source:c:\users\avdrine\documents\github\dclient\gamelvl.cpp
 	"GameLVL.h"
 
-1431925780 c:\users\avdrine\documents\github\dclient\gamelvl.h
+1432497587 c:\users\avdrine\documents\github\dclient\gamelvl.h
 	"libraries.h"
 	"graphics.h"
 	"objects.h"

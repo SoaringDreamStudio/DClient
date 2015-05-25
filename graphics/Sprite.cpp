@@ -31,7 +31,7 @@ CSprite::CSprite(SDL_Renderer* passed_renderer, std::string FilePath, int x, int
 	hitbox = NULL;
 
     //стереть комментарии для отображения хитбоксов
-	//hitbox = IMG_LoadTexture(renderer, "data/img/hitbox.png");
+	hitbox = IMG_LoadTexture(renderer, "data/img/hitbox.png");
 
 	//if (hitbox == NULL)
 	//{
@@ -243,6 +243,8 @@ void CSprite::DrawSteady() //отрисовать в окне (я хз, что это за функция. Возмож
     SDL_RenderCopy(renderer, image, &crop, &Camera);
 
 
+    CollisionRect.SetX(rect.x);// + *CameraX);
+    CollisionRect.SetY(rect.y);// + *CameraY);
    // CollisionRect.SetX(rect.x + *CameraX);
    // CollisionRect.SetY(rect.y + *CameraY);
 

@@ -369,10 +369,10 @@ MainMenu::MainMenu(CSDL_Setup* passed_SDL_Setup, int *passed_MouseX, int *passed
     activeMenu = mainMenu;
 
     startButton = new CSprite(csdl_setup->GetRenderer(), "data/img/Menu/Start1.png", 450, 480, 130, 60, CameraX, CameraY,
-                              CCollisionRectangle(0,0, 285, 75),csdl_setup);
+                              CCollisionRectangle(0,0, 130, 60),csdl_setup);
     startButton->SetUpAnimation(3,1);
     optionsButton = new CSprite(csdl_setup->GetRenderer(), "data/img/Menu/Options1.png", 426, 560, 175, 75, CameraX, CameraY,
-                              CCollisionRectangle(0,0, 285, 75),csdl_setup);
+                              CCollisionRectangle(0,0, 175, 75),csdl_setup);
     optionsButton->SetUpAnimation(3,1);
     exitButton = new CSprite(csdl_setup->GetRenderer(), "data/img/Menu/Exit1.png", 470, 660, 85, 50, CameraX, CameraY,
                               CCollisionRectangle(0,0, 85, 50),csdl_setup);
@@ -580,6 +580,9 @@ void MainMenu::UpdateControls()
             if(connectButton->isColliding(*MouseX, *MouseY))
             {
                 login = loginText->GetText();
+                std::string pass = passText->GetText();
+                if(!login.size() || !pass.size())
+                    return;
                 char data[22];
                 int l;
                 for(int n = 0, l = 0; n <8; n++, l++)
@@ -591,7 +594,6 @@ void MainMenu::UpdateControls()
                 data[10] = 0;
                 data[11] = 0;
                 data[12] = 10;
-                std::string pass = passText->GetText();
                 for(int n = 13, l = 0; n <=21; n++, l++)
                 {
                     data[n] = pass[l];

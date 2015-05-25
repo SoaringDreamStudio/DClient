@@ -19,8 +19,8 @@ MainCharacter::MainCharacter(std::string passed_NickName, CSDL_Setup* passed_SDL
     MoveRight = false;
     MoveUp = false;
 
-    staticSpeed = 3;
-	speed = 3;
+    staticSpeed = 1;
+	speed = 1;
 
     csdl_setup = passed_SDL_Setup;
     //
@@ -40,7 +40,7 @@ MainCharacter::MainCharacter(std::string passed_NickName, CSDL_Setup* passed_SDL
     tmpW = 79; //размер спрайта игрока
     tmpH = 98;
 	SpriteMainHero = new CSprite(csdl_setup->GetRenderer(),"data/img/Characters/hero.png", (csdl_setup->GetScreenWidth()/2), (csdl_setup->GetScreenHeight()/2), tmpW, tmpH, CameraX, CameraY,
-                   CCollisionRectangle(), csdl_setup);
+                   CCollisionRectangle(41,98,79,98), csdl_setup);
     SpriteMainHero->SetUpAnimation(6,4);
 	SpriteMainHero->SetOrgin(SpriteMainHero->GetWidht()/2.0f,SpriteMainHero->GetHeight());
 
@@ -321,7 +321,7 @@ void MainCharacter::UpdateControls()
     bool colldingWithObject = false;
 
     //Выполняется каждые 0,1 сек
-    if (timeCheck4+100 < SDL_GetTicks())
+    if (timeCheck4+10 < SDL_GetTicks())
     {
         //просчет столкновений с объектами
         for (int i = 0; i < gameLVL->GetCharacters().size(); i++)
@@ -383,17 +383,111 @@ void MainCharacter::UpdateControls()
 
             if (SpriteMainHero->isColliding(gameLVL->GetNormal()[i]->getSprite()->GetCollisionRect()))
             {
-                ////////////////////////////////////////////////////////////////////////////////////////
-                ////////////////////////////////////////////////////////////////////////////////////////
-                ////////////////////////////////////////////////////////////////////////////////////////
-                ////////////////////////////////////////////////////////////////////////////////////////
-                ////////////////////////////////////////////////////////////////////////////////////////
-                //std::cout << "I'm colliding!" << std::endl;
-                ////////////////////////////////////////////////////////////////////////////////////////
-                ////////////////////////////////////////////////////////////////////////////////////////
-                ////////////////////////////////////////////////////////////////////////////////////////
-                ////////////////////////////////////////////////////////////////////////////////////////
-                ////////////////////////////////////////////////////////////////////////////////////////
+                if (MoveRight && MoveUp)
+                {
+                    CCollisionRectangle tmpCR;
+                    tmpCR = gameLVL->GetNormal()[i]->getSprite()->GetCollisionRect();
+                    while(SpriteMainHero->isColliding(tmpCR))
+                    {
+                        tmpCR.SetX(tmpCR.GetRectangle().x+2);
+                        tmpCR.SetY(tmpCR.GetRectangle().y-2);
+                        *CameraX = *CameraX + 2;
+                        *CameraY = *CameraY - 2;
+                    }
+                    sendPosition("movel");
+                    onceSendDirection = false;
+                }
+                else if (MoveRight && MoveDown)
+                {
+                    CCollisionRectangle tmpCR;
+                    tmpCR = gameLVL->GetNormal()[i]->getSprite()->GetCollisionRect();
+                    while(SpriteMainHero->isColliding(tmpCR))
+                    {
+                        tmpCR.SetX(tmpCR.GetRectangle().x+2);
+                        tmpCR.SetY(tmpCR.GetRectangle().y+2);
+                        *CameraX = *CameraX + 2;
+                        *CameraY = *CameraY + 2;
+                    }
+                    sendPosition("movel");
+                    onceSendDirection = false;
+                }
+                else if (MoveLeft && MoveUp)
+                {
+                    CCollisionRectangle tmpCR;
+                    tmpCR = gameLVL->GetNormal()[i]->getSprite()->GetCollisionRect();
+                    while(SpriteMainHero->isColliding(tmpCR))
+                    {
+                        tmpCR.SetX(tmpCR.GetRectangle().x-2);
+                        tmpCR.SetY(tmpCR.GetRectangle().y-2);
+                        *CameraX = *CameraX - 2;
+                        *CameraY = *CameraY - 2;
+                    }
+                    sendPosition("movel");
+                    onceSendDirection = false;
+                }
+                else if (MoveLeft && MoveDown)
+                {
+                    CCollisionRectangle tmpCR;
+                    tmpCR = gameLVL->GetNormal()[i]->getSprite()->GetCollisionRect();
+                    while(SpriteMainHero->isColliding(tmpCR))
+                    {
+                        tmpCR.SetX(tmpCR.GetRectangle().x-2);
+                        tmpCR.SetY(tmpCR.GetRectangle().y+2);
+                        *CameraX = *CameraX - 2;
+                        *CameraY = *CameraY + 2;
+                    }
+                    sendPosition("movel");
+                    onceSendDirection = false;
+                }
+                else if (MoveLeft)
+                {
+                    CCollisionRectangle tmpCR;
+                    tmpCR = gameLVL->GetNormal()[i]->getSprite()->GetCollisionRect();
+                    while(SpriteMainHero->isColliding(tmpCR))
+                    {
+                        tmpCR.SetX(tmpCR.GetRectangle().x-2);
+                        *CameraX = *CameraX - 2;
+                    }
+                    sendPosition("movel");
+                    onceSendDirection = false;
+                }
+                else if (MoveDown)
+                {
+                    CCollisionRectangle tmpCR;
+                    tmpCR = gameLVL->GetNormal()[i]->getSprite()->GetCollisionRect();
+                    while(SpriteMainHero->isColliding(tmpCR))
+                    {
+                        tmpCR.SetY(tmpCR.GetRectangle().y+2);
+                        *CameraY = *CameraY + 2;
+                    }
+                    sendPosition("moved");
+                    onceSendDirection = false;
+                }
+                else if (MoveRight)
+                {
+                    CCollisionRectangle tmpCR;
+                    tmpCR = gameLVL->GetNormal()[i]->getSprite()->GetCollisionRect();
+                    while(SpriteMainHero->isColliding(tmpCR))
+                    {
+                        tmpCR.SetX(tmpCR.GetRectangle().x+2);
+                        *CameraX = *CameraX + 2;
+                    }
+                    sendPosition("mover");
+                    onceSendDirection = false;
+                }
+                else if (MoveUp)
+                {
+                    CCollisionRectangle tmpCR;
+                    tmpCR = gameLVL->GetNormal()[i]->getSprite()->GetCollisionRect();
+                    while(SpriteMainHero->isColliding(tmpCR))
+                    {
+                        tmpCR.SetY(tmpCR.GetRectangle().y-2);
+                        *CameraY = *CameraY - 2;
+                    }
+
+                    sendPosition("moveu");
+                    onceSendDirection = false;
+                }
             }
 
             //тригер столкновения с объектами - ON
@@ -436,18 +530,7 @@ void MainCharacter::UpdateControls()
 
             if (SpriteMainHero->isColliding(gameLVL->GetTrigger()[i]->getSprite()->GetCollisionRect()))
             {
-                ///////////////////////////////////////////////////////////////////////////
-                ///////////////////////////////////////////////////////////////////////////
-                ///////////////////////////////////////////////////////////////////////////
-                ///////////////////////////////////////////////////////////////////////////
-                ///////////////////////////////////////////////////////////////////////////
-                //std::cout << "I'm colliding!" << std::endl;
-                ///////////////////////////////////////////////////////////////////////////
-                ///////////////////////////////////////////////////////////////////////////
-                ///////////////////////////////////////////////////////////////////////////
-                ///////////////////////////////////////////////////////////////////////////
-                ///////////////////////////////////////////////////////////////////////////
-                ///////////////////////////////////////////////////////////////////////////
+
             }
 
             //тригер столкновения с объектами - ON
@@ -500,7 +583,7 @@ void MainCharacter::UpdateControls()
         timeCheckMoving = SDL_GetTicks();
     }
     //просчет движения каждые 0,05 сек
-    if (timeCheckMoving+50 < SDL_GetTicks() && (Follow || MoveDown || MoveLeft || MoveRight || MoveUp))
+    if (timeCheckMoving+11 < SDL_GetTicks() && (Follow || MoveDown || MoveLeft || MoveRight || MoveUp) && colldingWithObject)
     {
         //просчет движения при нажатии клавиш
         if (MoveLeft)

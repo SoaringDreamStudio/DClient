@@ -204,11 +204,11 @@ void Environment::LoadConfigs(void)
                                 {
                                     //если предыдущее слово x:, то записать параметр х
                                     if (PreviousWord == "x:")
-                                        hitbox.x = Rect.x*(static_cast<float>(atoi(word.c_str()))/100);
+                                        hitbox.x = Rect.x+atoi(word.c_str());
 
                                     //если предыдущее слово y:, то записать параметр y
                                     if (PreviousWord == "y:")
-                                        hitbox.y = Rect.y*(static_cast<float>(atoi(word.c_str()))/100);
+                                        hitbox.y = Rect.y+atoi(word.c_str());
 
                                     //если предыдущее слово w:, то записать параметр w
                                     if (PreviousWord == "w:")

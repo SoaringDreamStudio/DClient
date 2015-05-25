@@ -42,6 +42,13 @@ public:
                                                                             ID,
                                                                             PosX,
                                                                             PosY));}
+    void CreateNormal(int ID,int PosX,int PosY) {normal.push_back(new Normal(&spawn,
+                                                                            CameraX,
+                                                                            CameraY,
+                                                                            csdl_setup,
+                                                                            ID,
+                                                                            PosX,
+                                                                            PosY));}
     void CreateCharacter(int ID,int PosX,int PosY,std::string NickName) {characters.push_back(new Characters(&spawn,
                                                                                 CameraX,
                                                                                 CameraY,

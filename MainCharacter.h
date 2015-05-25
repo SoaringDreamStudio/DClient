@@ -34,7 +34,6 @@ public:
 
 private:
     void sendPosition(std::string);
-
     GameLVL* gameLVL;
     GameInterface* gameInterface;
     void UpdateAnimation();

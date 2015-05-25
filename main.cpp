@@ -110,6 +110,44 @@ int CMain::GameLoop(void)
                 //break;
 
             }
+
+            else if(buffer[0] == 25 )
+            {
+                unsigned int Size = (unsigned int)(buffer[1] << 24) + (unsigned int)(buffer[2]<< 16) + (unsigned int)(buffer[3] << 8) + buffer[4];
+                std::cout << "Sizenormal " << Size << std::endl;
+                bool fragments[Size];
+                for(int i = 0; i < Size;i++)
+                {
+
+                    fragments[i] = false;
+                }
+                while( !allTrue(fragments, Size))
+                {
+                    gsocket->Update();
+                    unsigned char buffer[256];
+                    int bytes_read = gsocket->Receive( sender, buffer, sizeof( buffer ) );
+
+                    if(buffer[0] == 26)
+                    {
+                        unsigned int Number = (unsigned int)(buffer[1] << 24) + (unsigned int)(buffer[2]<< 16) + (unsigned int)(buffer[3] << 8) + buffer[4];
+                        //std::cout << Number << std::endl;
+                        fragments[Number] = true;
+                        unsigned int ID = (unsigned int)(buffer[5] << 24) + (unsigned int)(buffer[6]<< 16) + (unsigned int)(buffer[7] << 8) + buffer[8];
+                        //std::cout << ID << std::endl;
+                        unsigned int X = (unsigned int)(buffer[9] << 24) + (unsigned int)(buffer[10]<< 16) + (unsigned int)(buffer[11] << 8) + buffer[12];
+                        //std::cout << X << std::endl;
+                        unsigned int Y = (unsigned int)(buffer[13] << 24) + (unsigned int)(buffer[14]<< 16) + (unsigned int)(buffer[15] << 8) + buffer[16];
+                        //std::cout << Y << std::endl;
+
+                        gameLVL->CreateNormal(ID,X,Y);
+                        std::cout << "created Normal" << std::endl;
+                    }
+
+                }
+                //создать массив булевых переменных для проверки дохождения пакетов
+                //break;
+
+            }
             else if(buffer[0] == 23)
             {
                 unsigned int Size = (unsigned int)(buffer[1] << 24) + (unsigned int)(buffer[2]<< 16) + (unsigned int)(buffer[3] << 8) + buffer[4];
@@ -192,12 +230,12 @@ int CMain::GameLoop(void)
 
             }
             else
-            {/*
+            {
                 for(int i = 0; i < 254; i++)
                 {
                     std::cout << int(buffer[i]) << " ";
                 }
-                std::cout << std::endl;*/
+                std::cout << std::endl;
                 break;
             }
         }
