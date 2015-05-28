@@ -393,6 +393,14 @@ extern std::string login;
                                                                     protocolId,
                                                                     port,
                                                                     this);
+                    connectedClients[address]->ReceivePacket(buffer, size-16, NumberOfPacket);
+
+                    for(int i = 0; i < size; i++)
+                    {
+                        data[i] = 0;
+                    }
+
+                    memcpy( data, &buffer[0], size-16 );
 
 
                 }

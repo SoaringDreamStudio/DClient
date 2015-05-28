@@ -2,9 +2,9 @@
 #include "GameLVL.h"
 
 
-GameLVL::GameLVL(float *passed_CameraX, float *passed_CameraY, int* passed_MouseX, int* passed_MouseY, CSDL_Setup* passed_csdl_setup, LoadingProcess* loadingProcess)
+GameLVL::GameLVL(float *passed_CameraX, float *passed_CameraY, int* passed_MouseX, int* passed_MouseY, CSDL_Setup* passed_csdl_setup, LoadingProcess* loadingProcess, MainCharacter* passed_MainHero)
 {
-
+    MainHero = passed_MainHero;
     csdl_setup = passed_csdl_setup;
     CameraX = passed_CameraX;
     CameraY = passed_CameraY;
@@ -193,4 +193,158 @@ void GameLVL::Update() //функция контроля переключения режимов игры
         TimeTimer = SDL_GetTicks();
     }
     //возвращение ГГ обратно на землю
+
+
+
+/*
+        //просчет столкновений с объектами
+        for (int i = 0; i < characters.size(); i++)
+        {
+
+            if (SpriteMainHero->isColliding(characters[i]->getSprite()->GetCollisionRect()))
+            {
+                ////////////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////////////
+                //std::cout << "I'm colliding!" << std::endl;
+                ////////////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////////////
+            }
+
+            //тригер столкновения с объектами - ON
+            colldingWithObject = true;
+
+            //обновление таймера
+            timeCheck = SDL_GetTicks();
+        }
+
+        //просчет столкновений с объектами
+        for (int i = 0; i < gameLVL->GetMobs().size(); i++)
+        {
+
+            if (SpriteMainHero->isColliding(gameLVL->GetMobs()[i]->getSprite()->GetCollisionRect()))
+            {
+                ////////////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////////////
+                //std::cout << "I'm colliding!" << std::endl;
+                ////////////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////////////
+            }
+
+            //тригер столкновения с объектами - ON
+            colldingWithObject = true;
+
+            //обновление таймера
+            timeCheck = SDL_GetTicks();
+        }
+*/
+        //просчет столкновений с объектами
+        for (std::vector<Normal*>::iterator it = normal.begin(); it != normal.end(); it++)
+        {
+            if((*it)->getSprite()->isColliding(MainHero->getSprite()->GetCollisionRect()))
+            {
+                if(MainHero->getDirection() == 0)
+                {
+                    *CameraY = *CameraY - MainHero->getSpeed();
+                    MainHero->sendPosition("stopu");
+                }
+                if(MainHero->getDirection() == 1)
+                {
+                    *CameraX = *CameraX + MainHero->getSpeed();
+                    *CameraY = *CameraY - MainHero->getSpeed();
+                    MainHero->sendPosition("stopu");
+                }
+                if(MainHero->getDirection() == 2)
+                {
+                    *CameraX = *CameraX + MainHero->getSpeed();
+                    MainHero->sendPosition("stopl");
+                }
+                if(MainHero->getDirection() == 3)
+                {
+                    *CameraX = *CameraX + MainHero->getSpeed();
+                    *CameraY = *CameraY + MainHero->getSpeed();
+                    MainHero->sendPosition("stopd");
+                }
+                if(MainHero->getDirection() == 4)
+                {
+                    *CameraY = *CameraY + MainHero->getSpeed();
+                    MainHero->sendPosition("stopd");
+                }
+                if(MainHero->getDirection() == 5)
+                {
+                    *CameraX = *CameraX - MainHero->getSpeed();
+                    *CameraY = *CameraY + MainHero->getSpeed();
+                    MainHero->sendPosition("stopd");
+                }
+                if(MainHero->getDirection() == 6)
+                {
+                    *CameraX = *CameraX - MainHero->getSpeed();
+                    MainHero->sendPosition("stopr");
+                }
+                if(MainHero->getDirection() == 7)
+                {
+                    *CameraX = *CameraX - MainHero->getSpeed();
+                    *CameraY = *CameraY - MainHero->getSpeed();
+                    MainHero->sendPosition("stopu");
+                }
+            }
+
+        }
+
+        //просчет столкновений с объектами
+        for (std::vector<Wtrig*>::iterator it = wtrig.begin(); it != wtrig.end(); it++)
+        {
+/*
+            if (SpriteMainHero->isColliding(gameLVL->GetWtrig()[i]->getSprite()->GetCollisionRect()))
+            {
+                ////////////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////////////
+                //std::cout << "I'm colliding!" << std::endl;
+
+                ////////////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////////////
+                ////////////////////////////////////////////////////////////////////////////////////////
+            }
+
+            //тригер столкновения с объектами - ON
+            colldingWithObject = true;
+
+            //обновление таймера
+            timeCheck = SDL_GetTicks();*/
+        }
+
+        //просчет столкновений с объектами
+        for (std::vector<Trigger*>::iterator it = trigger.begin(); it != trigger.end(); it++)
+        {
+/*
+            if (SpriteMainHero->isColliding(gameLVL->GetTrigger()[i]->getSprite()->GetCollisionRect()))
+            {
+
+            }
+
+            //тригер столкновения с объектами - ON
+            colldingWithObject = true;
+
+            //обновление таймера
+            timeCheck = SDL_GetTicks();*/
+        }
+
 }

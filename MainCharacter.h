@@ -1,7 +1,7 @@
 #pragma once
 #include "graphics.h"
 #include "libraries.h"
-#include "GameLVL.h"
+#include "Menu.h"
 #include "struct.h"
 
 class MainCharacter
@@ -13,7 +13,6 @@ public:
                int *passed_MouseY,
                float *passed_CameraX,
                float *passed_CameraY,
-               GameLVL* passed_gameLVL,
                LoadingProcess* loadingProcess,
                GameInterface* passed_gameInterface,
                net::Socket* passed_gsocket);
@@ -27,14 +26,16 @@ public:
 	void SetHP(int passed_HP) {HP=passed_HP;}
 	int* GetMaxHP() {return &maxHP;}
 	void SetMaxHP(int passed_maxHP) {maxHP=passed_maxHP;}
+    int getDirection();
+    void sendPosition(std::string);
 
 	void SendInfoToInterface();
 
 	std::string getNickName() {return NickName;}
+    CSprite* getSprite() {return SpriteMainHero;}
+    int getSpeed() {return speed;}
 
 private:
-    void sendPosition(std::string);
-    GameLVL* gameLVL;
     GameInterface* gameInterface;
     void UpdateAnimation();
     void UpdateControls();

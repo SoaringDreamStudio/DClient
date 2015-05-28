@@ -15,6 +15,9 @@ CMain::CMain(int passed_ScreenWidth, int passed_ScreenHeight, net::Socket* passe
     CameraX = 0;
 	CameraY = 0;
 
+	objectsHead = false;
+    normalHead = false;
+
     //CameraX = (csdl_setup->GetScreenWidth()/2)-(tmpW/2);
 	//CameraY = (csdl_setup->GetScreenHeight()/2)-tmpH;
 
@@ -50,12 +53,19 @@ int CMain::GameLoop(void)
 
     //инициализируем положение мыши и игровой уровень
     SDL_GetMouseState(&MouseX, &MouseY);
-    gameLVL = new GameLVL(&CameraX, &CameraY, &MouseX, &MouseY,  csdl_setup, loadingProcess);
     DrawLoadingProcess(3.4, loadingProcess);
 
     //инициализируем игровой интерфейс
     GameInterface* gameInterface = new GameInterface(csdl_setup, &MouseX, &MouseY, &CameraX, &CameraY);
     DrawLoadingProcess(9, loadingProcess);
+
+    //инициализируем главного героя
+    MainHero = new MainCharacter(login, csdl_setup, &MouseX, &MouseY, &CameraX, &CameraY,  loadingProcess, gameInterface, gsocket);
+    DrawLoadingProcess(4, loadingProcess);
+
+    gameLVL = new GameLVL(&CameraX, &CameraY, &MouseX, &MouseY,  csdl_setup, loadingProcess , MainHero);
+    //interpretator = new CInterpretator(gameLVL, MainHero);
+    DrawLoadingProcess(4, loadingProcess);
 
     ServerTimeOut = SDL_GetTicks();
 
@@ -73,9 +83,9 @@ int CMain::GameLoop(void)
                 break;
             }
 
-            else if(/*buffer[0] == 21 || */buffer[16] == 21)
+            else if(/*buffer[0] == 21 || */buffer[0] == 21)
             {
-                unsigned int Size = (unsigned int)(buffer[17] << 24) + (unsigned int)(buffer[18]<< 16) + (unsigned int)(buffer[19] << 8) + buffer[20];
+                unsigned int Size = (unsigned int)(buffer[1] << 24) + (unsigned int)(buffer[2]<< 16) + (unsigned int)(buffer[3] << 8) + buffer[4];
                 //std::cout << "Size " << Size << std::endl;
                 bool fragments[Size];
                 for(int i = 0; i < Size;i++)
@@ -226,9 +236,32 @@ int CMain::GameLoop(void)
                 }
                 //std::cout << "ended" << std::endl;
                 //создать массив булевых переменных для проверки дохождения пакетов
-                break;
+                //if(objectsHead && normalHead)
+                    break;
 
+            }/*
+            else if(buffer[0] == 22)
+            {
+                unsigned char data[1];
+                data[0]=30;
+                for(std::map<unsigned int, net::Connection*>::iterator it = gsocket->getConnections().begin(); it != gsocket->getConnections().end(); ++it)
+                {
+                    //std::cout << "server: " << it->first << std::endl;
+                    if(it->first != 1)
+                        it->second->Send(data, 1 );
+                }
             }
+            else if(buffer[0] == 26)
+            {
+                unsigned char data[1];
+                data[0]=31;
+                for(std::map<unsigned int, net::Connection*>::iterator it = gsocket->getConnections().begin(); it != gsocket->getConnections().end(); ++it)
+                {
+                    //std::cout << "server: " << it->first << std::endl;
+                    if(it->first != 1)
+                        it->second->Send(data, 1 );
+                }
+            }*/
             else
             {
                 for(int i = 0; i < 254; i++)
@@ -245,12 +278,7 @@ int CMain::GameLoop(void)
             return 0;
         }
     }
-    //инициализируем главного героя
-    MainHero = new MainCharacter(login, csdl_setup, &MouseX, &MouseY, &CameraX, &CameraY, gameLVL, loadingProcess, gameInterface, gsocket);
-    DrawLoadingProcess(4, loadingProcess);
 
-    //interpretator = new CInterpretator(gameLVL, MainHero);
-    DrawLoadingProcess(4, loadingProcess);
 
     //удаляем процесс загрузки
     delete loadingProcess;

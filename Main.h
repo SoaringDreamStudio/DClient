@@ -24,6 +24,8 @@ private:
 
     MainCharacter* MainHero;
     GameLVL* gameLVL;
+    bool objectsHead;
+    bool normalHead;
 
 	int ScreenWidth;
 	int ScreenHeight;

@@ -1,10 +1,9 @@
 #include "MainCharacter.h"
 
-MainCharacter::MainCharacter(std::string passed_NickName, CSDL_Setup* passed_SDL_Setup, int *passed_MouseX, int *passed_MouseY, float *passed_CameraX, float *passed_CameraY, GameLVL* passed_gameLVL, LoadingProcess* loadingProcess, GameInterface* passed_gameInterface, net::Socket* passed_gsocket)
+MainCharacter::MainCharacter(std::string passed_NickName, CSDL_Setup* passed_SDL_Setup, int *passed_MouseX, int *passed_MouseY, float *passed_CameraX, float *passed_CameraY, LoadingProcess* loadingProcess, GameInterface* passed_gameInterface, net::Socket* passed_gsocket)
 {
     gsocket = passed_gsocket;
     NickName = passed_NickName;
-    gameLVL = passed_gameLVL;
     gameInterface = passed_gameInterface;
 
     CameraX = passed_CameraX;
@@ -62,7 +61,6 @@ MainCharacter::MainCharacter(std::string passed_NickName, CSDL_Setup* passed_SDL
 	stopAnimation = false;
 
 
-    coordinates spawn = gameLVL->getSpawn();
 
 
     onceSendDirection = true;
@@ -323,222 +321,7 @@ void MainCharacter::UpdateControls()
     //Выполняется каждые 0,1 сек
     if (timeCheck4+10 < SDL_GetTicks())
     {
-        //просчет столкновений с объектами
-        for (int i = 0; i < gameLVL->GetCharacters().size(); i++)
-        {
 
-            if (SpriteMainHero->isColliding(gameLVL->GetCharacters()[i]->getSprite()->GetCollisionRect()))
-            {
-                ////////////////////////////////////////////////////////////////////////////////////////
-                ////////////////////////////////////////////////////////////////////////////////////////
-                ////////////////////////////////////////////////////////////////////////////////////////
-                ////////////////////////////////////////////////////////////////////////////////////////
-                ////////////////////////////////////////////////////////////////////////////////////////
-                //std::cout << "I'm colliding!" << std::endl;
-                ////////////////////////////////////////////////////////////////////////////////////////
-                ////////////////////////////////////////////////////////////////////////////////////////
-                ////////////////////////////////////////////////////////////////////////////////////////
-                ////////////////////////////////////////////////////////////////////////////////////////
-            }
-
-            //тригер столкновения с объектами - ON
-            colldingWithObject = true;
-
-            //обновление таймера
-            timeCheck = SDL_GetTicks();
-        }
-
-        //просчет столкновений с объектами
-        for (int i = 0; i < gameLVL->GetMobs().size(); i++)
-        {
-
-            if (SpriteMainHero->isColliding(gameLVL->GetMobs()[i]->getSprite()->GetCollisionRect()))
-            {
-                ////////////////////////////////////////////////////////////////////////////////////////
-                ////////////////////////////////////////////////////////////////////////////////////////
-                ////////////////////////////////////////////////////////////////////////////////////////
-                ////////////////////////////////////////////////////////////////////////////////////////
-                ////////////////////////////////////////////////////////////////////////////////////////
-                ////////////////////////////////////////////////////////////////////////////////////////
-                ////////////////////////////////////////////////////////////////////////////////////////
-                //std::cout << "I'm colliding!" << std::endl;
-                ////////////////////////////////////////////////////////////////////////////////////////
-                ////////////////////////////////////////////////////////////////////////////////////////
-                ////////////////////////////////////////////////////////////////////////////////////////
-                ////////////////////////////////////////////////////////////////////////////////////////
-                ////////////////////////////////////////////////////////////////////////////////////////
-                ////////////////////////////////////////////////////////////////////////////////////////
-            }
-
-            //тригер столкновения с объектами - ON
-            colldingWithObject = true;
-
-            //обновление таймера
-            timeCheck = SDL_GetTicks();
-        }
-
-        //просчет столкновений с объектами
-        for (int i = 0; i < gameLVL->GetNormal().size(); i++)
-        {
-
-            if (SpriteMainHero->isColliding(gameLVL->GetNormal()[i]->getSprite()->GetCollisionRect()))
-            {
-                if (MoveRight && MoveUp)
-                {
-                    CCollisionRectangle tmpCR;
-                    tmpCR = gameLVL->GetNormal()[i]->getSprite()->GetCollisionRect();
-                    while(SpriteMainHero->isColliding(tmpCR))
-                    {
-                        tmpCR.SetX(tmpCR.GetRectangle().x+2);
-                        tmpCR.SetY(tmpCR.GetRectangle().y-2);
-                        *CameraX = *CameraX + 2;
-                        *CameraY = *CameraY - 2;
-                    }
-                    sendPosition("movel");
-                    onceSendDirection = false;
-                }
-                else if (MoveRight && MoveDown)
-                {
-                    CCollisionRectangle tmpCR;
-                    tmpCR = gameLVL->GetNormal()[i]->getSprite()->GetCollisionRect();
-                    while(SpriteMainHero->isColliding(tmpCR))
-                    {
-                        tmpCR.SetX(tmpCR.GetRectangle().x+2);
-                        tmpCR.SetY(tmpCR.GetRectangle().y+2);
-                        *CameraX = *CameraX + 2;
-                        *CameraY = *CameraY + 2;
-                    }
-                    sendPosition("movel");
-                    onceSendDirection = false;
-                }
-                else if (MoveLeft && MoveUp)
-                {
-                    CCollisionRectangle tmpCR;
-                    tmpCR = gameLVL->GetNormal()[i]->getSprite()->GetCollisionRect();
-                    while(SpriteMainHero->isColliding(tmpCR))
-                    {
-                        tmpCR.SetX(tmpCR.GetRectangle().x-2);
-                        tmpCR.SetY(tmpCR.GetRectangle().y-2);
-                        *CameraX = *CameraX - 2;
-                        *CameraY = *CameraY - 2;
-                    }
-                    sendPosition("movel");
-                    onceSendDirection = false;
-                }
-                else if (MoveLeft && MoveDown)
-                {
-                    CCollisionRectangle tmpCR;
-                    tmpCR = gameLVL->GetNormal()[i]->getSprite()->GetCollisionRect();
-                    while(SpriteMainHero->isColliding(tmpCR))
-                    {
-                        tmpCR.SetX(tmpCR.GetRectangle().x-2);
-                        tmpCR.SetY(tmpCR.GetRectangle().y+2);
-                        *CameraX = *CameraX - 2;
-                        *CameraY = *CameraY + 2;
-                    }
-                    sendPosition("movel");
-                    onceSendDirection = false;
-                }
-                else if (MoveLeft)
-                {
-                    CCollisionRectangle tmpCR;
-                    tmpCR = gameLVL->GetNormal()[i]->getSprite()->GetCollisionRect();
-                    while(SpriteMainHero->isColliding(tmpCR))
-                    {
-                        tmpCR.SetX(tmpCR.GetRectangle().x-2);
-                        *CameraX = *CameraX - 2;
-                    }
-                    sendPosition("movel");
-                    onceSendDirection = false;
-                }
-                else if (MoveDown)
-                {
-                    CCollisionRectangle tmpCR;
-                    tmpCR = gameLVL->GetNormal()[i]->getSprite()->GetCollisionRect();
-                    while(SpriteMainHero->isColliding(tmpCR))
-                    {
-                        tmpCR.SetY(tmpCR.GetRectangle().y+2);
-                        *CameraY = *CameraY + 2;
-                    }
-                    sendPosition("moved");
-                    onceSendDirection = false;
-                }
-                else if (MoveRight)
-                {
-                    CCollisionRectangle tmpCR;
-                    tmpCR = gameLVL->GetNormal()[i]->getSprite()->GetCollisionRect();
-                    while(SpriteMainHero->isColliding(tmpCR))
-                    {
-                        tmpCR.SetX(tmpCR.GetRectangle().x+2);
-                        *CameraX = *CameraX + 2;
-                    }
-                    sendPosition("mover");
-                    onceSendDirection = false;
-                }
-                else if (MoveUp)
-                {
-                    CCollisionRectangle tmpCR;
-                    tmpCR = gameLVL->GetNormal()[i]->getSprite()->GetCollisionRect();
-                    while(SpriteMainHero->isColliding(tmpCR))
-                    {
-                        tmpCR.SetY(tmpCR.GetRectangle().y-2);
-                        *CameraY = *CameraY - 2;
-                    }
-
-                    sendPosition("moveu");
-                    onceSendDirection = false;
-                }
-            }
-
-            //тригер столкновения с объектами - ON
-            colldingWithObject = true;
-
-            //обновление таймера
-            timeCheck = SDL_GetTicks();
-        }
-
-        //просчет столкновений с объектами
-        for (int i = 0; i < gameLVL->GetWtrig().size(); i++)
-        {
-
-            if (SpriteMainHero->isColliding(gameLVL->GetWtrig()[i]->getSprite()->GetCollisionRect()))
-            {
-                ////////////////////////////////////////////////////////////////////////////////////////
-                ////////////////////////////////////////////////////////////////////////////////////////
-                ////////////////////////////////////////////////////////////////////////////////////////
-                ////////////////////////////////////////////////////////////////////////////////////////
-                ////////////////////////////////////////////////////////////////////////////////////////
-                //std::cout << "I'm colliding!" << std::endl;
-
-                ////////////////////////////////////////////////////////////////////////////////////////
-                ////////////////////////////////////////////////////////////////////////////////////////
-                ////////////////////////////////////////////////////////////////////////////////////////
-                ////////////////////////////////////////////////////////////////////////////////////////
-                ////////////////////////////////////////////////////////////////////////////////////////
-            }
-
-            //тригер столкновения с объектами - ON
-            colldingWithObject = true;
-
-            //обновление таймера
-            timeCheck = SDL_GetTicks();
-        }
-
-        //просчет столкновений с объектами
-        for (int i = 0; i < gameLVL->GetTrigger().size(); i++)
-        {
-
-            if (SpriteMainHero->isColliding(gameLVL->GetTrigger()[i]->getSprite()->GetCollisionRect()))
-            {
-
-            }
-
-            //тригер столкновения с объектами - ON
-            colldingWithObject = true;
-
-            //обновление таймера
-            timeCheck = SDL_GetTicks();
-        }
 
         //обновление таймера
         timeCheck4 = SDL_GetTicks();
@@ -583,67 +366,34 @@ void MainCharacter::UpdateControls()
         timeCheckMoving = SDL_GetTicks();
     }
     //просчет движения каждые 0,05 сек
-    if (timeCheckMoving+11 < SDL_GetTicks() && (Follow || MoveDown || MoveLeft || MoveRight || MoveUp) && colldingWithObject)
+    if (timeCheckMoving+16 < SDL_GetTicks() && (Follow || MoveDown || MoveLeft || MoveRight || MoveUp))
     {
         //просчет движения при нажатии клавиш
         if (MoveLeft)
         {
             *CameraX = *CameraX + speed;
-            Follow_Point_X = *CameraX;
-            Follow_Point_Y = *CameraY;
             sendPosition("movel");
             onceSendDirection = false;
         }
         if (MoveDown)
         {
             *CameraY = *CameraY - speed;
-            Follow_Point_X = *CameraX;
-            Follow_Point_Y = *CameraY;
             sendPosition("moved");
             onceSendDirection = false;
         }
         if (MoveRight)
         {
             *CameraX = *CameraX - speed;
-            Follow_Point_X = *CameraX;
-            Follow_Point_Y = *CameraY;
             sendPosition("mover");
             onceSendDirection = false;
         }
         if (MoveUp)
         {
             *CameraY = *CameraY + speed;
-            Follow_Point_X = *CameraX;
-            Follow_Point_Y = *CameraY;
             sendPosition("moveu");
             onceSendDirection = false;
         }
 
-
-        //просчет дистанции до пункта назначения
-        distance = GetDistance(*CameraX, *CameraY, Follow_Point_X, Follow_Point_Y);
-
-        //если дистанция меньше 15 пикселей, то остановить анимацию
-        if (distance < 15)
-            stopAnimation = true;
-        else
-            stopAnimation = false;
-
-        //если дисктанция больше 15 пикселей
-        if (distance > 15)
-        {
-            //просчет движения при движении мышкой
-            if (*CameraX != Follow_Point_X)
-            {
-                *CameraX = *CameraX - ((*CameraX - Follow_Point_X) / distance)*speed;
-            }
-            if (*CameraY != Follow_Point_Y)
-            {
-                *CameraY = *CameraY - ((*CameraY - Follow_Point_Y) / distance )*speed;
-            }
-        }
-        else
-            Follow = false;
 
         //обновление таймера движения
         timeCheckMoving = SDL_GetTicks();
@@ -758,5 +508,46 @@ void MainCharacter::sendPosition(std::string ActiveAnimation)
         //std::cout << "server: " << it->first << std::endl;
         if(it->first != 1)
             it->second->Send(data, 33 );
+    }
+}
+
+
+int MainCharacter::getDirection()
+{
+    if ((!MoveLeft &&  !MoveDown && !MoveRight && MoveUp) ||
+        (MoveLeft &&  !MoveDown && MoveRight && MoveUp))
+    {
+        return 0;
+    }
+    else if (!MoveLeft &&  !MoveDown && MoveRight && MoveUp)
+    {
+        return 1;
+    }
+    else if ((!MoveLeft &&  !MoveDown && MoveRight && !MoveUp) ||
+            (!MoveLeft &&  MoveDown && MoveRight && MoveUp))
+    {
+        return 2;
+    }
+    else if (!MoveLeft &&  MoveDown && MoveRight && !MoveUp)
+    {
+        return 3;
+    }
+    else if ((!MoveLeft &&  MoveDown && !MoveRight && !MoveUp) ||
+            (MoveLeft &&  MoveDown && MoveRight && !MoveUp))
+    {
+        return 4;
+    }
+    else if (MoveLeft &&  MoveDown && !MoveRight && !MoveUp)
+    {
+        return 5;
+    }
+    else if ((MoveLeft &&  !MoveDown && !MoveRight && !MoveUp) ||
+            (MoveLeft &&  MoveDown && !MoveRight && MoveUp))
+    {
+        return 6;
+    }
+    else if (MoveLeft &&  !MoveDown && !MoveRight && MoveUp)
+    {
+        return 7;
     }
 }

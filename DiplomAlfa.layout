@@ -1,35 +1,9 @@
 <?xml version="1.0" encoding="UTF-8" standalone="yes" ?>
 <CodeBlocks_layout_file>
 	<ActiveTarget name="Debug" />
-	<File name="graphics\Texts.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="graphics\Sprite.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="451" topLine="4" />
-		</Cursor>
-	</File>
-	<File name="objects\Environment\NonLive\Objects\Normal.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2236" topLine="12" />
-		</Cursor>
-	</File>
-	<File name="GameLVL.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="546" topLine="10" />
-		</Cursor>
-	</File>
-	<File name="MainCharacter.cpp" open="1" top="1" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="15004" topLine="376" />
-		</Cursor>
-	</File>
-	<File name="objects\Environment\NonLive\Ground.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1713" topLine="20" />
-		</Cursor>
-	</File>
-	<File name="Menu.h" open="0" top="0" tabpos="0" split="2" active="1" splitpos="642" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2752" topLine="112" />
-			<Cursor2 position="1610" topLine="54" />
+			<Cursor1 position="2373" topLine="66" />
 		</Cursor>
 	</File>
 	<File name="graphics\Texts.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -37,29 +11,30 @@
 			<Cursor1 position="581" topLine="12" />
 		</Cursor>
 	</File>
-	<File name="Net.cpp" open="0" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="Menu.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="4208" topLine="142" />
+			<Cursor1 position="25858" topLine="596" />
 		</Cursor>
 	</File>
-	<File name="objects\Environment.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="graphics\Texts.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="9949" topLine="187" />
+			<Cursor1 position="451" topLine="4" />
 		</Cursor>
 	</File>
-	<File name="StartCPP.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="GameLVL.cpp" open="1" top="0" tabpos="7" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1117" topLine="30" />
+			<Cursor1 position="9542" topLine="98" />
 		</Cursor>
 	</File>
-	<File name="objects\Environment.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="GameLVL.h" open="1" top="0" tabpos="10" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1319" topLine="23" />
+			<Cursor1 position="128" topLine="0" />
 		</Cursor>
 	</File>
-	<File name="MainCharacter.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="main.cpp" open="1" top="0" tabpos="3" split="2" active="1" splitpos="806" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="1957" topLine="44" />
+			<Cursor1 position="843" topLine="34" />
+			<Cursor2 position="305" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="Net.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -67,49 +42,19 @@
 			<Cursor1 position="2374" topLine="91" />
 		</Cursor>
 	</File>
-	<File name="objects\Environment\Live\Characters.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="objects\Environment.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="801" topLine="15" />
+			<Cursor1 position="9949" topLine="187" />
 		</Cursor>
 	</File>
-	<File name="Menu.cpp" open="0" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="objects\Environment.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="14056" topLine="351" />
+			<Cursor1 position="1319" topLine="23" />
 		</Cursor>
 	</File>
-	<File name="graphics\Sprite.cpp" open="1" top="0" tabpos="2" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+	<File name="objects\Environment\Live.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
-			<Cursor1 position="5447" topLine="194" />
-		</Cursor>
-	</File>
-	<File name="graphics\CollisionRectangle.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="471" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="graphics\Sprite.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="2373" topLine="66" />
-		</Cursor>
-	</File>
-	<File name="struct.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="232" topLine="0" />
-		</Cursor>
-	</File>
-	<File name="GameLVL.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="1757" topLine="23" />
-		</Cursor>
-	</File>
-	<File name="main.cpp" open="0" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="10376" topLine="208" />
-		</Cursor>
-	</File>
-	<File name="Main.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
-		<Cursor>
-			<Cursor1 position="780" topLine="4" />
+			<Cursor1 position="554" topLine="0" />
 		</Cursor>
 	</File>
 	<File name="objects\Environment\Live.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
@@ -120,6 +65,67 @@
 	<File name="objects\Environment\Live\Characters.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
 		<Cursor>
 			<Cursor1 position="2848" topLine="56" />
+		</Cursor>
+	</File>
+	<File name="objects\Environment\Live\Characters.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="801" topLine="15" />
+		</Cursor>
+	</File>
+	<File name="objects\Environment\NonLive\Ground.cpp" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1713" topLine="20" />
+		</Cursor>
+	</File>
+	<File name="graphics\CollisionRectangle.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="471" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="MainCharacter.cpp" open="1" top="0" tabpos="9" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="11543" topLine="223" />
+		</Cursor>
+	</File>
+	<File name="graphics\Sprite.cpp" open="1" top="0" tabpos="1" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="8344" topLine="54" />
+		</Cursor>
+	</File>
+	<File name="objects\Environment\NonLive\Objects\Normal.cpp" open="1" top="1" tabpos="11" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1820" topLine="46" />
+		</Cursor>
+	</File>
+	<File name="MainCharacter.h" open="1" top="0" tabpos="8" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="78" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="Main.h" open="0" top="0" tabpos="3" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="724" topLine="11" />
+		</Cursor>
+	</File>
+	<File name="Menu.h" open="0" top="0" tabpos="0" split="2" active="1" splitpos="642" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="2752" topLine="112" />
+			<Cursor2 position="1610" topLine="54" />
+		</Cursor>
+	</File>
+	<File name="Net.cpp" open="1" top="0" tabpos="4" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="12170" topLine="374" />
+		</Cursor>
+	</File>
+	<File name="struct.h" open="0" top="0" tabpos="0" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="232" topLine="0" />
+		</Cursor>
+	</File>
+	<File name="StartCPP.cpp" open="0" top="0" tabpos="6" split="0" active="1" splitpos="0" zoom_1="0" zoom_2="0">
+		<Cursor>
+			<Cursor1 position="1117" topLine="30" />
 		</Cursor>
 	</File>
 </CodeBlocks_layout_file>

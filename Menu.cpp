@@ -613,7 +613,7 @@ void MainMenu::UpdateControls()
                 }
                 std::cout << std::endl;
 
-                gsocket->Send( net::Address(127,0,0,1,21995), packet, sizeof(packet) );
+                gsocket->Send( net::Address(192,168,0,222,21995), packet, sizeof(packet) );
 
                 std::cout<< "Sent" << std::endl;
                 activeTextBox = nothing;
