@@ -96,11 +96,83 @@ GameLVL::GameLVL(float *passed_CameraX, float *passed_CameraY, int* passed_Mouse
 
 
     loadingProcess->addProcent(9);
+    LoadStage();
 }
 
 
 GameLVL::~GameLVL(void)
 {
+
+}
+
+void GameLVL::LoadStage()
+{
+    //создается поток файловый для чтения
+    std::ifstream LoadedFile("data/stages/stage.dat");
+
+    //инициализация переменной-строки для чтения конфигов
+    std::string line;
+
+    //если файл был успешно открыт
+    if (LoadedFile.is_open())
+    {
+        //выполнять до тех пор, пока нет ошибок
+        while ( LoadedFile.good() )
+        {
+            //считать строку из файла
+            std::getline(LoadedFile, line);
+
+            //добаляет в поток строку из string
+            std::istringstream iss(line);
+
+            int ID;
+            int X;
+            int Y;
+
+            //переменные "предыдущее слово в строке" и "первое слово в строке"
+            std::string PreviousWord;
+
+            //пока не строка не закончилась
+            while (iss)
+            {
+
+                //текущее слово
+                std::string word;
+
+
+                //текущее слово вставляется из потока
+                iss >> word;
+
+                //если предыдущее слово name, то записываем слово во временную переменную
+                if(PreviousWord == "ID:")
+                    ID = atoi(word.c_str());
+
+                if(PreviousWord == "x:")
+                    X = atoi(word.c_str());
+
+                if(PreviousWord == "y:")
+                    Y = atoi(word.c_str());
+
+
+
+                //предыдущее слово приравнять к текущему
+                PreviousWord = word;
+            }
+            CreateGround(ID,
+                            X,
+                            Y);/*
+            ground.push_back(new Ground(&spawn,
+                                        ID,
+                                        X,
+                                        Y));*/
+
+
+        }
+    }
+    else // в случае невозможности открыть файл - выдать ошибку
+    {
+        std::cout << "File could not be open " << std::endl;
+    }
 
 }
 
@@ -347,4 +419,18 @@ void GameLVL::Update() //функция контроля переключения режимов игры
             timeCheck = SDL_GetTicks();*/
         }
 
+}
+
+void GameLVL::DelCharacter(std::string NickName)
+{
+    for(std::vector<Characters*>::iterator it = characters.begin();it != characters.end(); it++)
+    {
+        if((*it)->getNickName() == NickName)
+        {
+            characters.erase(it);
+            it = characters.begin();
+            if(characters.begin() == characters.end())
+                break;
+        }
+    }
 }

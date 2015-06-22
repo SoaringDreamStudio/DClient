@@ -239,29 +239,36 @@ int CMain::GameLoop(void)
                 //if(objectsHead && normalHead)
                     break;
 
-            }/*
-            else if(buffer[0] == 22)
-            {
-                unsigned char data[1];
-                data[0]=30;
-                for(std::map<unsigned int, net::Connection*>::iterator it = gsocket->getConnections().begin(); it != gsocket->getConnections().end(); ++it)
-                {
-                    //std::cout << "server: " << it->first << std::endl;
-                    if(it->first != 1)
-                        it->second->Send(data, 1 );
-                }
             }
+            //костыль
             else if(buffer[0] == 26)
-            {
-                unsigned char data[1];
-                data[0]=31;
-                for(std::map<unsigned int, net::Connection*>::iterator it = gsocket->getConnections().begin(); it != gsocket->getConnections().end(); ++it)
-                {
-                    //std::cout << "server: " << it->first << std::endl;
-                    if(it->first != 1)
-                        it->second->Send(data, 1 );
-                }
-            }*/
+                    {
+                        unsigned int Number = (unsigned int)(buffer[1] << 24) + (unsigned int)(buffer[2]<< 16) + (unsigned int)(buffer[3] << 8) + buffer[4];
+                        //std::cout << Number << std::endl;
+                        unsigned int ID = (unsigned int)(buffer[5] << 24) + (unsigned int)(buffer[6]<< 16) + (unsigned int)(buffer[7] << 8) + buffer[8];
+                        //std::cout << ID << std::endl;
+                        unsigned int X = (unsigned int)(buffer[9] << 24) + (unsigned int)(buffer[10]<< 16) + (unsigned int)(buffer[11] << 8) + buffer[12];
+                        //std::cout << X << std::endl;
+                        unsigned int Y = (unsigned int)(buffer[13] << 24) + (unsigned int)(buffer[14]<< 16) + (unsigned int)(buffer[15] << 8) + buffer[16];
+                        //std::cout << Y << std::endl;
+
+                        gameLVL->CreateNormal(ID,X,Y);
+                        std::cout << "created Normal" << std::endl;
+                    }
+            else if(buffer[0] == 27)
+                    {
+                        std::string Nickname;
+
+                        for(int i = 1; i <=8; i++)
+                        {
+                            if(buffer[i] == 0)
+                                break;
+                            Nickname += buffer[i];
+                        }
+
+                        gameLVL->DelCharacter(Nickname);
+                        std::cout << "deleted character " << Nickname << std::endl;
+                    }
             else
             {
                 for(int i = 0; i < 254; i++)
@@ -282,7 +289,7 @@ int CMain::GameLoop(void)
 
     //удаляем процесс загрузки
     delete loadingProcess;
-
+    quit = false;
     //основной процесс игры
     //Выполняется до тех пор пока переменная quit ложна и не был нажат крестик
 	while(!quit && csdl_setup->GetMainEvent()->type != SDL_QUIT)
@@ -381,11 +388,15 @@ int CMain::GameLoop(void)
         //считываем положение мышки
 		SDL_GetMouseState(&MouseX, &MouseY);
 
-        //проверка на режим игры и считывание клавиш для переключения режимов
-        gameLVL->Update();
 
         //interpretator->command(gameLVL->GetConsoleCommand());
         //gameLVL->SetConsoleCommand("");
+
+        //проверка на режим игры и считывание клавиш для переключения режимов
+        gameLVL->Update();
+
+        //обновление анимации и управление ГГ
+        MainHero->Update();
 
         //отрисовка заднего плана
         gameLVL->DrawBack();
@@ -393,11 +404,10 @@ int CMain::GameLoop(void)
         //отрисовка главного героя
         MainHero->Draw();
 
-        //обновление анимации и управление ГГ
-        MainHero->Update();
 
         //отрисовка переднего плана
         gameLVL->DrawFront();
+
 
         //просчет и прорисовка для игрового интерфейса
         gameInterface->Update();
@@ -406,6 +416,13 @@ int CMain::GameLoop(void)
 
         //отрисовка рендера
 		csdl_setup->End();
+		//std::cout << gsocket->getConnections().size() << std::endl;
+
+		if(gsocket->getConnections().size() == 0)
+		{
+		    quit = true;
+		}
+
 
 
 /*
@@ -497,6 +514,7 @@ int CMain::GameLoop(void)
 }
 void CMain::GameMenu(void)
 {
+    Mquit = false;
     //инициализация главного меню
     MainMenu* mainMenu = new MainMenu(csdl_setup, &MouseX, &MouseY, &CameraX, &CameraY, gsocket);
     //CSprite* menu1 = new CSprite(csdl_setup->GetRenderer(), "data/img/menu1.png", 100, 0, 800, 600, &CameraX, &CameraY, CCollisionRectangle());
@@ -552,16 +570,17 @@ void CMain::GameMenu(void)
             csdl_setup->GetMainEvent()->type = NULL;
             csdl_setup->GetMainEvent()->button.state = NULL;
             csdl_setup->GetMainEvent()->button.button = NULL;
-            std::cout<<"(csdl_setup->GetMainEvent()->type == SDL_MOUSEBUTTONUP) " << (csdl_setup->GetMainEvent()->type == SDL_MOUSEBUTTONUP) <<
+            //std::cout << "2222" << std::endl;
+            /*std::cout<<"(csdl_setup->GetMainEvent()->type == SDL_MOUSEBUTTONUP) " << (csdl_setup->GetMainEvent()->type == SDL_MOUSEBUTTONUP) <<
        "(csdl_setup->GetMainEvent()->button.state == SDL_RELEASED) " << (csdl_setup->GetMainEvent()->button.state == SDL_RELEASED) <<
        "(csdl_setup->GetMainEvent()->button.button == SDL_BUTTON(SDL_BUTTON_LEFT)) " << (csdl_setup->GetMainEvent()->button.button == SDL_BUTTON(SDL_BUTTON_LEFT)) << std::endl;
-        }
+        */}
     }
 }
 
 bool CMain::GOMenu(void)
 {
-    /*
+
     //инициализация Mquit
     Mquit = ignoreGameOver;
 
@@ -588,7 +607,7 @@ bool CMain::GOMenu(void)
         //отрисовка рендера
 		csdl_setup->End();
     }
-    return true;*/
+    return true;
 }
 
 void CMain::Loading(void)

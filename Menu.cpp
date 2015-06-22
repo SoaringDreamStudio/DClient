@@ -405,6 +405,7 @@ MainMenu::MainMenu(CSDL_Setup* passed_SDL_Setup, int *passed_MouseX, int *passed
                           365,
                           350,
                           50);
+    menuMusic = new Music("data/menumusic.mp3");
     //mainMenuButton;
 
 
@@ -523,6 +524,10 @@ void MainMenu::Update()
 {
     UpdateAnimation();
     UpdateControls();
+    if( Mix_PlayingMusic() == 0 )
+    {
+        menuMusic->Play();
+    }
 }
 
 void MainMenu::UpdateControls()
@@ -613,11 +618,12 @@ void MainMenu::UpdateControls()
                 }
                 std::cout << std::endl;
 
-                gsocket->Send( net::Address(192,168,0,222,21995), packet, sizeof(packet) );
+                gsocket->Send( net::Address(79,164,35,62,21995), packet, sizeof(packet) );
 
                 std::cout<< "Sent" << std::endl;
                 activeTextBox = nothing;
                 Mquit = true;
+                menuMusic->Stop();
             }
 
             //если была нажата кнопка1
@@ -898,7 +904,7 @@ void MainMenu::enterText(Text* text)
         }
     }
 }
-/*
+
 GameOverMenu::GameOverMenu(CSDL_Setup* passed_SDL_Setup, int *passed_MouseX, int *passed_MouseY, float *passed_CameraX, float *passed_CameraY)
 {
 
@@ -910,8 +916,16 @@ GameOverMenu::GameOverMenu(CSDL_Setup* passed_SDL_Setup, int *passed_MouseX, int
     MouseY = passed_MouseY;
     Mquit  = false;
 
-    text1 = new Text("Game Over", "BLACK", csdl_setup->GetScreenWidth()*0.2, csdl_setup->GetScreenHeight()*0.37, csdl_setup->GetScreenWidth()*0.066, csdl_setup->GetScreenHeight()*0.066, csdl_setup, CameraX, CameraY);
-    text2 = new Text("Main menu", csdl_setup->GetScreenWidth()*0.283, csdl_setup->GetScreenHeight()*0.67, csdl_setup->GetScreenWidth()*0.05, csdl_setup->GetScreenHeight()*0.066, csdl_setup, CameraX, CameraY);
+    text1 = new Text(csdl_setup->GetRenderer(),
+                          "Game over",
+                          365,
+                          180,
+                          50);
+    text2 = new Text(csdl_setup->GetRenderer(),
+                          "Main Menu",
+                          365,
+                          350,
+                          50);
 
     MenuButton1 = new CSprite(csdl_setup->GetRenderer(), "data/img/MenuButton1.png", csdl_setup->GetScreenWidth()*0.25, csdl_setup->GetScreenHeight()*0.6, csdl_setup->GetScreenWidth()*0.5, csdl_setup->GetScreenHeight()*0.2, CameraX, CameraY,
                               CCollisionRectangle(0,0,csdl_setup->GetScreenWidth()*0.5,csdl_setup->GetScreenHeight()*0.2), csdl_setup);
@@ -926,11 +940,6 @@ GameOverMenu::~GameOverMenu(void)
 
 void GameOverMenu::UpdateAnimation()
 {
-    //настроить текст gameover
-    text1->Update();
-
-    //настроить текст на кнопке
-    text2->Update();
 
     //если мышка наведена на кнопку - проиграть анимацию
     if(MenuButton1->isColliding(*MouseX, *MouseY) && !(csdl_setup->GetMainEvent()->button.button == SDL_BUTTON(SDL_BUTTON_LEFT) || csdl_setup->GetMainEvent()->button.button == SDL_BUTTON_LEFT))
@@ -985,7 +994,7 @@ void GameOverMenu::Draw()
     text2->Draw();
 
 }
-*/
+
 LoadingProcess::LoadingProcess(CSDL_Setup* passed_SDL_Setup, int *passed_MouseX, int *passed_MouseY, float *passed_CameraX, float *passed_CameraY)
 {
 

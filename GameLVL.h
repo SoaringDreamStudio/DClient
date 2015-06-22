@@ -58,6 +58,8 @@ public:
                                                                                 PosX,
                                                                                 PosY,
                                                                                 NickName));}
+    void DelCharacter(std::string NickName);
+    void LoadStage();
 private:
     GameInterface* gameInterface;
     CSDL_Setup* csdl_setup;

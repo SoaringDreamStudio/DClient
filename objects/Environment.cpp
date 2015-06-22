@@ -200,23 +200,38 @@ void Environment::LoadConfigs(void)
                                 }
 
                                 //если первое слово в строке hitbox:
-                                else if (FirstWord == "hitbox:")
+                                else if (PreviousWord == "hitbox:")
                                 {
-                                    //если предыдущее слово x:, то записать параметр х
-                                    if (PreviousWord == "x:")
-                                        hitbox.x = Rect.x+atoi(word.c_str());
+                                        iss >> word;
 
+                                        hitbox.x = atoi(word.c_str());
+                                        iss >> word;
+                                        iss >> word;
+                                        hitbox.y = atoi(word.c_str());
+                                        iss >> word;
+                                        iss >> word;
+                                        hitbox.w = Rect.w*(static_cast<float>(atoi(word.c_str()))/100);
+                                        iss >> word;
+                                        iss >> word;
+                                        hitbox.h = Rect.h*(static_cast<float>(atoi(word.c_str()))/100);
+
+/*
                                     //если предыдущее слово y:, то записать параметр y
                                     if (PreviousWord == "y:")
+                                    {
                                         hitbox.y = Rect.y+atoi(word.c_str());
+                                    }
 
                                     //если предыдущее слово w:, то записать параметр w
                                     if (PreviousWord == "w:")
+                                    {
                                         hitbox.w = Rect.w*(static_cast<float>(atoi(word.c_str()))/100);
-
+                                    }
                                     //если предыдущее слово h:, то записать параметр h
                                     if (PreviousWord == "h:")
+                                    {
                                         hitbox.h = Rect.h*(static_cast<float>(atoi(word.c_str()))/100);
+                                    }*/
                                 }
 
                                 //если предыдущее слово FilePathSprite:, то считать местоположение картинки для спрайта

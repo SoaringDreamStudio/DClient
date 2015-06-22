@@ -148,8 +148,10 @@ private:
     bool Mquit;
 
     bool OnePressed;
+
+    Music* menuMusic;
 };
-/*
+
 class GameOverMenu
 {
 public:
@@ -177,4 +179,3 @@ private:
     CSprite* MenuButton2;
     bool Mquit;
 };
-*/

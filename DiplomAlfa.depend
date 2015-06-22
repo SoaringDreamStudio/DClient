@@ -1,12 +1,20 @@
 # depslib dependency file v1.0
-1426862173 source:c:\project\codeblocksversion\diplomalfa\firstrpg.cpp
-	"stdafx.h"
-	"Main.h"
+1434452767 source:c:\users\avdrine\documents\github\dclient\gamelvl.cpp
+	"GameLVL.h"
 
-1426855735 c:\project\codeblocksversion\diplomalfa\stdafx.h
+1434450878 c:\users\avdrine\documents\github\dclient\gamelvl.h
+	"libraries.h"
+	"graphics.h"
+	"objects.h"
+	"Menu.h"
+	"MainCharacter.h"
+	<vector>
+
+1431623486 c:\users\avdrine\documents\github\dclient\libraries.h
 	<SDL.h>
 	<SDL_image.h>
 	<SDL_mixer.h>
+	<SDL_ttf.h>
 	<iostream>
 	<vector>
 	<map>
@@ -15,991 +23,8 @@
 	<string>
 	<cstdlib>
 	<math.h>
-	"Net.h"
 	"struct.h"
-
-1394937196 c:\project\codeblocksversion\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl.h
-	"SDL_main.h"
-	"SDL_stdinc.h"
-	"SDL_assert.h"
-	"SDL_atomic.h"
-	"SDL_audio.h"
-	"SDL_clipboard.h"
-	"SDL_cpuinfo.h"
-	"SDL_endian.h"
-	"SDL_error.h"
-	"SDL_events.h"
-	"SDL_filesystem.h"
-	"SDL_joystick.h"
-	"SDL_gamecontroller.h"
-	"SDL_haptic.h"
-	"SDL_hints.h"
-	"SDL_loadso.h"
-	"SDL_log.h"
-	"SDL_messagebox.h"
-	"SDL_mutex.h"
-	"SDL_power.h"
-	"SDL_render.h"
-	"SDL_rwops.h"
-	"SDL_system.h"
-	"SDL_thread.h"
-	"SDL_timer.h"
-	"SDL_version.h"
-	"SDL_video.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937196 c:\project\codeblocksversion\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_main.h
-	"SDL_stdinc.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937197 c:\project\codeblocksversion\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_stdinc.h
-	"SDL_config.h"
-	<sys/types.h>
-	<stdio.h>
-	<stdlib.h>
-	<stddef.h>
-	<stdarg.h>
-	<stdlib.h>
-	<malloc.h>
-	<stddef.h>
-	<stdarg.h>
-	<memory.h>
-	<string.h>
-	<strings.h>
-	<inttypes.h>
-	<stdint.h>
-	<ctype.h>
-	<math.h>
-	<float.h>
-	<iconv.h>
-	"begin_code.h"
-	<alloca.h>
-	<malloc.h>
-	<malloc.h>
-	<malloc.h>
-	<stdlib.h>
-	"close_code.h"
-
-1394937197 c:\project\codeblocksversion\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_config.h
-	"SDL_platform.h"
-
-1410287888 c:\project\codeblocksversion\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_platform.h
-	"AvailabilityMacros.h"
-	"TargetConditionals.h"
-	<winapifamily.h>
-	"begin_code.h"
-	"close_code.h"
-
-1394937197 c:\project\codeblocksversion\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\begin_code.h
-
-1394937197 c:\project\codeblocksversion\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\close_code.h
-
-1394937196 c:\project\codeblocksversion\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_assert.h
-	"SDL_config.h"
-	"begin_code.h"
-	<signal.h>
-	"close_code.h"
-
-1394937196 c:\project\codeblocksversion\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_atomic.h
-	"SDL_stdinc.h"
-	"SDL_platform.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937196 c:\project\codeblocksversion\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_audio.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"SDL_endian.h"
-	"SDL_mutex.h"
-	"SDL_thread.h"
-	"SDL_rwops.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937196 c:\project\codeblocksversion\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_error.h
-	"SDL_stdinc.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937196 c:\project\codeblocksversion\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_endian.h
-	"SDL_stdinc.h"
-	<endian.h>
-	"begin_code.h"
-	"close_code.h"
-
-1394937197 c:\project\codeblocksversion\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_mutex.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937197 c:\project\codeblocksversion\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_thread.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"SDL_atomic.h"
-	"SDL_mutex.h"
-	"begin_code.h"
-	<process.h>
-	"close_code.h"
-
-1394937197 c:\project\codeblocksversion\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_rwops.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937196 c:\project\codeblocksversion\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_clipboard.h
-	"SDL_stdinc.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937196 c:\project\codeblocksversion\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_cpuinfo.h
-	"SDL_stdinc.h"
-	<intrin.h>
-	<intrin.h>
-	<altivec.h>
-	<mmintrin.h>
-	<mm3dnow.h>
-	<xmmintrin.h>
-	<emmintrin.h>
-	"begin_code.h"
-	"close_code.h"
-
-1394937196 c:\project\codeblocksversion\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_events.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"SDL_video.h"
-	"SDL_keyboard.h"
-	"SDL_mouse.h"
-	"SDL_joystick.h"
-	"SDL_gamecontroller.h"
-	"SDL_quit.h"
-	"SDL_gesture.h"
-	"SDL_touch.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937197 c:\project\codeblocksversion\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_video.h
-	"SDL_stdinc.h"
-	"SDL_pixels.h"
-	"SDL_rect.h"
-	"SDL_surface.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937197 c:\project\codeblocksversion\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_pixels.h
-	"SDL_stdinc.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937197 c:\project\codeblocksversion\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_rect.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"SDL_pixels.h"
-	"SDL_rwops.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937197 c:\project\codeblocksversion\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_surface.h
-	"SDL_stdinc.h"
-	"SDL_pixels.h"
-	"SDL_rect.h"
-	"SDL_blendmode.h"
-	"SDL_rwops.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937196 c:\project\codeblocksversion\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_blendmode.h
-	"begin_code.h"
-	"close_code.h"
-
-1394937196 c:\project\codeblocksversion\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_keyboard.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"SDL_keycode.h"
-	"SDL_video.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937196 c:\project\codeblocksversion\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_keycode.h
-	"SDL_stdinc.h"
-	"SDL_scancode.h"
-
-1394937197 c:\project\codeblocksversion\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_scancode.h
-	"SDL_stdinc.h"
-
-1394937196 c:\project\codeblocksversion\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_mouse.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"SDL_video.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937196 c:\project\codeblocksversion\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_joystick.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937196 c:\project\codeblocksversion\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_gamecontroller.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"SDL_rwops.h"
-	"SDL_joystick.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937197 c:\project\codeblocksversion\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_quit.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-
-1394937196 c:\project\codeblocksversion\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_gesture.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"SDL_video.h"
-	"SDL_touch.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937197 c:\project\codeblocksversion\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_touch.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"SDL_video.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937196 c:\project\codeblocksversion\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_filesystem.h
-	"SDL_stdinc.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937196 c:\project\codeblocksversion\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_haptic.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"SDL_joystick.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937196 c:\project\codeblocksversion\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_hints.h
-	"SDL_stdinc.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937196 c:\project\codeblocksversion\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_loadso.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937196 c:\project\codeblocksversion\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_log.h
-	"SDL_stdinc.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937196 c:\project\codeblocksversion\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_messagebox.h
-	"SDL_stdinc.h"
-	"SDL_video.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937197 c:\project\codeblocksversion\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_power.h
-	"SDL_stdinc.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937197 c:\project\codeblocksversion\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_render.h
-	"SDL_stdinc.h"
-	"SDL_rect.h"
-	"SDL_video.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937197 c:\project\codeblocksversion\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_system.h
-	"SDL_stdinc.h"
-	"SDL_keyboard.h"
-	"SDL_render.h"
-	"SDL_video.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937197 c:\project\codeblocksversion\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_timer.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937197 c:\project\codeblocksversion\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_version.h
-	"SDL_stdinc.h"
-	"begin_code.h"
-	"close_code.h"
-
-1376152742 c:\project\codeblocksversion\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_image.h
-	"SDL.h"
-	"SDL_version.h"
-	"begin_code.h"
-	"close_code.h"
-
-1376152825 c:\project\codeblocksversion\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_mixer.h
-	"SDL_stdinc.h"
-	"SDL_rwops.h"
-	"SDL_audio.h"
-	"SDL_endian.h"
-	"SDL_version.h"
-	"begin_code.h"
-	"close_code.h"
-
-1426861518 c:\project\codeblocksversion\diplomalfa\main.h
-	"SDL_Setup.h"
-	"interpretator.h"
-	"Sprite.h"
-	"MainCharacter.h"
-	"Enviroment.h"
-	"Menu.h"
-	<windows.h>
-	<math.h>
-
-1422664905 c:\project\codeblocksversion\diplomalfa\sdl_setup.h
-
-1422708520 c:\project\codeblocksversion\diplomalfa\sprite.h
-	"stdafx.h"
-	"CollisionRectangle.h"
-	"SDL_Setup.h"
-
-1422708278 source:c:\project\codeblocksversion\diplomalfa\sdl_setup.cpp
-	"stdafx.h"
-	"SDL_Setup.h"
-
-1423682043 source:c:\project\codeblocksversion\diplomalfa\sprite.cpp
-	"stdafx.h"
-	"Sprite.h"
-
-1426861553 source:c:\project\codeblocksversion\diplomalfa\main.cpp
-	"stdafx.h"
-	"Main.h"
-
-1413663040 c:\project\codeblocksversion\diplomalfa\main—haracter.h
-	"stdafx.h"
-	"Sprite.h"
-	"SDL_Setup.h"
-	<math.h>
-
-1413667422 source:c:\project\codeblocksversion\diplomalfa\main—haracter.cpp
-	"Main—haracter.h"
-
-1423694354 c:\project\codeblocksversion\diplomalfa\maincharacter.h
-	"stdafx.h"
-	"Sprite.h"
-	"SDL_Setup.h"
-	"Enviroment.h"
-	"writing.h"
-	"Mybiblio.h"
-	"effects.h"
-
-1423694387 source:c:\project\codeblocksversion\diplomalfa\maincharacter.cpp
-	"MainCharacter.h"
-
-1423688474 c:\project\codeblocksversion\diplomalfa\enviroment.h
-	"stdafx.h"
-	"Sprite.h"
-	"SDL_Setup.h"
-	"objects.h"
-	"Menu.h"
-	<vector>
-
-1423678735 source:c:\project\codeblocksversion\diplomalfa\enviroment.cpp
-	"Enviroment.h"
-
-1414957869 c:\project\codeblocksversion\diplomalfa\tree.h
-	"stdafx.h"
-	"Sprite.h"
-	"SDL_Setup.h"
-
-1414957964 source:c:\project\codeblocksversion\diplomalfa\tree.cpp
-	"Tree.h"
-
-1414486173 c:\project\codeblocksversion\diplomalfa\collisionrectangle.h
-	"stdafx.h"
-
-1414486279 source:c:\project\codeblocksversion\diplomalfa\collisionrectangle.cpp
-	"CollisionRectangle.h"
-
-1423674908 c:\project\codeblocksversion\diplomalfa\struct.h
-	"stdafx.h"
-	"CollisionRectangle.h"
-
-1423691006 source:c:\project\codeblocksversion\diplomalfa\objects.cpp
-	"objects.h"
-
-1423689596 c:\project\codeblocksversion\diplomalfa\objects.h
-	"stdafx.h"
-	"Sprite.h"
-	"SDL_Setup.h"
-
-1426862300 c:\project\codeblocksversion\diplomalfa\menu.h
-	"stdafx.h"
-	"Sprite.h"
-	"SDL_Setup.h"
-	"writing.h"
-	"Mybiblio.h"
-	<cstdlib>
-	<sstream>
-
-1426862269 source:c:\project\codeblocksversion\diplomalfa\menu.cpp
-	"Menu.h"
-
-1422992847 c:\project\codeblocksversion\diplomalfa\writing.h
-	"stdafx.h"
-	"Sprite.h"
-	"SDL_Setup.h"
-	<vector>
-	<windows.h>
-
-1422998148 source:c:\project\codeblocksversion\diplomalfa\writing.cpp
-	"writing.h"
-
-1415527063 c:\project\codeblocksversion\diplomalfa\mybiblio.h
-	"stdafx.h"
-
-1415527063 source:c:\project\codeblocksversion\diplomalfa\mybiblio.cpp
-	"Mybiblio.h"
-
-1422649294 source:c:\project\codeblocksversion\diplomalfa\effects.cpp
-	"effects.h"
-
-1422004019 c:\project\codeblocksversion\diplomalfa\effects.h
-	"stdafx.h"
-	"Sprite.h"
-	"SDL_Setup.h"
-	"objects.h"
-
-1423421892 c:\project\codeblocksversion\diplomalfa\interpretator.h
-	"stdafx.h"
-	"Enviroment.h"
-	"objects.h"
-	"MainCharacter.h"
-
-1423422724 source:c:\project\codeblocksversion\diplomalfa\interpretator.cpp
-	"interpretator.h"
-
-1426862111 c:\project\codeblocksversion\diplomalfa\net.h
-	<winsock2.h>
-	<sys/socket.h>
-	<netinet/in.h>
-	<fcntl.h>
-	<assert.h>
-	<map>
-	<unistd.h>
-
-1426862121 source:c:\project\codeblocksversion\diplomalfa\net.cpp
 	"Net.h"
-	<cstdio>
-	<winsock2.h>
-	<iostream>
-
-1414486279 source:c:\users\avdrine\documents\diplomalfa\collisionrectangle.cpp
-	"CollisionRectangle.h"
-
-1414486173 c:\users\avdrine\documents\diplomalfa\collisionrectangle.h
-	"stdafx.h"
-
-1426855735 c:\users\avdrine\documents\diplomalfa\stdafx.h
-	<SDL.h>
-	<SDL_image.h>
-	<SDL_mixer.h>
-	<iostream>
-	<vector>
-	<map>
-	<fstream>
-	<sstream>
-	<string>
-	<cstdlib>
-	<math.h>
-	"Net.h"
-	"struct.h"
-
-1394937196 c:\users\avdrine\documents\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl.h
-	"SDL_main.h"
-	"SDL_stdinc.h"
-	"SDL_assert.h"
-	"SDL_atomic.h"
-	"SDL_audio.h"
-	"SDL_clipboard.h"
-	"SDL_cpuinfo.h"
-	"SDL_endian.h"
-	"SDL_error.h"
-	"SDL_events.h"
-	"SDL_filesystem.h"
-	"SDL_joystick.h"
-	"SDL_gamecontroller.h"
-	"SDL_haptic.h"
-	"SDL_hints.h"
-	"SDL_loadso.h"
-	"SDL_log.h"
-	"SDL_messagebox.h"
-	"SDL_mutex.h"
-	"SDL_power.h"
-	"SDL_render.h"
-	"SDL_rwops.h"
-	"SDL_system.h"
-	"SDL_thread.h"
-	"SDL_timer.h"
-	"SDL_version.h"
-	"SDL_video.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937196 c:\users\avdrine\documents\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_main.h
-	"SDL_stdinc.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937197 c:\users\avdrine\documents\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_stdinc.h
-	"SDL_config.h"
-	<sys/types.h>
-	<stdio.h>
-	<stdlib.h>
-	<stddef.h>
-	<stdarg.h>
-	<stdlib.h>
-	<malloc.h>
-	<stddef.h>
-	<stdarg.h>
-	<memory.h>
-	<string.h>
-	<strings.h>
-	<inttypes.h>
-	<stdint.h>
-	<ctype.h>
-	<math.h>
-	<float.h>
-	<iconv.h>
-	"begin_code.h"
-	<alloca.h>
-	<malloc.h>
-	<malloc.h>
-	<malloc.h>
-	<stdlib.h>
-	"close_code.h"
-
-1394937197 c:\users\avdrine\documents\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_config.h
-	"SDL_platform.h"
-
-1410295088 c:\users\avdrine\documents\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_platform.h
-	"AvailabilityMacros.h"
-	"TargetConditionals.h"
-	<winapifamily.h>
-	"begin_code.h"
-	"close_code.h"
-
-1394937197 c:\users\avdrine\documents\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\begin_code.h
-
-1394937197 c:\users\avdrine\documents\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\close_code.h
-
-1394937196 c:\users\avdrine\documents\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_assert.h
-	"SDL_config.h"
-	"begin_code.h"
-	<signal.h>
-	"close_code.h"
-
-1394937196 c:\users\avdrine\documents\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_atomic.h
-	"SDL_stdinc.h"
-	"SDL_platform.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937196 c:\users\avdrine\documents\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_audio.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"SDL_endian.h"
-	"SDL_mutex.h"
-	"SDL_thread.h"
-	"SDL_rwops.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937196 c:\users\avdrine\documents\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_error.h
-	"SDL_stdinc.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937196 c:\users\avdrine\documents\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_endian.h
-	"SDL_stdinc.h"
-	<endian.h>
-	"begin_code.h"
-	"close_code.h"
-
-1394937197 c:\users\avdrine\documents\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_mutex.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937197 c:\users\avdrine\documents\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_thread.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"SDL_atomic.h"
-	"SDL_mutex.h"
-	"begin_code.h"
-	<process.h>
-	"close_code.h"
-
-1394937197 c:\users\avdrine\documents\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_rwops.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937196 c:\users\avdrine\documents\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_clipboard.h
-	"SDL_stdinc.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937196 c:\users\avdrine\documents\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_cpuinfo.h
-	"SDL_stdinc.h"
-	<intrin.h>
-	<intrin.h>
-	<altivec.h>
-	<mmintrin.h>
-	<mm3dnow.h>
-	<xmmintrin.h>
-	<emmintrin.h>
-	"begin_code.h"
-	"close_code.h"
-
-1394937196 c:\users\avdrine\documents\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_events.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"SDL_video.h"
-	"SDL_keyboard.h"
-	"SDL_mouse.h"
-	"SDL_joystick.h"
-	"SDL_gamecontroller.h"
-	"SDL_quit.h"
-	"SDL_gesture.h"
-	"SDL_touch.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937197 c:\users\avdrine\documents\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_video.h
-	"SDL_stdinc.h"
-	"SDL_pixels.h"
-	"SDL_rect.h"
-	"SDL_surface.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937197 c:\users\avdrine\documents\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_pixels.h
-	"SDL_stdinc.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937197 c:\users\avdrine\documents\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_rect.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"SDL_pixels.h"
-	"SDL_rwops.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937197 c:\users\avdrine\documents\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_surface.h
-	"SDL_stdinc.h"
-	"SDL_pixels.h"
-	"SDL_rect.h"
-	"SDL_blendmode.h"
-	"SDL_rwops.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937196 c:\users\avdrine\documents\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_blendmode.h
-	"begin_code.h"
-	"close_code.h"
-
-1394937196 c:\users\avdrine\documents\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_keyboard.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"SDL_keycode.h"
-	"SDL_video.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937196 c:\users\avdrine\documents\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_keycode.h
-	"SDL_stdinc.h"
-	"SDL_scancode.h"
-
-1394937197 c:\users\avdrine\documents\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_scancode.h
-	"SDL_stdinc.h"
-
-1394937196 c:\users\avdrine\documents\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_mouse.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"SDL_video.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937196 c:\users\avdrine\documents\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_joystick.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937196 c:\users\avdrine\documents\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_gamecontroller.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"SDL_rwops.h"
-	"SDL_joystick.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937197 c:\users\avdrine\documents\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_quit.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-
-1394937196 c:\users\avdrine\documents\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_gesture.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"SDL_video.h"
-	"SDL_touch.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937197 c:\users\avdrine\documents\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_touch.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"SDL_video.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937196 c:\users\avdrine\documents\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_filesystem.h
-	"SDL_stdinc.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937196 c:\users\avdrine\documents\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_haptic.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"SDL_joystick.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937196 c:\users\avdrine\documents\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_hints.h
-	"SDL_stdinc.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937196 c:\users\avdrine\documents\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_loadso.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937196 c:\users\avdrine\documents\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_log.h
-	"SDL_stdinc.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937196 c:\users\avdrine\documents\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_messagebox.h
-	"SDL_stdinc.h"
-	"SDL_video.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937197 c:\users\avdrine\documents\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_power.h
-	"SDL_stdinc.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937197 c:\users\avdrine\documents\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_render.h
-	"SDL_stdinc.h"
-	"SDL_rect.h"
-	"SDL_video.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937197 c:\users\avdrine\documents\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_system.h
-	"SDL_stdinc.h"
-	"SDL_keyboard.h"
-	"SDL_render.h"
-	"SDL_video.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937197 c:\users\avdrine\documents\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_timer.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394937197 c:\users\avdrine\documents\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_version.h
-	"SDL_stdinc.h"
-	"begin_code.h"
-	"close_code.h"
-
-1376159942 c:\users\avdrine\documents\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_image.h
-	"SDL.h"
-	"SDL_version.h"
-	"begin_code.h"
-	"close_code.h"
-
-1376160025 c:\users\avdrine\documents\diplomalfa\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_mixer.h
-	"SDL_stdinc.h"
-	"SDL_rwops.h"
-	"SDL_audio.h"
-	"SDL_endian.h"
-	"SDL_version.h"
-	"begin_code.h"
-	"close_code.h"
-
-1426862111 c:\users\avdrine\documents\diplomalfa\net.h
-	<winsock2.h>
-	<sys/socket.h>
-	<netinet/in.h>
-	<fcntl.h>
-	<assert.h>
-	<map>
-	<unistd.h>
-
-1423674908 c:\users\avdrine\documents\diplomalfa\struct.h
-	"stdafx.h"
-	"CollisionRectangle.h"
-
-1422649294 source:c:\users\avdrine\documents\diplomalfa\effects.cpp
-	"effects.h"
-
-1422004019 c:\users\avdrine\documents\diplomalfa\effects.h
-	"stdafx.h"
-	"Sprite.h"
-	"SDL_Setup.h"
-	"objects.h"
-
-1422708520 c:\users\avdrine\documents\diplomalfa\sprite.h
-	"stdafx.h"
-	"CollisionRectangle.h"
-	"SDL_Setup.h"
-
-1422664905 c:\users\avdrine\documents\diplomalfa\sdl_setup.h
-
-1423689596 c:\users\avdrine\documents\diplomalfa\objects.h
-	"stdafx.h"
-	"Sprite.h"
-	"SDL_Setup.h"
-
-1429273165 source:c:\users\avdrine\documents\diplomalfa\enviroment.cpp
-	"Enviroment.h"
-
-1423688474 c:\users\avdrine\documents\diplomalfa\enviroment.h
-	"stdafx.h"
-	"Sprite.h"
-	"SDL_Setup.h"
-	"objects.h"
-	"Menu.h"
-	<vector>
-
-1428857121 c:\users\avdrine\documents\diplomalfa\menu.h
-	"stdafx.h"
-	"Sprite.h"
-	"SDL_Setup.h"
-	"writing.h"
-	"Mybiblio.h"
-	<cstdlib>
-	<sstream>
-
-1422992847 c:\users\avdrine\documents\diplomalfa\writing.h
-	"stdafx.h"
-	"Sprite.h"
-	"SDL_Setup.h"
-	<vector>
-	<windows.h>
-
-1415527063 c:\users\avdrine\documents\diplomalfa\mybiblio.h
-	"stdafx.h"
-
-1428850532 source:c:\users\avdrine\documents\diplomalfa\firstrpg.cpp
-	"stdafx.h"
-	"Main.h"
-
-1429277879 c:\users\avdrine\documents\diplomalfa\main.h
-	"SDL_Setup.h"
-	"interpretator.h"
-	"Sprite.h"
-	"MainCharacter.h"
-	"Enviroment.h"
-	"Menu.h"
-	<windows.h>
-	<math.h>
-
-1423421892 c:\users\avdrine\documents\diplomalfa\interpretator.h
-	"stdafx.h"
-	"Enviroment.h"
-	"objects.h"
-	"MainCharacter.h"
-
-1423694354 c:\users\avdrine\documents\diplomalfa\maincharacter.h
-	"stdafx.h"
-	"Sprite.h"
-	"SDL_Setup.h"
-	"Enviroment.h"
-	"writing.h"
-	"Mybiblio.h"
-	"effects.h"
-
-1423422724 source:c:\users\avdrine\documents\diplomalfa\interpretator.cpp
-	"interpretator.h"
-
-1429620611 source:c:\users\avdrine\documents\diplomalfa\main.cpp
-	"stdafx.h"
-	"Main.h"
-
-1423694387 source:c:\users\avdrine\documents\diplomalfa\maincharacter.cpp
-	"MainCharacter.h"
-
-1428858278 source:c:\users\avdrine\documents\diplomalfa\menu.cpp
-	"Menu.h"
-
-1415527063 source:c:\users\avdrine\documents\diplomalfa\mybiblio.cpp
-	"Mybiblio.h"
-
-1423691006 source:c:\users\avdrine\documents\diplomalfa\objects.cpp
-	"objects.h"
-
-1428851342 source:c:\users\avdrine\documents\diplomalfa\sdl_setup.cpp
-	"stdafx.h"
-	"SDL_Setup.h"
-
-1423682043 source:c:\users\avdrine\documents\diplomalfa\sprite.cpp
-	"stdafx.h"
-	"Sprite.h"
-
-1422998148 source:c:\users\avdrine\documents\diplomalfa\writing.cpp
-	"writing.h"
-
-1429277558 source:c:\users\avdrine\documents\diplomalfa\net.cpp
-	"Net.h"
-	<cstdio>
-	<winsock2.h>
-	<iostream>
-
-1414486279 source:c:\users\avdrine\documents\github\dclient\collisionrectangle.cpp
-	"CollisionRectangle.h"
-
-1414486173 c:\users\avdrine\documents\github\dclient\collisionrectangle.h
-	"stdafx.h"
-
-1426855735 c:\users\avdrine\documents\github\dclient\stdafx.h
-	<SDL.h>
-	<SDL_image.h>
-	<SDL_mixer.h>
-	<iostream>
-	<vector>
-	<map>
-	<fstream>
-	<sstream>
-	<string>
-	<cstdlib>
-	<math.h>
-	"Net.h"
-	"struct.h"
 
 1394937196 c:\users\avdrine\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl.h
 	"SDL_main.h"
@@ -1037,7 +62,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1394937197 c:\users\avdrine\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_stdinc.h
+1394937198 c:\users\avdrine\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_stdinc.h
 	"SDL_config.h"
 	<sys/types.h>
 	<stdio.h>
@@ -1065,19 +90,19 @@
 	<stdlib.h>
 	"close_code.h"
 
-1394937197 c:\users\avdrine\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_config.h
+1394937198 c:\users\avdrine\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_config.h
 	"SDL_platform.h"
 
-1410295088 c:\users\avdrine\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_platform.h
+1410295090 c:\users\avdrine\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_platform.h
 	"AvailabilityMacros.h"
 	"TargetConditionals.h"
 	<winapifamily.h>
 	"begin_code.h"
 	"close_code.h"
 
-1394937197 c:\users\avdrine\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\begin_code.h
+1394937198 c:\users\avdrine\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\begin_code.h
 
-1394937197 c:\users\avdrine\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\close_code.h
+1394937198 c:\users\avdrine\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\close_code.h
 
 1394937196 c:\users\avdrine\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_assert.h
 	"SDL_config.h"
@@ -1112,13 +137,13 @@
 	"begin_code.h"
 	"close_code.h"
 
-1394937197 c:\users\avdrine\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_mutex.h
+1394937198 c:\users\avdrine\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_mutex.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1394937197 c:\users\avdrine\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_thread.h
+1394937198 c:\users\avdrine\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_thread.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_atomic.h"
@@ -1127,7 +152,7 @@
 	<process.h>
 	"close_code.h"
 
-1394937197 c:\users\avdrine\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_rwops.h
+1394937198 c:\users\avdrine\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_rwops.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
@@ -1164,7 +189,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1394937197 c:\users\avdrine\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_video.h
+1394937198 c:\users\avdrine\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_video.h
 	"SDL_stdinc.h"
 	"SDL_pixels.h"
 	"SDL_rect.h"
@@ -1172,12 +197,12 @@
 	"begin_code.h"
 	"close_code.h"
 
-1394937197 c:\users\avdrine\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_pixels.h
+1394937198 c:\users\avdrine\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_pixels.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1394937197 c:\users\avdrine\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_rect.h
+1394937198 c:\users\avdrine\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_rect.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_pixels.h"
@@ -1185,7 +210,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1394937197 c:\users\avdrine\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_surface.h
+1394937198 c:\users\avdrine\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_surface.h
 	"SDL_stdinc.h"
 	"SDL_pixels.h"
 	"SDL_rect.h"
@@ -1210,7 +235,7 @@
 	"SDL_stdinc.h"
 	"SDL_scancode.h"
 
-1394937197 c:\users\avdrine\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_scancode.h
+1394937198 c:\users\avdrine\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_scancode.h
 	"SDL_stdinc.h"
 
 1394937196 c:\users\avdrine\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_mouse.h
@@ -1234,7 +259,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1394937197 c:\users\avdrine\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_quit.h
+1394937198 c:\users\avdrine\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_quit.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 
@@ -1246,7 +271,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1394937197 c:\users\avdrine\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_touch.h
+1394937198 c:\users\avdrine\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_touch.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"SDL_video.h"
@@ -1287,19 +312,19 @@
 	"begin_code.h"
 	"close_code.h"
 
-1394937197 c:\users\avdrine\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_power.h
+1394937198 c:\users\avdrine\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_power.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
 
-1394937197 c:\users\avdrine\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_render.h
+1394937198 c:\users\avdrine\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_render.h
 	"SDL_stdinc.h"
 	"SDL_rect.h"
 	"SDL_video.h"
 	"begin_code.h"
 	"close_code.h"
 
-1394937197 c:\users\avdrine\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_system.h
+1394937198 c:\users\avdrine\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_system.h
 	"SDL_stdinc.h"
 	"SDL_keyboard.h"
 	"SDL_render.h"
@@ -1307,13 +332,13 @@
 	"begin_code.h"
 	"close_code.h"
 
-1394937197 c:\users\avdrine\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_timer.h
+1394937198 c:\users\avdrine\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_timer.h
 	"SDL_stdinc.h"
 	"SDL_error.h"
 	"begin_code.h"
 	"close_code.h"
 
-1394937197 c:\users\avdrine\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_version.h
+1394937198 c:\users\avdrine\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_version.h
 	"SDL_stdinc.h"
 	"begin_code.h"
 	"close_code.h"
@@ -1324,7 +349,7 @@
 	"begin_code.h"
 	"close_code.h"
 
-1376160025 c:\users\avdrine\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_mixer.h
+1376160026 c:\users\avdrine\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_mixer.h
 	"SDL_stdinc.h"
 	"SDL_rwops.h"
 	"SDL_audio.h"
@@ -1332,6 +357,18 @@
 	"SDL_version.h"
 	"begin_code.h"
 	"close_code.h"
+
+1376156544 c:\users\avdrine\documents\github\dclient\libraries\sdl2_ttf-2.0.12\i686-w64-mingw32\include\sdl2\sdl_ttf.h
+	"SDL.h"
+	"begin_code.h"
+	"close_code.h"
+
+1431913602 c:\users\avdrine\documents\github\dclient\struct.h
+	"libraries.h"
+	"graphics/CollisionRectangle.h"
+
+1431431298 c:\users\avdrine\documents\github\dclient\graphics\collisionrectangle.h
+	"../libraries.h"
 
 1432219000 c:\users\avdrine\documents\github\dclient\net.h
 	<winsock2.h>
@@ -1345,25 +382,30 @@
 	<iostream>
 	<unistd.h>
 
-1431913602 c:\users\avdrine\documents\github\dclient\struct.h
-	"libraries.h"
+1433064986 c:\users\avdrine\documents\github\dclient\graphics.h
+	"graphics/SDL_Setup.h"
 	"graphics/CollisionRectangle.h"
+	"graphics/Sprite.h"
+	"graphics/Texts.h"
+	"graphics/Music.h"
 
-1422649294 source:c:\users\avdrine\documents\github\dclient\effects.cpp
-	"effects.h"
+1431628408 c:\users\avdrine\documents\github\dclient\graphics\sdl_setup.h
+	<map>
+	<SDL.h>
+	<SDL_image.h>
+	<SDL_mixer.h>
+	<SDL_ttf.h>
 
-1422004019 c:\users\avdrine\documents\github\dclient\effects.h
-	"stdafx.h"
-	"Sprite.h"
-	"SDL_Setup.h"
-	"objects.h"
-
-1422708520 c:\users\avdrine\documents\github\dclient\sprite.h
-	"stdafx.h"
+1431642906 c:\users\avdrine\documents\github\dclient\graphics\sprite.h
+	"../libraries.h"
 	"CollisionRectangle.h"
 	"SDL_Setup.h"
 
-1422664905 c:\users\avdrine\documents\github\dclient\sdl_setup.h
+1432467850 c:\users\avdrine\documents\github\dclient\graphics\texts.h
+	"SDL_Setup.h"
+
+1433065026 c:\users\avdrine\documents\github\dclient\graphics\music.h
+	"../libraries.h"
 
 1431548964 c:\users\avdrine\documents\github\dclient\objects.h
 	"objects/Environment.h"
@@ -1384,36 +426,102 @@
 	"objects/Items/Equip/Weapon/Range.h"
 	"objects/Items/Usable.h"
 
-1429273165 source:c:\users\avdrine\documents\github\dclient\enviroment.cpp
-	"Enviroment.h"
+1432406346 c:\users\avdrine\documents\github\dclient\objects\environment.h
+	<string>
+	"../graphics.h"
+	"../struct.h"
 
-1423688474 c:\users\avdrine\documents\github\dclient\enviroment.h
-	"stdafx.h"
-	"Sprite.h"
-	"SDL_Setup.h"
-	"objects.h"
-	"Menu.h"
-	<vector>
+1431704654 c:\users\avdrine\documents\github\dclient\objects\environment\live.h
+	"../Environment.h"
 
-1432468453 c:\users\avdrine\documents\github\dclient\menu.h
+1431915846 c:\users\avdrine\documents\github\dclient\objects\environment\live\characters.h
+	"../Live.h"
+	"../../Items.h"
+
+1431685148 c:\users\avdrine\documents\github\dclient\objects\items.h
+	"../graphics.h"
+
+1431863094 c:\users\avdrine\documents\github\dclient\objects\environment\live\mobs.h
+	"../Live.h"
+	"../../../struct.h"
+
+1431863520 c:\users\avdrine\documents\github\dclient\objects\environment\nonlive.h
+	"../Environment.h"
+
+1431863094 c:\users\avdrine\documents\github\dclient\objects\environment\nonlive\objects.h
+	"../NonLive.h"
+
+1431863412 c:\users\avdrine\documents\github\dclient\objects\environment\nonlive\objects\normal.h
+	"../Objects.h"
+
+1431863502 c:\users\avdrine\documents\github\dclient\objects\environment\nonlive\objects\trigger.h
+	"../Objects.h"
+
+1431863456 c:\users\avdrine\documents\github\dclient\objects\environment\nonlive\objects\wtrig.h
+	"../Objects.h"
+
+1431863534 c:\users\avdrine\documents\github\dclient\objects\environment\nonlive\ground.h
+	"../NonLive.h"
+
+1431685148 c:\users\avdrine\documents\github\dclient\objects\items\equip.h
+	"../Items.h"
+
+1431549266 c:\users\avdrine\documents\github\dclient\objects\items\equip\armor.h
+	"../Equip.h"
+
+1431549828 c:\users\avdrine\documents\github\dclient\objects\items\equip\weapon.h
+	<string>
+	"../Equip.h"
+
+1431684356 c:\users\avdrine\documents\github\dclient\objects\items\equip\weapon\melee.h
+	"../Weapon.h"
+	"../../../../struct.h"
+
+1431549260 c:\users\avdrine\documents\github\dclient\objects\items\equip\weapon\range.h
+	"../Weapon.h"
+
+1431549282 c:\users\avdrine\documents\github\dclient\objects\items\usable.h
+	"../Items.h"
+
+1433701975 c:\users\avdrine\documents\github\dclient\menu.h
 	"libraries.h"
 	"graphics.h"
 
-1422992847 c:\users\avdrine\documents\github\dclient\writing.h
-	"stdafx.h"
-	"Sprite.h"
+1432554216 c:\users\avdrine\documents\github\dclient\maincharacter.h
+	"graphics.h"
+	"libraries.h"
+	"Menu.h"
+	"struct.h"
+
+1432532158 source:c:\users\avdrine\documents\github\dclient\graphics\collisionrectangle.cpp
+	"CollisionRectangle.h"
+
+1433687483 source:c:\users\avdrine\documents\github\dclient\graphics\music.cpp
+	"Music.h"
+
+1433687483 source:c:\users\avdrine\documents\github\dclient\graphics\sdl_setup.cpp
+	"../libraries.h"
 	"SDL_Setup.h"
-	<vector>
-	<windows.h>
 
-1415527063 c:\users\avdrine\documents\github\dclient\mybiblio.h
-	"stdafx.h"
+1433687483 source:c:\users\avdrine\documents\github\dclient\graphics\sound.cpp
+	"Sound.h"
 
-1428850532 source:c:\users\avdrine\documents\github\dclient\firstrpg.cpp
-	"stdafx.h"
+1433096799 c:\users\avdrine\documents\github\dclient\graphics\sound.h
+	"../libraries.h"
+
+1434360204 source:c:\users\avdrine\documents\github\dclient\graphics\sprite.cpp
+	"../libraries.h"
+	"Sprite.h"
+
+1432471566 source:c:\users\avdrine\documents\github\dclient\graphics\texts.cpp
+	"Texts.h"
+	"../libraries.h"
+
+1434454780 source:c:\users\avdrine\documents\github\dclient\main.cpp
+	"libraries.h"
 	"Main.h"
 
-1432471757 c:\users\avdrine\documents\github\dclient\main.h
+1432548622 c:\users\avdrine\documents\github\dclient\main.h
 	"graphics.h"
 	"Menu.h"
 	"GameLVL.h"
@@ -1421,1975 +529,74 @@
 	<windows.h>
 	<math.h>
 
-1423421892 c:\users\avdrine\documents\github\dclient\interpretator.h
-	"stdafx.h"
-	"Enviroment.h"
-	"objects.h"
+1433687482 source:c:\users\avdrine\documents\github\dclient\maincharacter.cpp
 	"MainCharacter.h"
 
-1432531487 c:\users\avdrine\documents\github\dclient\maincharacter.h
-	"graphics.h"
-	"libraries.h"
-	"GameLVL.h"
-	"struct.h"
-
-1423422724 source:c:\users\avdrine\documents\github\dclient\interpretator.cpp
-	"interpretator.h"
-
-1432498323 source:c:\users\avdrine\documents\github\dclient\main.cpp
-	"libraries.h"
-	"Main.h"
-
-1432532343 source:c:\users\avdrine\documents\github\dclient\maincharacter.cpp
-	"MainCharacter.h"
-
-1432499986 source:c:\users\avdrine\documents\github\dclient\menu.cpp
+1433702140 source:c:\users\avdrine\documents\github\dclient\menu.cpp
 	"Menu.h"
 
-1415527063 source:c:\users\avdrine\documents\github\dclient\mybiblio.cpp
-	"Mybiblio.h"
-
-1432383371 source:c:\users\avdrine\documents\github\dclient\net.cpp
+1433687483 source:c:\users\avdrine\documents\github\dclient\net.cpp
 	"Net.h"
 	<cstdio>
 	<winsock2.h>
 	<ctime>
 	<fstream>
 
-1423691006 source:c:\users\avdrine\documents\github\dclient\objects.cpp
-	"objects.h"
+1433700430 source:c:\users\avdrine\documents\github\dclient\objects\environment.cpp
+	"Environment.h"
 
-1428851342 source:c:\users\avdrine\documents\github\dclient\sdl_setup.cpp
-	"stdafx.h"
-	"SDL_Setup.h"
+1433687483 source:c:\users\avdrine\documents\github\dclient\objects\environment\live.cpp
+	"Live.h"
 
-1423682043 source:c:\users\avdrine\documents\github\dclient\sprite.cpp
-	"stdafx.h"
-	"Sprite.h"
+1433687483 source:c:\users\avdrine\documents\github\dclient\objects\environment\live\characters.cpp
+	"Characters.h"
 
-1422998148 source:c:\users\avdrine\documents\github\dclient\writing.cpp
-	"writing.h"
+1431863094 source:c:\users\avdrine\documents\github\dclient\objects\environment\live\mobs.cpp
+	"Mobs.h"
 
-1432532156 source:c:\users\avdrine\documents\github\dclient\graphics\collisionrectangle.cpp
-	"CollisionRectangle.h"
+1431863096 source:c:\users\avdrine\documents\github\dclient\objects\environment\nonlive.cpp
+	"NonLive.h"
 
-1431431296 c:\users\avdrine\documents\github\dclient\graphics\collisionrectangle.h
-	"../libraries.h"
+1432456342 source:c:\users\avdrine\documents\github\dclient\objects\environment\nonlive\ground.cpp
+	"Ground.h"
 
-1431623486 c:\users\avdrine\documents\github\dclient\libraries.h
-	<SDL.h>
-	<SDL_image.h>
-	<SDL_mixer.h>
-	<SDL_ttf.h>
-	<iostream>
-	<vector>
-	<map>
-	<fstream>
-	<sstream>
-	<string>
-	<cstdlib>
-	<math.h>
-	"struct.h"
-	"Net.h"
+1433687483 source:c:\users\avdrine\documents\github\dclient\objects\environment\nonlive\objects.cpp
+	"Objects.h"
 
-1431633488 source:c:\users\avdrine\documents\github\dclient\graphics\sdl_setup.cpp
-	"../libraries.h"
-	"SDL_Setup.h"
+1433687483 source:c:\users\avdrine\documents\github\dclient\objects\environment\nonlive\objects\normal.cpp
+	"Normal.h"
 
-1431628407 c:\users\avdrine\documents\github\dclient\graphics\sdl_setup.h
-	<map>
-	<SDL.h>
-	<SDL_image.h>
-	<SDL_mixer.h>
-	<SDL_ttf.h>
+1431863552 source:c:\users\avdrine\documents\github\dclient\objects\environment\nonlive\objects\trigger.cpp
+	"Trigger.h"
 
-1432499801 source:c:\users\avdrine\documents\github\dclient\graphics\sprite.cpp
-	"../libraries.h"
-	"Sprite.h"
+1431863558 source:c:\users\avdrine\documents\github\dclient\objects\environment\nonlive\objects\wtrig.cpp
+	"Wtrig.h"
 
-1431642904 c:\users\avdrine\documents\github\dclient\graphics\sprite.h
-	"../libraries.h"
-	"CollisionRectangle.h"
-	"SDL_Setup.h"
+1431549798 source:c:\users\avdrine\documents\github\dclient\objects\items.cpp
+	"Items.h"
 
-1431628260 c:\users\avdrine\documents\github\dclient\graphics.h
-	"graphics/SDL_Setup.h"
-	"graphics/CollisionRectangle.h"
-	"graphics/Sprite.h"
-	"graphics/Texts.h"
+1431549804 source:c:\users\avdrine\documents\github\dclient\objects\items\equip.cpp
+	"Equip.h"
 
-1432476041 source:c:\users\avdrine\documents\github\dclient\startcpp.cpp
+1431544564 source:c:\users\avdrine\documents\github\dclient\objects\items\equip\armor.cpp
+	"Armor.h"
+
+1431544742 source:c:\users\avdrine\documents\github\dclient\objects\items\equip\weapon.cpp
+	"Weapon.h"
+
+1431684360 source:c:\users\avdrine\documents\github\dclient\objects\items\equip\weapon\melee.cpp
+	"Melee.h"
+
+1431545002 source:c:\users\avdrine\documents\github\dclient\objects\items\equip\weapon\range.cpp
+	"Range.h"
+
+1431549850 source:c:\users\avdrine\documents\github\dclient\objects\items\usable.cpp
+	"Usable.h"
+
+1434454842 source:c:\users\avdrine\documents\github\dclient\startcpp.cpp
 	"libraries.h"
 	"Main.h"
-
-1376156544 c:\users\avdrine\documents\github\dclient\libraries\sdl2_ttf-2.0.12\i686-w64-mingw32\include\sdl2\sdl_ttf.h
-	"SDL.h"
-	"begin_code.h"
-	"close_code.h"
-
-1432467849 c:\users\avdrine\documents\github\dclient\graphics\texts.h
-	"SDL_Setup.h"
-
-1432471564 source:c:\users\avdrine\documents\github\dclient\graphics\texts.cpp
-	"Texts.h"
-	"../libraries.h"
 
 1431922018 source:c:\users\avdrine\documents\github\dclient\struct.cpp
-	"struct.h"
-
-1432500444 source:c:\users\avdrine\documents\github\dclient\objects\environment.cpp
-	"Environment.h"
-
-1432406345 c:\users\avdrine\documents\github\dclient\objects\environment.h
-	<string>
-	"../graphics.h"
-	"../struct.h"
-
-1431863092 source:c:\users\avdrine\documents\github\dclient\objects\environment\live.cpp
-	"Live.h"
-
-1431704652 c:\users\avdrine\documents\github\dclient\objects\environment\live.h
-	"../Environment.h"
-
-1432415883 source:c:\users\avdrine\documents\github\dclient\objects\environment\live\characters.cpp
-	"Characters.h"
-
-1431915844 c:\users\avdrine\documents\github\dclient\objects\environment\live\characters.h
-	"../Live.h"
-	"../../Items.h"
-
-1431685146 c:\users\avdrine\documents\github\dclient\objects\items.h
-	"../graphics.h"
-
-1431863092 source:c:\users\avdrine\documents\github\dclient\objects\environment\live\mobs.cpp
-	"Mobs.h"
-
-1431863092 c:\users\avdrine\documents\github\dclient\objects\environment\live\mobs.h
-	"../Live.h"
-	"../../../struct.h"
-
-1431863094 source:c:\users\avdrine\documents\github\dclient\objects\environment\nonlive.cpp
-	"NonLive.h"
-
-1431863519 c:\users\avdrine\documents\github\dclient\objects\environment\nonlive.h
-	"../Environment.h"
-
-1432456341 source:c:\users\avdrine\documents\github\dclient\objects\environment\nonlive\ground.cpp
-	"Ground.h"
-
-1431863532 c:\users\avdrine\documents\github\dclient\objects\environment\nonlive\ground.h
-	"../NonLive.h"
-
-1431863092 source:c:\users\avdrine\documents\github\dclient\objects\environment\nonlive\objects.cpp
-	"Objects.h"
-
-1431863092 c:\users\avdrine\documents\github\dclient\objects\environment\nonlive\objects.h
-	"../NonLive.h"
-
-1432496562 source:c:\users\avdrine\documents\github\dclient\objects\environment\nonlive\objects\normal.cpp
-	"Normal.h"
-
-1431863410 c:\users\avdrine\documents\github\dclient\objects\environment\nonlive\objects\normal.h
-	"../Objects.h"
-
-1431863550 source:c:\users\avdrine\documents\github\dclient\objects\environment\nonlive\objects\trigger.cpp
-	"Trigger.h"
-
-1431863500 c:\users\avdrine\documents\github\dclient\objects\environment\nonlive\objects\trigger.h
-	"../Objects.h"
-
-1431863556 source:c:\users\avdrine\documents\github\dclient\objects\environment\nonlive\objects\wtrig.cpp
-	"Wtrig.h"
-
-1431863455 c:\users\avdrine\documents\github\dclient\objects\environment\nonlive\objects\wtrig.h
-	"../Objects.h"
-
-1431549796 source:c:\users\avdrine\documents\github\dclient\objects\items.cpp
-	"Items.h"
-
-1431549802 source:c:\users\avdrine\documents\github\dclient\objects\items\equip.cpp
-	"Equip.h"
-
-1431685146 c:\users\avdrine\documents\github\dclient\objects\items\equip.h
-	"../Items.h"
-
-1431544562 source:c:\users\avdrine\documents\github\dclient\objects\items\equip\armor.cpp
-	"Armor.h"
-
-1431549265 c:\users\avdrine\documents\github\dclient\objects\items\equip\armor.h
-	"../Equip.h"
-
-1431544741 source:c:\users\avdrine\documents\github\dclient\objects\items\equip\weapon.cpp
-	"Weapon.h"
-
-1431549826 c:\users\avdrine\documents\github\dclient\objects\items\equip\weapon.h
-	<string>
-	"../Equip.h"
-
-1431684359 source:c:\users\avdrine\documents\github\dclient\objects\items\equip\weapon\melee.cpp
-	"Melee.h"
-
-1431684355 c:\users\avdrine\documents\github\dclient\objects\items\equip\weapon\melee.h
-	"../Weapon.h"
-	"../../../../struct.h"
-
-1431545000 source:c:\users\avdrine\documents\github\dclient\objects\items\equip\weapon\range.cpp
-	"Range.h"
-
-1431549258 c:\users\avdrine\documents\github\dclient\objects\items\equip\weapon\range.h
-	"../Weapon.h"
-
-1431549849 source:c:\users\avdrine\documents\github\dclient\objects\items\usable.cpp
-	"Usable.h"
-
-1431549280 c:\users\avdrine\documents\github\dclient\objects\items\usable.h
-	"../Items.h"
-
-1432399197 source:c:\users\avdrine\documents\github\dclient\gamelvl.cpp
-	"GameLVL.h"
-
-1432497587 c:\users\avdrine\documents\github\dclient\gamelvl.h
-	"libraries.h"
-	"graphics.h"
-	"objects.h"
-	"Menu.h"
-	<vector>
-
-1432309123 source:c:\users\unknown\documents\github\dclient\graphics\collisionrectangle.cpp
-	"CollisionRectangle.h"
-
-1432309123 c:\users\unknown\documents\github\dclient\graphics\collisionrectangle.h
-	"../libraries.h"
-
-1432309123 c:\users\unknown\documents\github\dclient\libraries.h
-	<SDL.h>
-	<SDL_image.h>
-	<SDL_mixer.h>
-	<SDL_ttf.h>
-	<iostream>
-	<vector>
-	<map>
-	<fstream>
-	<sstream>
-	<string>
-	<cstdlib>
-	<math.h>
-	"struct.h"
-	"Net.h"
-
-1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl.h
-	"SDL_main.h"
-	"SDL_stdinc.h"
-	"SDL_assert.h"
-	"SDL_atomic.h"
-	"SDL_audio.h"
-	"SDL_clipboard.h"
-	"SDL_cpuinfo.h"
-	"SDL_endian.h"
-	"SDL_error.h"
-	"SDL_events.h"
-	"SDL_filesystem.h"
-	"SDL_joystick.h"
-	"SDL_gamecontroller.h"
-	"SDL_haptic.h"
-	"SDL_hints.h"
-	"SDL_loadso.h"
-	"SDL_log.h"
-	"SDL_messagebox.h"
-	"SDL_mutex.h"
-	"SDL_power.h"
-	"SDL_render.h"
-	"SDL_rwops.h"
-	"SDL_system.h"
-	"SDL_thread.h"
-	"SDL_timer.h"
-	"SDL_version.h"
-	"SDL_video.h"
-	"begin_code.h"
-	"close_code.h"
-
-1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_main.h
-	"SDL_stdinc.h"
-	"begin_code.h"
-	"close_code.h"
-
-1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_stdinc.h
-	"SDL_config.h"
-	<sys/types.h>
-	<stdio.h>
-	<stdlib.h>
-	<stddef.h>
-	<stdarg.h>
-	<stdlib.h>
-	<malloc.h>
-	<stddef.h>
-	<stdarg.h>
-	<memory.h>
-	<string.h>
-	<strings.h>
-	<inttypes.h>
-	<stdint.h>
-	<ctype.h>
-	<math.h>
-	<float.h>
-	<iconv.h>
-	"begin_code.h"
-	<alloca.h>
-	<malloc.h>
-	<malloc.h>
-	<malloc.h>
-	<stdlib.h>
-	"close_code.h"
-
-1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_config.h
-	"SDL_platform.h"
-
-1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_platform.h
-	"AvailabilityMacros.h"
-	"TargetConditionals.h"
-	<winapifamily.h>
-	"begin_code.h"
-	"close_code.h"
-
-1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\begin_code.h
-
-1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\close_code.h
-
-1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_assert.h
-	"SDL_config.h"
-	"begin_code.h"
-	<signal.h>
-	"close_code.h"
-
-1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_atomic.h
-	"SDL_stdinc.h"
-	"SDL_platform.h"
-	"begin_code.h"
-	"close_code.h"
-
-1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_audio.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"SDL_endian.h"
-	"SDL_mutex.h"
-	"SDL_thread.h"
-	"SDL_rwops.h"
-	"begin_code.h"
-	"close_code.h"
-
-1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_error.h
-	"SDL_stdinc.h"
-	"begin_code.h"
-	"close_code.h"
-
-1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_endian.h
-	"SDL_stdinc.h"
-	<endian.h>
-	"begin_code.h"
-	"close_code.h"
-
-1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_mutex.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"begin_code.h"
-	"close_code.h"
-
-1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_thread.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"SDL_atomic.h"
-	"SDL_mutex.h"
-	"begin_code.h"
-	<process.h>
-	"close_code.h"
-
-1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_rwops.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"begin_code.h"
-	"close_code.h"
-
-1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_clipboard.h
-	"SDL_stdinc.h"
-	"begin_code.h"
-	"close_code.h"
-
-1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_cpuinfo.h
-	"SDL_stdinc.h"
-	<intrin.h>
-	<intrin.h>
-	<altivec.h>
-	<mmintrin.h>
-	<mm3dnow.h>
-	<xmmintrin.h>
-	<emmintrin.h>
-	"begin_code.h"
-	"close_code.h"
-
-1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_events.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"SDL_video.h"
-	"SDL_keyboard.h"
-	"SDL_mouse.h"
-	"SDL_joystick.h"
-	"SDL_gamecontroller.h"
-	"SDL_quit.h"
-	"SDL_gesture.h"
-	"SDL_touch.h"
-	"begin_code.h"
-	"close_code.h"
-
-1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_video.h
-	"SDL_stdinc.h"
-	"SDL_pixels.h"
-	"SDL_rect.h"
-	"SDL_surface.h"
-	"begin_code.h"
-	"close_code.h"
-
-1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_pixels.h
-	"SDL_stdinc.h"
-	"begin_code.h"
-	"close_code.h"
-
-1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_rect.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"SDL_pixels.h"
-	"SDL_rwops.h"
-	"begin_code.h"
-	"close_code.h"
-
-1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_surface.h
-	"SDL_stdinc.h"
-	"SDL_pixels.h"
-	"SDL_rect.h"
-	"SDL_blendmode.h"
-	"SDL_rwops.h"
-	"begin_code.h"
-	"close_code.h"
-
-1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_blendmode.h
-	"begin_code.h"
-	"close_code.h"
-
-1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_keyboard.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"SDL_keycode.h"
-	"SDL_video.h"
-	"begin_code.h"
-	"close_code.h"
-
-1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_keycode.h
-	"SDL_stdinc.h"
-	"SDL_scancode.h"
-
-1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_scancode.h
-	"SDL_stdinc.h"
-
-1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_mouse.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"SDL_video.h"
-	"begin_code.h"
-	"close_code.h"
-
-1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_joystick.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"begin_code.h"
-	"close_code.h"
-
-1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_gamecontroller.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"SDL_rwops.h"
-	"SDL_joystick.h"
-	"begin_code.h"
-	"close_code.h"
-
-1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_quit.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-
-1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_gesture.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"SDL_video.h"
-	"SDL_touch.h"
-	"begin_code.h"
-	"close_code.h"
-
-1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_touch.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"SDL_video.h"
-	"begin_code.h"
-	"close_code.h"
-
-1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_filesystem.h
-	"SDL_stdinc.h"
-	"begin_code.h"
-	"close_code.h"
-
-1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_haptic.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"SDL_joystick.h"
-	"begin_code.h"
-	"close_code.h"
-
-1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_hints.h
-	"SDL_stdinc.h"
-	"begin_code.h"
-	"close_code.h"
-
-1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_loadso.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"begin_code.h"
-	"close_code.h"
-
-1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_log.h
-	"SDL_stdinc.h"
-	"begin_code.h"
-	"close_code.h"
-
-1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_messagebox.h
-	"SDL_stdinc.h"
-	"SDL_video.h"
-	"begin_code.h"
-	"close_code.h"
-
-1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_power.h
-	"SDL_stdinc.h"
-	"begin_code.h"
-	"close_code.h"
-
-1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_render.h
-	"SDL_stdinc.h"
-	"SDL_rect.h"
-	"SDL_video.h"
-	"begin_code.h"
-	"close_code.h"
-
-1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_system.h
-	"SDL_stdinc.h"
-	"SDL_keyboard.h"
-	"SDL_render.h"
-	"SDL_video.h"
-	"begin_code.h"
-	"close_code.h"
-
-1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_timer.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"begin_code.h"
-	"close_code.h"
-
-1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_version.h
-	"SDL_stdinc.h"
-	"begin_code.h"
-	"close_code.h"
-
-1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_image.h
-	"SDL.h"
-	"SDL_version.h"
-	"begin_code.h"
-	"close_code.h"
-
-1432309118 c:\users\unknown\documents\github\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_mixer.h
-	"SDL_stdinc.h"
-	"SDL_rwops.h"
-	"SDL_audio.h"
-	"SDL_endian.h"
-	"SDL_version.h"
-	"begin_code.h"
-	"close_code.h"
-
-1432309120 c:\users\unknown\documents\github\dclient\libraries\sdl2_ttf-2.0.12\i686-w64-mingw32\include\sdl2\sdl_ttf.h
-	"SDL.h"
-	"begin_code.h"
-	"close_code.h"
-
-1432309124 c:\users\unknown\documents\github\dclient\struct.h
-	"libraries.h"
-	"graphics/CollisionRectangle.h"
-
-1432309120 c:\users\unknown\documents\github\dclient\net.h
-	<winsock2.h>
-	<sys/socket.h>
-	<netinet/in.h>
-	<fcntl.h>
-	<assert.h>
-	<map>
-	<ctime>
-	<SDL.h>
-	<iostream>
-	<unistd.h>
-
-1432309123 source:c:\users\unknown\documents\github\dclient\graphics\sdl_setup.cpp
-	"../libraries.h"
-	"SDL_Setup.h"
-
-1432309123 c:\users\unknown\documents\github\dclient\graphics\sdl_setup.h
-	<map>
-	<SDL.h>
-	<SDL_image.h>
-	<SDL_mixer.h>
-	<SDL_ttf.h>
-
-1432309123 source:c:\users\unknown\documents\github\dclient\graphics\sprite.cpp
-	"../libraries.h"
-	"Sprite.h"
-
-1432309123 c:\users\unknown\documents\github\dclient\graphics\sprite.h
-	"../libraries.h"
-	"CollisionRectangle.h"
-	"SDL_Setup.h"
-
-1432309123 source:c:\users\unknown\documents\github\dclient\graphics\texts.cpp
-	"Texts.h"
-	"../libraries.h"
-
-1432309123 c:\users\unknown\documents\github\dclient\graphics\texts.h
-	"SDL_Setup.h"
-
-1432309123 source:c:\users\unknown\documents\github\dclient\main.cpp
-	"libraries.h"
-	"Main.h"
-
-1432309120 c:\users\unknown\documents\github\dclient\main.h
-	"graphics.h"
-	"Menu.h"
-	"GameLVL.h"
-	"MainCharacter.h"
-	<windows.h>
-	<math.h>
-
-1432309123 c:\users\unknown\documents\github\dclient\graphics.h
-	"graphics/SDL_Setup.h"
-	"graphics/CollisionRectangle.h"
-	"graphics/Sprite.h"
-	"graphics/Texts.h"
-
-1432309120 c:\users\unknown\documents\github\dclient\menu.h
-	"libraries.h"
-	"graphics.h"
-
-1432309118 c:\users\unknown\documents\github\dclient\gamelvl.h
-	"libraries.h"
-	"graphics.h"
-	"objects.h"
-	"Menu.h"
-	<vector>
-
-1432309123 c:\users\unknown\documents\github\dclient\objects.h
-	"objects/Environment.h"
-	"objects/Environment/Live.h"
-	"objects/Environment/Live/Characters.h"
-	"objects/Environment/Live/Mobs.h"
-	"objects/Environment/NonLive.h"
-	"objects/Environment/NonLive/Objects.h"
-	"objects/Environment/NonLive/Objects/Normal.h"
-	"objects/Environment/NonLive/Objects/Trigger.h"
-	"objects/Environment/NonLive/Objects/Wtrig.h"
-	"objects/Environment/NonLive/Ground.h"
-	"objects/Items.h"
-	"objects/Items/Equip.h"
-	"objects/Items/Equip/Armor.h"
-	"objects/Items/Equip/Weapon.h"
-	"objects/Items/Equip/Weapon/Melee.h"
-	"objects/Items/Equip/Weapon/Range.h"
-	"objects/Items/Usable.h"
-
-1432309123 c:\users\unknown\documents\github\dclient\objects\environment.h
-	<string>
-	"../graphics.h"
-	"../struct.h"
-
-1432309123 c:\users\unknown\documents\github\dclient\objects\environment\live.h
-	"../Environment.h"
-
-1432309123 c:\users\unknown\documents\github\dclient\objects\environment\live\characters.h
-	"../Live.h"
-	"../../Items.h"
-
-1432309124 c:\users\unknown\documents\github\dclient\objects\items.h
-	"../graphics.h"
-
-1432309123 c:\users\unknown\documents\github\dclient\objects\environment\live\mobs.h
-	"../Live.h"
-	"../../../struct.h"
-
-1432309123 c:\users\unknown\documents\github\dclient\objects\environment\nonlive.h
-	"../Environment.h"
-
-1432309123 c:\users\unknown\documents\github\dclient\objects\environment\nonlive\objects.h
-	"../NonLive.h"
-
-1432309123 c:\users\unknown\documents\github\dclient\objects\environment\nonlive\objects\normal.h
-	"../Objects.h"
-
-1432309123 c:\users\unknown\documents\github\dclient\objects\environment\nonlive\objects\trigger.h
-	"../Objects.h"
-
-1432309123 c:\users\unknown\documents\github\dclient\objects\environment\nonlive\objects\wtrig.h
-	"../Objects.h"
-
-1432309123 c:\users\unknown\documents\github\dclient\objects\environment\nonlive\ground.h
-	"../NonLive.h"
-
-1432309124 c:\users\unknown\documents\github\dclient\objects\items\equip.h
-	"../Items.h"
-
-1432309124 c:\users\unknown\documents\github\dclient\objects\items\equip\armor.h
-	"../Equip.h"
-
-1432309124 c:\users\unknown\documents\github\dclient\objects\items\equip\weapon.h
-	<string>
-	"../Equip.h"
-
-1432309124 c:\users\unknown\documents\github\dclient\objects\items\equip\weapon\melee.h
-	"../Weapon.h"
-	"../../../../struct.h"
-
-1432309124 c:\users\unknown\documents\github\dclient\objects\items\equip\weapon\range.h
-	"../Weapon.h"
-
-1432309124 c:\users\unknown\documents\github\dclient\objects\items\usable.h
-	"../Items.h"
-
-1432309120 source:c:\users\unknown\documents\github\dclient\menu.cpp
-	"Menu.h"
-
-1432309120 source:c:\users\unknown\documents\github\dclient\net.cpp
-	"Net.h"
-	<cstdio>
-	<winsock2.h>
-	<ctime>
-	<fstream>
-
-1432309123 source:c:\users\unknown\documents\github\dclient\objects\environment.cpp
-	"Environment.h"
-
-1432309123 source:c:\users\unknown\documents\github\dclient\objects\environment\live.cpp
-	"Live.h"
-
-1432309123 source:c:\users\unknown\documents\github\dclient\objects\environment\live\characters.cpp
-	"Characters.h"
-
-1432309123 source:c:\users\unknown\documents\github\dclient\objects\environment\live\mobs.cpp
-	"Mobs.h"
-
-1432309123 source:c:\users\unknown\documents\github\dclient\objects\environment\nonlive.cpp
-	"NonLive.h"
-
-1432309123 source:c:\users\unknown\documents\github\dclient\objects\environment\nonlive\objects.cpp
-	"Objects.h"
-
-1431773883 source:c:\users\unknown\documents\github\dclient\objects\items.cpp
-	"Items.h"
-
-1431773883 source:c:\users\unknown\documents\github\dclient\startcpp.cpp
-	"libraries.h"
-	"Main.h"
-
-1432551175 source:c:\users\8\desktop\d\dclient\gamelvl.cpp
-	"GameLVL.h"
-
-1432550206 c:\users\8\desktop\d\dclient\gamelvl.h
-	"libraries.h"
-	"graphics.h"
-	"objects.h"
-	"Menu.h"
-	"MainCharacter.h"
-	<vector>
-
-1431619886 c:\users\8\desktop\d\dclient\libraries.h
-	<SDL.h>
-	<SDL_image.h>
-	<SDL_mixer.h>
-	<SDL_ttf.h>
-	<iostream>
-	<vector>
-	<map>
-	<fstream>
-	<sstream>
-	<string>
-	<cstdlib>
-	<math.h>
-	"struct.h"
-	"Net.h"
-
-1394933596 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl.h
-	"SDL_main.h"
-	"SDL_stdinc.h"
-	"SDL_assert.h"
-	"SDL_atomic.h"
-	"SDL_audio.h"
-	"SDL_clipboard.h"
-	"SDL_cpuinfo.h"
-	"SDL_endian.h"
-	"SDL_error.h"
-	"SDL_events.h"
-	"SDL_filesystem.h"
-	"SDL_joystick.h"
-	"SDL_gamecontroller.h"
-	"SDL_haptic.h"
-	"SDL_hints.h"
-	"SDL_loadso.h"
-	"SDL_log.h"
-	"SDL_messagebox.h"
-	"SDL_mutex.h"
-	"SDL_power.h"
-	"SDL_render.h"
-	"SDL_rwops.h"
-	"SDL_system.h"
-	"SDL_thread.h"
-	"SDL_timer.h"
-	"SDL_version.h"
-	"SDL_video.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933596 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_main.h
-	"SDL_stdinc.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933598 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_stdinc.h
-	"SDL_config.h"
-	<sys/types.h>
-	<stdio.h>
-	<stdlib.h>
-	<stddef.h>
-	<stdarg.h>
-	<stdlib.h>
-	<malloc.h>
-	<stddef.h>
-	<stdarg.h>
-	<memory.h>
-	<string.h>
-	<strings.h>
-	<inttypes.h>
-	<stdint.h>
-	<ctype.h>
-	<math.h>
-	<float.h>
-	<iconv.h>
-	"begin_code.h"
-	<alloca.h>
-	<malloc.h>
-	<malloc.h>
-	<malloc.h>
-	<stdlib.h>
-	"close_code.h"
-
-1394933598 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_config.h
-	"SDL_platform.h"
-
-1410291490 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_platform.h
-	"AvailabilityMacros.h"
-	"TargetConditionals.h"
-	<winapifamily.h>
-	"begin_code.h"
-	"close_code.h"
-
-1394933598 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\begin_code.h
-
-1394933598 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\close_code.h
-
-1394933596 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_assert.h
-	"SDL_config.h"
-	"begin_code.h"
-	<signal.h>
-	"close_code.h"
-
-1394933596 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_atomic.h
-	"SDL_stdinc.h"
-	"SDL_platform.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933596 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_audio.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"SDL_endian.h"
-	"SDL_mutex.h"
-	"SDL_thread.h"
-	"SDL_rwops.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933596 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_error.h
-	"SDL_stdinc.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933596 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_endian.h
-	"SDL_stdinc.h"
-	<endian.h>
-	"begin_code.h"
-	"close_code.h"
-
-1394933598 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_mutex.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933598 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_thread.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"SDL_atomic.h"
-	"SDL_mutex.h"
-	"begin_code.h"
-	<process.h>
-	"close_code.h"
-
-1394933598 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_rwops.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933596 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_clipboard.h
-	"SDL_stdinc.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933596 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_cpuinfo.h
-	"SDL_stdinc.h"
-	<intrin.h>
-	<intrin.h>
-	<altivec.h>
-	<mmintrin.h>
-	<mm3dnow.h>
-	<xmmintrin.h>
-	<emmintrin.h>
-	"begin_code.h"
-	"close_code.h"
-
-1394933596 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_events.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"SDL_video.h"
-	"SDL_keyboard.h"
-	"SDL_mouse.h"
-	"SDL_joystick.h"
-	"SDL_gamecontroller.h"
-	"SDL_quit.h"
-	"SDL_gesture.h"
-	"SDL_touch.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933598 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_video.h
-	"SDL_stdinc.h"
-	"SDL_pixels.h"
-	"SDL_rect.h"
-	"SDL_surface.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933598 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_pixels.h
-	"SDL_stdinc.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933598 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_rect.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"SDL_pixels.h"
-	"SDL_rwops.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933598 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_surface.h
-	"SDL_stdinc.h"
-	"SDL_pixels.h"
-	"SDL_rect.h"
-	"SDL_blendmode.h"
-	"SDL_rwops.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933596 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_blendmode.h
-	"begin_code.h"
-	"close_code.h"
-
-1394933596 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_keyboard.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"SDL_keycode.h"
-	"SDL_video.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933596 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_keycode.h
-	"SDL_stdinc.h"
-	"SDL_scancode.h"
-
-1394933598 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_scancode.h
-	"SDL_stdinc.h"
-
-1394933596 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_mouse.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"SDL_video.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933596 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_joystick.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933596 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_gamecontroller.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"SDL_rwops.h"
-	"SDL_joystick.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933598 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_quit.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-
-1394933596 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_gesture.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"SDL_video.h"
-	"SDL_touch.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933598 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_touch.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"SDL_video.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933596 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_filesystem.h
-	"SDL_stdinc.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933596 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_haptic.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"SDL_joystick.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933596 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_hints.h
-	"SDL_stdinc.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933596 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_loadso.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933596 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_log.h
-	"SDL_stdinc.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933596 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_messagebox.h
-	"SDL_stdinc.h"
-	"SDL_video.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933598 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_power.h
-	"SDL_stdinc.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933598 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_render.h
-	"SDL_stdinc.h"
-	"SDL_rect.h"
-	"SDL_video.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933598 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_system.h
-	"SDL_stdinc.h"
-	"SDL_keyboard.h"
-	"SDL_render.h"
-	"SDL_video.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933598 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_timer.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933598 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_version.h
-	"SDL_stdinc.h"
-	"begin_code.h"
-	"close_code.h"
-
-1376156342 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_image.h
-	"SDL.h"
-	"SDL_version.h"
-	"begin_code.h"
-	"close_code.h"
-
-1376156426 c:\users\8\desktop\d\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_mixer.h
-	"SDL_stdinc.h"
-	"SDL_rwops.h"
-	"SDL_audio.h"
-	"SDL_endian.h"
-	"SDL_version.h"
-	"begin_code.h"
-	"close_code.h"
-
-1376152944 c:\users\8\desktop\d\dclient\libraries\sdl2_ttf-2.0.12\i686-w64-mingw32\include\sdl2\sdl_ttf.h
-	"SDL.h"
-	"begin_code.h"
-	"close_code.h"
-
-1431910002 c:\users\8\desktop\d\dclient\struct.h
-	"libraries.h"
-	"graphics/CollisionRectangle.h"
-
-1431427698 c:\users\8\desktop\d\dclient\graphics\collisionrectangle.h
-	"../libraries.h"
-
-1432215400 c:\users\8\desktop\d\dclient\net.h
-	<winsock2.h>
-	<sys/socket.h>
-	<netinet/in.h>
-	<fcntl.h>
-	<assert.h>
-	<map>
-	<ctime>
-	<SDL.h>
-	<iostream>
-	<unistd.h>
-
-1431624660 c:\users\8\desktop\d\dclient\graphics.h
-	"graphics/SDL_Setup.h"
-	"graphics/CollisionRectangle.h"
-	"graphics/Sprite.h"
-	"graphics/Texts.h"
-
-1431624808 c:\users\8\desktop\d\dclient\graphics\sdl_setup.h
-	<map>
-	<SDL.h>
-	<SDL_image.h>
-	<SDL_mixer.h>
-	<SDL_ttf.h>
-
-1431639306 c:\users\8\desktop\d\dclient\graphics\sprite.h
-	"../libraries.h"
-	"CollisionRectangle.h"
-	"SDL_Setup.h"
-
-1432464250 c:\users\8\desktop\d\dclient\graphics\texts.h
-	"SDL_Setup.h"
-
-1431545364 c:\users\8\desktop\d\dclient\objects.h
-	"objects/Environment.h"
-	"objects/Environment/Live.h"
-	"objects/Environment/Live/Characters.h"
-	"objects/Environment/Live/Mobs.h"
-	"objects/Environment/NonLive.h"
-	"objects/Environment/NonLive/Objects.h"
-	"objects/Environment/NonLive/Objects/Normal.h"
-	"objects/Environment/NonLive/Objects/Trigger.h"
-	"objects/Environment/NonLive/Objects/Wtrig.h"
-	"objects/Environment/NonLive/Ground.h"
-	"objects/Items.h"
-	"objects/Items/Equip.h"
-	"objects/Items/Equip/Armor.h"
-	"objects/Items/Equip/Weapon.h"
-	"objects/Items/Equip/Weapon/Melee.h"
-	"objects/Items/Equip/Weapon/Range.h"
-	"objects/Items/Usable.h"
-
-1432402746 c:\users\8\desktop\d\dclient\objects\environment.h
-	<string>
-	"../graphics.h"
-	"../struct.h"
-
-1431701054 c:\users\8\desktop\d\dclient\objects\environment\live.h
-	"../Environment.h"
-
-1431912246 c:\users\8\desktop\d\dclient\objects\environment\live\characters.h
-	"../Live.h"
-	"../../Items.h"
-
-1431681548 c:\users\8\desktop\d\dclient\objects\items.h
-	"../graphics.h"
-
-1431859494 c:\users\8\desktop\d\dclient\objects\environment\live\mobs.h
-	"../Live.h"
-	"../../../struct.h"
-
-1431859920 c:\users\8\desktop\d\dclient\objects\environment\nonlive.h
-	"../Environment.h"
-
-1431859494 c:\users\8\desktop\d\dclient\objects\environment\nonlive\objects.h
-	"../NonLive.h"
-
-1431859812 c:\users\8\desktop\d\dclient\objects\environment\nonlive\objects\normal.h
-	"../Objects.h"
-
-1431859902 c:\users\8\desktop\d\dclient\objects\environment\nonlive\objects\trigger.h
-	"../Objects.h"
-
-1431859856 c:\users\8\desktop\d\dclient\objects\environment\nonlive\objects\wtrig.h
-	"../Objects.h"
-
-1431859934 c:\users\8\desktop\d\dclient\objects\environment\nonlive\ground.h
-	"../NonLive.h"
-
-1431681548 c:\users\8\desktop\d\dclient\objects\items\equip.h
-	"../Items.h"
-
-1431545666 c:\users\8\desktop\d\dclient\objects\items\equip\armor.h
-	"../Equip.h"
-
-1431546228 c:\users\8\desktop\d\dclient\objects\items\equip\weapon.h
-	<string>
-	"../Equip.h"
-
-1431680756 c:\users\8\desktop\d\dclient\objects\items\equip\weapon\melee.h
-	"../Weapon.h"
-	"../../../../struct.h"
-
-1431545660 c:\users\8\desktop\d\dclient\objects\items\equip\weapon\range.h
-	"../Weapon.h"
-
-1431545682 c:\users\8\desktop\d\dclient\objects\items\usable.h
-	"../Items.h"
-
-1432464854 c:\users\8\desktop\d\dclient\menu.h
-	"libraries.h"
-	"graphics.h"
-
-1432528558 source:c:\users\8\desktop\d\dclient\graphics\collisionrectangle.cpp
-	"CollisionRectangle.h"
-
-1431629890 source:c:\users\8\desktop\d\dclient\graphics\sdl_setup.cpp
-	"../libraries.h"
-	"SDL_Setup.h"
-
-1432542708 source:c:\users\8\desktop\d\dclient\graphics\sprite.cpp
-	"../libraries.h"
-	"Sprite.h"
-
-1432467966 source:c:\users\8\desktop\d\dclient\graphics\texts.cpp
-	"Texts.h"
-	"../libraries.h"
-
-1432550867 source:c:\users\8\desktop\d\dclient\main.cpp
-	"libraries.h"
-	"Main.h"
-
-1432545021 c:\users\8\desktop\d\dclient\main.h
-	"graphics.h"
-	"Menu.h"
-	"GameLVL.h"
-	"MainCharacter.h"
-	<windows.h>
-	<math.h>
-
-1432550615 c:\users\8\desktop\d\dclient\maincharacter.h
-	"graphics.h"
-	"libraries.h"
-	"Menu.h"
-	"struct.h"
-
-1432551403 source:c:\users\8\desktop\d\dclient\maincharacter.cpp
-	"MainCharacter.h"
-
-1432540017 source:c:\users\8\desktop\d\dclient\net.cpp
-	"Net.h"
-	<cstdio>
-	<winsock2.h>
-	<ctime>
-	<fstream>
-
-1432496846 source:c:\users\8\desktop\d\dclient\objects\environment.cpp
-	"Environment.h"
-
-1431859494 source:c:\users\8\desktop\d\dclient\objects\environment\live.cpp
-	"Live.h"
-
-1432412284 source:c:\users\8\desktop\d\dclient\objects\environment\live\characters.cpp
-	"Characters.h"
-
-1431859494 source:c:\users\8\desktop\d\dclient\objects\environment\live\mobs.cpp
-	"Mobs.h"
-
-1431859496 source:c:\users\8\desktop\d\dclient\objects\environment\nonlive.cpp
-	"NonLive.h"
-
-1432452742 source:c:\users\8\desktop\d\dclient\objects\environment\nonlive\ground.cpp
-	"Ground.h"
-
-1431859494 source:c:\users\8\desktop\d\dclient\objects\environment\nonlive\objects.cpp
-	"Objects.h"
-
-1432492964 source:c:\users\8\desktop\d\dclient\objects\environment\nonlive\objects\normal.cpp
-	"Normal.h"
-
-1431859952 source:c:\users\8\desktop\d\dclient\objects\environment\nonlive\objects\trigger.cpp
-	"Trigger.h"
-
-1431859958 source:c:\users\8\desktop\d\dclient\objects\environment\nonlive\objects\wtrig.cpp
-	"Wtrig.h"
-
-1431546198 source:c:\users\8\desktop\d\dclient\objects\items.cpp
-	"Items.h"
-
-1431546204 source:c:\users\8\desktop\d\dclient\objects\items\equip.cpp
-	"Equip.h"
-
-1431540964 source:c:\users\8\desktop\d\dclient\objects\items\equip\armor.cpp
-	"Armor.h"
-
-1431541142 source:c:\users\8\desktop\d\dclient\objects\items\equip\weapon.cpp
-	"Weapon.h"
-
-1431680760 source:c:\users\8\desktop\d\dclient\objects\items\equip\weapon\melee.cpp
-	"Melee.h"
-
-1431541402 source:c:\users\8\desktop\d\dclient\objects\items\equip\weapon\range.cpp
-	"Range.h"
-
-1431546250 source:c:\users\8\desktop\d\dclient\objects\items\usable.cpp
-	"Usable.h"
-
-1432472442 source:c:\users\8\desktop\d\dclient\startcpp.cpp
-	"libraries.h"
-	"Main.h"
-
-1431918418 source:c:\users\8\desktop\d\dclient\struct.cpp
-	"struct.h"
-
-1432550759 source:c:\users\8\desktop\d\dclient\menu.cpp
-	"Menu.h"
-
-1432309118 source:c:\users\unknown\documents\github\dclient\gamelvl.cpp
-	"GameLVL.h"
-
-1432309120 c:\users\unknown\documents\github\dclient\maincharacter.h
-	"graphics.h"
-	"libraries.h"
-	"GameLVL.h"
-	"struct.h"
-
-1432309120 source:c:\users\unknown\documents\github\dclient\maincharacter.cpp
-	"MainCharacter.h"
-
-1432309123 source:c:\users\unknown\documents\github\dclient\objects\environment\nonlive\ground.cpp
-	"Ground.h"
-
-1432309123 source:c:\users\unknown\documents\github\dclient\objects\environment\nonlive\objects\normal.cpp
-	"Normal.h"
-
-1432309123 source:c:\users\unknown\documents\github\dclient\objects\environment\nonlive\objects\trigger.cpp
-	"Trigger.h"
-
-1432309123 source:c:\users\unknown\documents\github\dclient\objects\environment\nonlive\objects\wtrig.cpp
-	"Wtrig.h"
-
-1432395598 source:e:\dclient\gamelvl.cpp
-	"GameLVL.h"
-
-1432493988 e:\dclient\gamelvl.h
-	"libraries.h"
-	"graphics.h"
-	"objects.h"
-	"Menu.h"
-	<vector>
-
-1431619886 e:\dclient\libraries.h
-	<SDL.h>
-	<SDL_image.h>
-	<SDL_mixer.h>
-	<SDL_ttf.h>
-	<iostream>
-	<vector>
-	<map>
-	<fstream>
-	<sstream>
-	<string>
-	<cstdlib>
-	<math.h>
-	"struct.h"
-	"Net.h"
-
-1394933596 e:\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl.h
-	"SDL_main.h"
-	"SDL_stdinc.h"
-	"SDL_assert.h"
-	"SDL_atomic.h"
-	"SDL_audio.h"
-	"SDL_clipboard.h"
-	"SDL_cpuinfo.h"
-	"SDL_endian.h"
-	"SDL_error.h"
-	"SDL_events.h"
-	"SDL_filesystem.h"
-	"SDL_joystick.h"
-	"SDL_gamecontroller.h"
-	"SDL_haptic.h"
-	"SDL_hints.h"
-	"SDL_loadso.h"
-	"SDL_log.h"
-	"SDL_messagebox.h"
-	"SDL_mutex.h"
-	"SDL_power.h"
-	"SDL_render.h"
-	"SDL_rwops.h"
-	"SDL_system.h"
-	"SDL_thread.h"
-	"SDL_timer.h"
-	"SDL_version.h"
-	"SDL_video.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933596 e:\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_main.h
-	"SDL_stdinc.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933598 e:\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_stdinc.h
-	"SDL_config.h"
-	<sys/types.h>
-	<stdio.h>
-	<stdlib.h>
-	<stddef.h>
-	<stdarg.h>
-	<stdlib.h>
-	<malloc.h>
-	<stddef.h>
-	<stdarg.h>
-	<memory.h>
-	<string.h>
-	<strings.h>
-	<inttypes.h>
-	<stdint.h>
-	<ctype.h>
-	<math.h>
-	<float.h>
-	<iconv.h>
-	"begin_code.h"
-	<alloca.h>
-	<malloc.h>
-	<malloc.h>
-	<malloc.h>
-	<stdlib.h>
-	"close_code.h"
-
-1394933598 e:\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_config.h
-	"SDL_platform.h"
-
-1410291490 e:\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_platform.h
-	"AvailabilityMacros.h"
-	"TargetConditionals.h"
-	<winapifamily.h>
-	"begin_code.h"
-	"close_code.h"
-
-1394933598 e:\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\begin_code.h
-
-1394933598 e:\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\close_code.h
-
-1394933596 e:\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_assert.h
-	"SDL_config.h"
-	"begin_code.h"
-	<signal.h>
-	"close_code.h"
-
-1394933596 e:\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_atomic.h
-	"SDL_stdinc.h"
-	"SDL_platform.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933596 e:\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_audio.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"SDL_endian.h"
-	"SDL_mutex.h"
-	"SDL_thread.h"
-	"SDL_rwops.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933596 e:\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_error.h
-	"SDL_stdinc.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933596 e:\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_endian.h
-	"SDL_stdinc.h"
-	<endian.h>
-	"begin_code.h"
-	"close_code.h"
-
-1394933598 e:\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_mutex.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933598 e:\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_thread.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"SDL_atomic.h"
-	"SDL_mutex.h"
-	"begin_code.h"
-	<process.h>
-	"close_code.h"
-
-1394933598 e:\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_rwops.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933596 e:\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_clipboard.h
-	"SDL_stdinc.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933596 e:\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_cpuinfo.h
-	"SDL_stdinc.h"
-	<intrin.h>
-	<intrin.h>
-	<altivec.h>
-	<mmintrin.h>
-	<mm3dnow.h>
-	<xmmintrin.h>
-	<emmintrin.h>
-	"begin_code.h"
-	"close_code.h"
-
-1394933596 e:\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_events.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"SDL_video.h"
-	"SDL_keyboard.h"
-	"SDL_mouse.h"
-	"SDL_joystick.h"
-	"SDL_gamecontroller.h"
-	"SDL_quit.h"
-	"SDL_gesture.h"
-	"SDL_touch.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933598 e:\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_video.h
-	"SDL_stdinc.h"
-	"SDL_pixels.h"
-	"SDL_rect.h"
-	"SDL_surface.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933598 e:\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_pixels.h
-	"SDL_stdinc.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933598 e:\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_rect.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"SDL_pixels.h"
-	"SDL_rwops.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933598 e:\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_surface.h
-	"SDL_stdinc.h"
-	"SDL_pixels.h"
-	"SDL_rect.h"
-	"SDL_blendmode.h"
-	"SDL_rwops.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933596 e:\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_blendmode.h
-	"begin_code.h"
-	"close_code.h"
-
-1394933596 e:\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_keyboard.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"SDL_keycode.h"
-	"SDL_video.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933596 e:\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_keycode.h
-	"SDL_stdinc.h"
-	"SDL_scancode.h"
-
-1394933598 e:\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_scancode.h
-	"SDL_stdinc.h"
-
-1394933596 e:\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_mouse.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"SDL_video.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933596 e:\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_joystick.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933596 e:\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_gamecontroller.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"SDL_rwops.h"
-	"SDL_joystick.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933598 e:\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_quit.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-
-1394933596 e:\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_gesture.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"SDL_video.h"
-	"SDL_touch.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933598 e:\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_touch.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"SDL_video.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933596 e:\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_filesystem.h
-	"SDL_stdinc.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933596 e:\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_haptic.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"SDL_joystick.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933596 e:\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_hints.h
-	"SDL_stdinc.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933596 e:\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_loadso.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933596 e:\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_log.h
-	"SDL_stdinc.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933596 e:\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_messagebox.h
-	"SDL_stdinc.h"
-	"SDL_video.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933598 e:\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_power.h
-	"SDL_stdinc.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933598 e:\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_render.h
-	"SDL_stdinc.h"
-	"SDL_rect.h"
-	"SDL_video.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933598 e:\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_system.h
-	"SDL_stdinc.h"
-	"SDL_keyboard.h"
-	"SDL_render.h"
-	"SDL_video.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933598 e:\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_timer.h
-	"SDL_stdinc.h"
-	"SDL_error.h"
-	"begin_code.h"
-	"close_code.h"
-
-1394933598 e:\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_version.h
-	"SDL_stdinc.h"
-	"begin_code.h"
-	"close_code.h"
-
-1376156342 e:\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_image.h
-	"SDL.h"
-	"SDL_version.h"
-	"begin_code.h"
-	"close_code.h"
-
-1376156426 e:\dclient\libraries\sdl2-devel-2.0.3-mingw\sdl2-2.0.3\i686-w64-mingw32\include\sdl2\sdl_mixer.h
-	"SDL_stdinc.h"
-	"SDL_rwops.h"
-	"SDL_audio.h"
-	"SDL_endian.h"
-	"SDL_version.h"
-	"begin_code.h"
-	"close_code.h"
-
-1376152944 e:\dclient\libraries\sdl2_ttf-2.0.12\i686-w64-mingw32\include\sdl2\sdl_ttf.h
-	"SDL.h"
-	"begin_code.h"
-	"close_code.h"
-
-1431910002 e:\dclient\struct.h
-	"libraries.h"
-	"graphics/CollisionRectangle.h"
-
-1431427698 e:\dclient\graphics\collisionrectangle.h
-	"../libraries.h"
-
-1432215400 e:\dclient\net.h
-	<winsock2.h>
-	<sys/socket.h>
-	<netinet/in.h>
-	<fcntl.h>
-	<assert.h>
-	<map>
-	<ctime>
-	<SDL.h>
-	<iostream>
-	<unistd.h>
-
-1431624660 e:\dclient\graphics.h
-	"graphics/SDL_Setup.h"
-	"graphics/CollisionRectangle.h"
-	"graphics/Sprite.h"
-	"graphics/Texts.h"
-
-1431624808 e:\dclient\graphics\sdl_setup.h
-	<map>
-	<SDL.h>
-	<SDL_image.h>
-	<SDL_mixer.h>
-	<SDL_ttf.h>
-
-1431639306 e:\dclient\graphics\sprite.h
-	"../libraries.h"
-	"CollisionRectangle.h"
-	"SDL_Setup.h"
-
-1432464250 e:\dclient\graphics\texts.h
-	"SDL_Setup.h"
-
-1431545364 e:\dclient\objects.h
-	"objects/Environment.h"
-	"objects/Environment/Live.h"
-	"objects/Environment/Live/Characters.h"
-	"objects/Environment/Live/Mobs.h"
-	"objects/Environment/NonLive.h"
-	"objects/Environment/NonLive/Objects.h"
-	"objects/Environment/NonLive/Objects/Normal.h"
-	"objects/Environment/NonLive/Objects/Trigger.h"
-	"objects/Environment/NonLive/Objects/Wtrig.h"
-	"objects/Environment/NonLive/Ground.h"
-	"objects/Items.h"
-	"objects/Items/Equip.h"
-	"objects/Items/Equip/Armor.h"
-	"objects/Items/Equip/Weapon.h"
-	"objects/Items/Equip/Weapon/Melee.h"
-	"objects/Items/Equip/Weapon/Range.h"
-	"objects/Items/Usable.h"
-
-1432402746 e:\dclient\objects\environment.h
-	<string>
-	"../graphics.h"
-	"../struct.h"
-
-1431701054 e:\dclient\objects\environment\live.h
-	"../Environment.h"
-
-1431912246 e:\dclient\objects\environment\live\characters.h
-	"../Live.h"
-	"../../Items.h"
-
-1431681548 e:\dclient\objects\items.h
-	"../graphics.h"
-
-1431859494 e:\dclient\objects\environment\live\mobs.h
-	"../Live.h"
-	"../../../struct.h"
-
-1431859920 e:\dclient\objects\environment\nonlive.h
-	"../Environment.h"
-
-1431859494 e:\dclient\objects\environment\nonlive\objects.h
-	"../NonLive.h"
-
-1431859812 e:\dclient\objects\environment\nonlive\objects\normal.h
-	"../Objects.h"
-
-1431859902 e:\dclient\objects\environment\nonlive\objects\trigger.h
-	"../Objects.h"
-
-1431859856 e:\dclient\objects\environment\nonlive\objects\wtrig.h
-	"../Objects.h"
-
-1431859934 e:\dclient\objects\environment\nonlive\ground.h
-	"../NonLive.h"
-
-1431681548 e:\dclient\objects\items\equip.h
-	"../Items.h"
-
-1431545666 e:\dclient\objects\items\equip\armor.h
-	"../Equip.h"
-
-1431546228 e:\dclient\objects\items\equip\weapon.h
-	<string>
-	"../Equip.h"
-
-1431680756 e:\dclient\objects\items\equip\weapon\melee.h
-	"../Weapon.h"
-	"../../../../struct.h"
-
-1431545660 e:\dclient\objects\items\equip\weapon\range.h
-	"../Weapon.h"
-
-1431545682 e:\dclient\objects\items\usable.h
-	"../Items.h"
-
-1432464854 e:\dclient\menu.h
-	"libraries.h"
-	"graphics.h"
-
-1432528558 source:e:\dclient\graphics\collisionrectangle.cpp
-	"CollisionRectangle.h"
-
-1431629890 source:e:\dclient\graphics\sdl_setup.cpp
-	"../libraries.h"
-	"SDL_Setup.h"
-
-1432496202 source:e:\dclient\graphics\sprite.cpp
-	"../libraries.h"
-	"Sprite.h"
-
-1432467966 source:e:\dclient\graphics\texts.cpp
-	"Texts.h"
-	"../libraries.h"
-
-1432494724 source:e:\dclient\main.cpp
-	"libraries.h"
-	"Main.h"
-
-1432468158 e:\dclient\main.h
-	"graphics.h"
-	"Menu.h"
-	"GameLVL.h"
-	"MainCharacter.h"
-	<windows.h>
-	<math.h>
-
-1432527888 e:\dclient\maincharacter.h
-	"graphics.h"
-	"libraries.h"
-	"GameLVL.h"
-	"struct.h"
-
-1432529262 source:e:\dclient\maincharacter.cpp
-	"MainCharacter.h"
-
-1432379772 source:e:\dclient\net.cpp
-	"Net.h"
-	<cstdio>
-	<winsock2.h>
-	<ctime>
-	<fstream>
-
-1432496846 source:e:\dclient\objects\environment.cpp
-	"Environment.h"
-
-1431859494 source:e:\dclient\objects\environment\live.cpp
-	"Live.h"
-
-1432412284 source:e:\dclient\objects\environment\live\characters.cpp
-	"Characters.h"
-
-1431859494 source:e:\dclient\objects\environment\live\mobs.cpp
-	"Mobs.h"
-
-1431859496 source:e:\dclient\objects\environment\nonlive.cpp
-	"NonLive.h"
-
-1432452742 source:e:\dclient\objects\environment\nonlive\ground.cpp
-	"Ground.h"
-
-1431859494 source:e:\dclient\objects\environment\nonlive\objects.cpp
-	"Objects.h"
-
-1432492964 source:e:\dclient\objects\environment\nonlive\objects\normal.cpp
-	"Normal.h"
-
-1431859952 source:e:\dclient\objects\environment\nonlive\objects\trigger.cpp
-	"Trigger.h"
-
-1431859958 source:e:\dclient\objects\environment\nonlive\objects\wtrig.cpp
-	"Wtrig.h"
-
-1431546198 source:e:\dclient\objects\items.cpp
-	"Items.h"
-
-1431546204 source:e:\dclient\objects\items\equip.cpp
-	"Equip.h"
-
-1431540964 source:e:\dclient\objects\items\equip\armor.cpp
-	"Armor.h"
-
-1431541142 source:e:\dclient\objects\items\equip\weapon.cpp
-	"Weapon.h"
-
-1431680760 source:e:\dclient\objects\items\equip\weapon\melee.cpp
-	"Melee.h"
-
-1431541402 source:e:\dclient\objects\items\equip\weapon\range.cpp
-	"Range.h"
-
-1431546250 source:e:\dclient\objects\items\usable.cpp
-	"Usable.h"
-
-1432472442 source:e:\dclient\startcpp.cpp
-	"libraries.h"
-	"Main.h"
-
-1431918418 source:e:\dclient\struct.cpp
 	"struct.h"
 

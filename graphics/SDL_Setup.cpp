@@ -24,6 +24,15 @@ CSDL_Setup::CSDL_Setup(bool* quit, int passed_ScreenWidth, int passed_ScreenHeig
     {
 		std::cout << "Unable to init TTF" << std::endl;
     }
+    if( Mix_OpenAudio( 22050, MIX_DEFAULT_FORMAT, 2, 4096 ) == -1 )
+    {
+        std::cout << "Unable to init audio" << std::endl;
+    }
+    if (Mix_Init(MIX_INIT_MP3|MIX_INIT_OGG) < 0)
+    {
+		std::cout << "Unable to init decoders" << std::endl;
+    }
+    Mix_VolumeMusic(50);
 
 	renderer = NULL;
 	renderer = SDL_CreateRenderer(window, -1, SDL_RENDERER_ACCELERATED);

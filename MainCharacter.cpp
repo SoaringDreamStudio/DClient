@@ -83,8 +83,8 @@ void MainCharacter::UpdateAnimation() //ќбновление анимации главного геро€
 {
 
     //какие-то вычислени€ дл€ определени€ угла-направлени€ пункта назначени€
-    angle = atan2(Follow_Point_Y - *CameraY, Follow_Point_X - *CameraX);
-    angle = (angle * (180/3.14)) + 180;
+    //angle = atan2(Follow_Point_Y - *CameraY, Follow_Point_X - *CameraX);
+    //angle = (angle * (180/3.14)) + 180;
 
     //≈сли герой двигаетс€ в определенном направлении, то выдать соответствующую анимацию
     //ƒвижение по клавишам
@@ -145,30 +145,34 @@ void MainCharacter::UpdateAnimation() //ќбновление анимации главного геро€
         if ((angle <=360 && angle >315) || (angle >=0 && angle <= 45))//left
         {
             if (distance < 20)
-                SpriteMainHero->PlayAnimation(1, 1, 2, 250);
-            else
-                SpriteMainHero->PlayAnimation(0, 2, 2, 250);
-        }
-        else if (angle > 45 && angle <=135)//up
-        {
-            if (distance < 20)
-                SpriteMainHero->PlayAnimation(1, 1, 3, 250);
-            else
-                SpriteMainHero->PlayAnimation(0, 2, 3, 250);
-        }
-        else if (angle > 135 && angle <=225)//right
-        {
-            if (distance < 20)
                 SpriteMainHero->PlayAnimation(1, 1, 1, 250);
             else
                 SpriteMainHero->PlayAnimation(0, 2, 1, 250);
         }
-        else if (angle > 225 && angle <= 315)//down
+        else if (angle > 45 && angle <=135)//up
         {
             if (distance < 20)
                 SpriteMainHero->PlayAnimation(1, 1, 0, 250);
             else
                 SpriteMainHero->PlayAnimation(0, 2, 0, 250);
+        }
+        else if (angle > 135 && angle <=225)//right
+        {
+
+            if (distance < 20)
+                SpriteMainHero->PlayAnimation(1, 1, 2, 250);
+            else
+                SpriteMainHero->PlayAnimation(0, 2, 2, 250);
+
+        }
+        else if (angle > 225 && angle <= 315)//down
+        {
+
+            if (distance < 20)
+                SpriteMainHero->PlayAnimation(1, 1, 3, 250);
+            else
+                SpriteMainHero->PlayAnimation(0, 2, 3, 250);
+
         }
     }
 }
